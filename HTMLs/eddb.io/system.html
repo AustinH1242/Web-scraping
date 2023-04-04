@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="theme-color" content="#09485c">
+    <meta name="apple-mobile-web-app-title" content="EDDB">
+    <meta name="application-name" content="EDDB">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="mCZH3-ixqoKt3N4ms7UR6euWEm7lC9ZRr4ZdKG7y8wj8c3CmnNXLz-uL7Ejw9iDZg95VCbFhomnG9TNsHaWgWw==">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="manifest" href="/manifest.json">
+    <title>Systems - EDDB</title>
+            <script>
+            window.data = {"reference":[],"content":[],"shortParamNames":{"system":{"a":"allegiance_id","g":"government_id","e":"primary_economy_id","f":"faction","y":"needs_permit","p":"powerIds","o":"powerEffectTypes","r":"referenceSystemId","z":"stationFilter","pa":"page","so":"sort","t":"stateIds","i":"security_id","u":"is_populated","j":"factionId","k":"factionPresenceType"}}};
+                </script>
+            <meta name="description" content="Systems in Elite: Dangerous - search, filter, find and sort systems!">
+<link href="/assets/943648ae/select.css?v=1597095590" rel="stylesheet">
+<link href="/assets/6546688b/select2.css?v=1597095590" rel="stylesheet">
+<link href="/assets/c5994544/css/font-awesome.min.css?v=1597095590" rel="stylesheet">
+<link href="/assets/e78dfa28/dark-bottom.css?v=1597095590" rel="stylesheet">
+<link href="/css/eddb-light.min.css?v=1621859153" rel="stylesheet">
+<script>window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website.","dismiss":"Got it!","learnMore":"","link":null,"theme":false};</script>            <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58296939-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-58296939-1', { 'anonymize_ip': true });
+        </script>
+    </head>
+<body class="site-eddb">
+<div class="site-wrap">
+
+    <nav id="w1" class="navbar-inverse navbar-fixed-top navbar"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="/"><img src="/images/logo.png" alt=""></a><div class="theme-switcher">
+    <div class="theme-title">
+        Theme
+    </div>
+    <div class="theme-options">
+        <a class="theme-option option-light option-selected">
+            <i class="option-selected-icon fa fa-check" aria-hidden="true" title="Check"></i>
+        </a>
+        <a class="theme-option option-dark ">
+            <i class="option-selected-icon fa fa-check" aria-hidden="true" title="Check"></i>
+        </a>
+
+    </div>
+</div></div><div id="w1-collapse" class="collapse navbar-collapse"><ul id="w2" class="navbar-nav navbar-right nav"><li class="active"><a href="/system">Systems</a></li>
+<li><a href="/station">Stations</a></li>
+<li><a href="/attraction">Attractions</a></li>
+<li><a href="/commodity">Commodities</a></li>
+<li><a href="/faction">Factions</a></li>
+<li><a href="/body">Bodies</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Trading <span class="caret"></span></a><ul id="w3" class="dropdown-menu"><li><a href="/trade/single" tabindex="-1">Single Hop Trade</a></li>
+<li><a href="/trade/hops" tabindex="-1">Multi Hop Trade Route</a></li>
+<li><a href="/trade/loops" tabindex="-1">Loop Trade Route</a></li>
+<li><a href="/trade/commodity" tabindex="-1">Find Commodity</a></li></ul></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Other <span class="caret"></span></a><ul id="w4" class="dropdown-menu"><li><a href="https://ross.eddb.io/" tabindex="-1"><img src="/images/ross_label_white.png" height="10px" alt=""></a></li>
+<li><a href="/legal/site-notice" tabindex="-1">Site Notice</a></li>
+<li><a href="/legal/privacy-policy" tabindex="-1">Privacy Policy</a></li>
+<li><a href="/contact" tabindex="-1">Contact</a></li>
+<li><a href="/api" tabindex="-1">API</a></li></ul></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Account <span class="caret"></span></a><ul id="w5" class="dropdown-menu"><li><a href="/user/login" tabindex="-1">Login</a></li>
+<li><a href="/user/signup" tabindex="-1">Signup</a></li>
+<li><a href="/user/request-password-reset" tabindex="-1">Reset password</a></li>
+<li><a href="/user/resend-activation-token" tabindex="-1">Resend activation email</a></li>
+<li><a href="/user/faq" tabindex="-1">FAQ</a></li></ul></li></ul></div></div></nav>
+    <div class="container-fluid container-main">
+
+        <ul class="breadcrumb"><li><a href="/">Home</a></li>
+<li class="active">Systems</li>
+</ul>                
+<div class="page-header">
+    <h1>Systems</h1>
+</div>
+
+<div class="selectStandalone">
+    <input type="hidden" id="select2Systems" class="select2Systems" name="select2Systems"></div>
+
+<form id="findSystemsForm" action="/system" method="post">
+<input type="hidden" name="_csrf" value="mCZH3-ixqoKt3N4ms7UR6euWEm7lC9ZRr4ZdKG7y8wj8c3CmnNXLz-uL7Ejw9iDZg95VCbFhomnG9TNsHaWgWw==">
+    <div class="panel panel-eddb">
+        <div class="panel-heading clearfix">
+            Filter
+            <div class="pull-right panel-heading-link">
+                <i class="fa fa-external-link-square"></i> <a id="permaUrl" title="Bookmark this URL to access your settings fast!">Perma
+                    Settings Link</a>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="form-group field-system-is_populated">
+<label class="control-label" for="system-is_populated">Only Populated Systems</label>
+<input type="hidden" id="system-is_populated" class="form-control" name="system[is_populated]" value="1" disabled>
+
+<p class="help-block help-block-error"></p>
+</div>                </div>
+                <div class="col-sm-3">
+                    <div class="form-group field-system-allegiance_id">
+<label class="control-label" for="system-allegiance_id">Allegiance</label>
+<input type="hidden" id="system-allegiance_id" class="form-control" name="system[allegiance_id]">
+
+<p class="help-block help-block-error"></p>
+</div>                </div>
+                <div class="col-sm-3">
+                    <div class="form-group field-system-government_id">
+<label class="control-label" for="system-government_id">Government</label>
+<input type="hidden" id="system-government_id" class="form-control" name="system[government_id]">
+
+<p class="help-block help-block-error"></p>
+</div>                </div>
+                <div class="col-sm-3">
+                    <div class="form-group field-system-primary_economy_id">
+<label class="control-label" for="system-primary_economy_id">Primary Economy</label>
+<input type="hidden" id="system-primary_economy_id" class="form-control" name="system[primary_economy_id]">
+
+<p class="help-block help-block-error"></p>
+</div>                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="form-group field-system-factionid">
+<label class="control-label" for="system-factionid">Minor Faction</label>
+<input type="hidden" id="system-factionid" class="form-control" name="system[factionId]">
+
+<p class="help-block help-block-error"></p>
+</div>                </div>
+                <div class="col-sm-3">
+                    <div class="form-group field-system-factionpresencetype">
+<label class="control-label" for="system-factionpresencetype">Presence Type</label>
+<input type="hidden" id="system-factionpresencetype" class="form-control" name="system[factionPresenceType]">
+
+<p class="help-block help-block-error"></p>
+</div>                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="form-group field-system-needs_permit">
+<label class="control-label" for="system-needs_permit">Needs Permit</label>
+<input type="hidden" id="system-needs_permit" class="form-control" name="system[needs_permit]">
+
+<p class="help-block help-block-error"></p>
+</div>                </div>
+                <div class="col-sm-3">
+                    <div class="form-group field-system-stationfilter">
+<label class="control-label" for="system-stationfilter">Station Filter</label>
+<input type="hidden" id="system-stationfilter" class="form-control" name="system[stationFilter]">
+
+<p class="help-block help-block-error"></p>
+</div>                </div>
+                <div class="col-sm-3">
+                    <div class="form-group field-system-powerids">
+<label class="control-label" for="system-powerids">Powers</label>
+<input type="hidden" id="system-powerids" class="form-control" name="system[powerIds]" value="">
+
+<p class="help-block help-block-error"></p>
+</div>                </div>
+                <div class="col-sm-3">
+                    <div class="form-group field-system-powereffecttypes">
+<label class="control-label" for="system-powereffecttypes">Power Effects</label>
+<input type="hidden" id="system-powereffecttypes" class="form-control" name="system[powerEffectTypes]" value="">
+
+<p class="help-block help-block-error"></p>
+</div>                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group field-system-referencesystemid">
+<label class="control-label" for="system-referencesystemid">Reference System</label>
+<input type="hidden" id="system-referencesystemid" class="form-control" name="system[referenceSystemId]">
+
+<p class="help-block help-block-error"></p>
+</div>                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group field-system-security_id">
+<label class="control-label" for="system-security_id">Security</label>
+<input type="hidden" id="system-security_id" class="form-control" name="system[security_id]">
+
+<p class="help-block help-block-error"></p>
+</div>                </div>
+                <div class="col-sm-3">
+                    <div class="form-group field-system-stateids">
+<label class="control-label" for="system-stateids">Faction States</label>
+<input type="hidden" id="system-stateids" class="form-control" name="system[stateIds]" value="">
+
+<p class="help-block help-block-error"></p>
+</div>                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-sm-9"></div>
+                <div class="col-sm-3 clearfix">
+                    <div class="pull-right form-row-button-container">
+
+                        <button type="submit" id="btFindSystems" class="btn btn-primary"><i class="fa fa-cog fa-spin disabled-spinner fa-fw"></i><i class="fa fa-search enabled-spinner fa-fw"></i> Find Systems</button>                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div id="systemSearchResultWrapper" class="panel-loading-drop">
+                
+<div>
+    <div id="w0" class="compactGrid systemSearchResult">
+    <div class="summary">Found <strong class="totalCount">20,638</strong> systems. Showing <strong>1 - 50</strong>.</div>
+
+
+<ul class="pagination"><li class="first disabled"><span>First</span></li>
+<li class="prev disabled"><span>&laquo;</span></li>
+<li class="active"><a href="/system?page=1&amp;per-page=50" data-page="0">1</a></li>
+<li><a href="/system?page=2&amp;per-page=50" data-page="1">2</a></li>
+<li><a href="/system?page=3&amp;per-page=50" data-page="2">3</a></li>
+<li><a href="/system?page=4&amp;per-page=50" data-page="3">4</a></li>
+<li><a href="/system?page=5&amp;per-page=50" data-page="4">5</a></li>
+<li><a href="/system?page=6&amp;per-page=50" data-page="5">6</a></li>
+<li><a href="/system?page=7&amp;per-page=50" data-page="6">7</a></li>
+<li><a href="/system?page=8&amp;per-page=50" data-page="7">8</a></li>
+<li><a href="/system?page=9&amp;per-page=50" data-page="8">9</a></li>
+<li><a href="/system?page=10&amp;per-page=50" data-page="9">10</a></li>
+<li class="next"><a href="/system?page=2&amp;per-page=50" data-page="1">&raquo;</a></li>
+<li class="last"><a href="/system?page=413&amp;per-page=50" data-page="412">Last</a></li></ul>
+
+<table class="compactGridTable table table-striped table-bordered"><thead>
+<tr><th><a class="btn btn-primary btn-table-action" href="/system?sort=name" data-sort="name"><i class="fa fa-dot-circle-o"></i> System</a></th><th><a class="btn btn-primary btn-table-action" href="/system?sort=station_count" data-sort="station_count"><i class="fa fa-building-o"></i></a></th><th><a class="btn btn-primary btn-table-action" href="/system?sort=fleet_carrier_count" data-sort="fleet_carrier_count"><i class="fa fa-space-shuttle" aria-hidden="true" title="Fleet Carrier"></i></a></th><th><a class="btn btn-primary btn-table-action" href="/system?sort=allegiance_id" data-sort="allegiance_id">Allegiance</a></th><th><a class="btn btn-primary btn-table-action" href="/system?sort=population" data-sort="population">Population</a></th><th><a class="btn btn-primary btn-table-action" href="/system?sort=power_id" data-sort="power_id">Powerplay</a></th><th><a class="btn btn-primary btn-table-action asc" href="/system?sort=-referenceDistance" data-sort="-referenceDistance">Distance Sol</a></th></tr>
+</thead>
+<tbody>
+<tr data-key="17072"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>62</td><td>0</td><td>Federation</td><td>22,780,919,531</td><td><strong title="Control">C</strong>: Zachary Hudson</td><td>0.00 ly</td></tr>
+<tr data-key="764"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/764">Alpha Centauri</a></td><td>9</td><td>6</td><td>Independent</td><td>106,811</td><td><strong title="Exploited">E</strong>: Zachary Hudson</td><td>4.38 ly</td></tr>
+<tr data-key="1815"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/1815">Barnard&#039;s Star</a></td><td>18</td><td>8</td><td>Independent</td><td>1,256,069</td><td><strong title="Exploited">E</strong>: Zachary Hudson</td><td>5.95 ly</td></tr>
+<tr data-key="12934"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/12934">Luhman 16</a></td><td>37</td><td>2</td><td>Independent</td><td>193,793</td><td>Contested</td><td>6.57 ly</td></tr>
+<tr data-key="19046"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/19046">WISE 0855-0714</a></td><td>1</td><td>1</td><td>Independent</td><td>34,825</td><td><strong title="Exploited">E</strong>: Zachary Hudson</td><td>7.17 ly</td></tr>
+<tr data-key="19153"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/19153">Wolf 359</a></td><td>13</td><td>1</td><td>Independent</td><td>135,903</td><td>Contested</td><td>7.78 ly</td></tr>
+<tr data-key="16977"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/16977">Sirius</a></td><td>6</td><td>0</td><td>Independent</td><td>2,501,068</td><td>Contested</td><td>8.59 ly</td></tr>
+<tr data-key="16151"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/16151">Ross 154</a></td><td>14</td><td>1</td><td>Independent</td><td>2,006,272</td><td>Contested</td><td>9.69 ly</td></tr>
+<tr data-key="4374"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/4374">Duamta</a></td><td>21</td><td>4</td><td>Federation</td><td>13,327,723,347</td><td>Contested</td><td>9.88 ly</td></tr>
+<tr data-key="19047"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/19047">WISE 1506+7027</a></td><td>17</td><td>1</td><td>Independent</td><td>14,971,863</td><td><strong title="Exploited">E</strong>: Zachary Hudson</td><td>10.52 ly</td></tr>
+<tr data-key="4589"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/4589">Epsilon Eridani</a></td><td>14</td><td>0</td><td>Independent</td><td>80,020,906</td><td><strong title="Exploited">E</strong>: Zachary Hudson</td><td>10.52 ly</td></tr>
+<tr data-key="11393"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/11393">Lacaille 9352</a></td><td>34</td><td>1</td><td>Independent</td><td>95,031</td><td>Contested</td><td>10.69 ly</td></tr>
+<tr data-key="16145"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/16145">Ross 128</a></td><td>8</td><td>0</td><td>Federation</td><td>23,708</td><td>Contested</td><td>10.94 ly</td></tr>
+<tr data-key="4724"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/4724">EZ Aquarii</a></td><td>2</td><td>2</td><td>Federation</td><td>9,930,324</td><td>Contested</td><td>11.10 ly</td></tr>
+<tr data-key="278"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/278">61 Cygni</a></td><td>2</td><td>1</td><td>Federation</td><td>8,274,043</td><td><strong title="Exploited">E</strong>: Zachary Hudson</td><td>11.37 ly</td></tr>
+<tr data-key="15756"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/15756">Procyon</a></td><td>13</td><td>2</td><td>Independent</td><td>18,561,357,265</td><td>Contested</td><td>11.41 ly</td></tr>
+<tr data-key="5455"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/5455">Groombridge 34</a></td><td>33</td><td>2</td><td>Independent</td><td>9,521,472</td><td><strong title="Exploited">E</strong>: Zachary Hudson</td><td>11.73 ly</td></tr>
+<tr data-key="4592"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/4592">Epsilon Indi</a></td><td>12</td><td>0</td><td>Independent</td><td>4,000,005,459</td><td>Contested</td><td>11.80 ly</td></tr>
+<tr data-key="17120"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17120">SPF-LF 1</a></td><td>1</td><td>3</td><td>Independent</td><td>0</td><td>Contested</td><td>11.82 ly</td></tr>
+<tr data-key="17489"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17489">Tau Ceti</a></td><td>20</td><td>6</td><td>Independent</td><td>5,000,152,143</td><td><strong title="Exploited">E</strong>: Zachary Hudson</td><td>11.94 ly</td></tr>
+<tr data-key="19695"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/19695">YZ Ceti</a></td><td>13</td><td>3</td><td>Federation</td><td>7,654,650</td><td><strong title="Exploited">E</strong>: Zachary Hudson</td><td>12.07 ly</td></tr>
+<tr data-key="12978"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/12978">Luyten&#039;s Star</a></td><td>32</td><td>6</td><td>Independent</td><td>13,151,211</td><td>Contested</td><td>12.39 ly</td></tr>
+<tr data-key="11392"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/11392">Lacaille 8760</a></td><td>52</td><td>1</td><td>Federation</td><td>309,388</td><td>Contested</td><td>12.88 ly</td></tr>
+<tr data-key="11117"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/11117">Kruger 60</a></td><td>6</td><td>0</td><td>Federation</td><td>20,092,481</td><td><strong title="Exploited">E</strong>: Zachary Hudson</td><td>13.08 ly</td></tr>
+<tr data-key="12063"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/12063">LHS 380</a></td><td>5</td><td>0</td><td>Independent</td><td>11,251,719</td><td><strong title="Exploited">E</strong>: Zachary Hudson</td><td>13.85 ly</td></tr>
+<tr data-key="18444"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/18444">van Maanen&#039;s Star</a></td><td>15</td><td>0</td><td>Independent</td><td>7,231,045</td><td><strong title="Exploited">E</strong>: Zachary Hudson</td><td>13.91 ly</td></tr>
+<tr data-key="17891"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17891">Toolfa</a></td><td>51</td><td>0</td><td>Independent</td><td>49,769,105</td><td>Contested</td><td>14.01 ly</td></tr>
+<tr data-key="19163"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/19163">Wolf 424</a></td><td>15</td><td>1</td><td>Federation</td><td>24,449,914</td><td>Contested</td><td>14.01 ly</td></tr>
+<tr data-key="4955"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/4955">G 41-14</a></td><td>1</td><td>0</td><td>Federation</td><td>3,065,518</td><td>Contested</td><td>14.55 ly</td></tr>
+<tr data-key="13656"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/13656">Mildeptu</a></td><td>10</td><td>0</td><td>Independent</td><td>20,779,611</td><td>Contested</td><td>14.56 ly</td></tr>
+<tr data-key="18108"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/18108">TZ Arietis</a></td><td>49</td><td>1</td><td>Federation</td><td>63,823,540</td><td><strong title="Exploited">E</strong>: Zachary Hudson</td><td>14.61 ly</td></tr>
+<tr data-key="12095"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/12095">LHS 450</a></td><td>4</td><td>0</td><td>Independent</td><td>588,598</td><td><strong title="Exploited">E</strong>: Zachary Hudson</td><td>14.78 ly</td></tr>
+<tr data-key="12094"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/12094">LHS 449</a></td><td>27</td><td>2</td><td>Federation</td><td>19,160</td><td>Contested</td><td>14.80 ly</td></tr>
+<tr data-key="12974"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/12974">Luyten 145-141</a></td><td>23</td><td>0</td><td>Independent</td><td>293,707</td><td><strong title="Exploited">E</strong>: Zemina Torval</td><td>15.02 ly</td></tr>
+<tr data-key="16259"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/16259">Ross 780</a></td><td>28</td><td>1</td><td>Independent</td><td>49,959,461</td><td>Contested</td><td>15.32 ly</td></tr>
+<tr data-key="18341"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/18341">V1581 Cygni</a></td><td>20</td><td>0</td><td>Federation</td><td>7,974,763</td><td><strong title="Exploited">E</strong>: Zachary Hudson</td><td>15.39 ly</td></tr>
+<tr data-key="9744"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/9744">IL Aquarii</a></td><td>32</td><td>0</td><td>Federation</td><td>23,151,214</td><td>Contested</td><td>15.45 ly</td></tr>
+<tr data-key="12953"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/12953">Lung</a></td><td>21</td><td>0</td><td>Federation</td><td>625,972</td><td><strong title="Control">C</strong>: Zachary Hudson</td><td>15.48 ly</td></tr>
+<tr data-key="10915"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/10915">Kokary</a></td><td>23</td><td>0</td><td>Independent</td><td>64,427,612</td><td><strong title="Exploited">E</strong>: Zachary Hudson</td><td>15.79 ly</td></tr>
+<tr data-key="5454"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/5454">Groombridge 1618</a></td><td>36</td><td>0</td><td>Independent</td><td>5,914,893,483</td><td><strong title="Control">C</strong>: Zachary Hudson</td><td>15.88 ly</td></tr>
+<tr data-key="1542"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/1542">Avik</a></td><td>1</td><td>2</td><td>Independent</td><td>42,967</td><td>Contested</td><td>15.88 ly</td></tr>
+<tr data-key="11383"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/11383">La Rochelle</a></td><td>7</td><td>1</td><td>Independent</td><td>16,995</td><td><strong title="Exploited">E</strong>: Yuri Grom</td><td>16.14 ly</td></tr>
+<tr data-key="14995"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/14995">Omicron-2 Eridani</a></td><td>19</td><td>0</td><td>Federation</td><td>123,416</td><td>Contested</td><td>16.27 ly</td></tr>
+<tr data-key="5173"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/5173">Gendalla</a></td><td>24</td><td>2</td><td>Federation</td><td>902,342</td><td><strong title="Control">C</strong>: Edmund Mahon</td><td>16.55 ly</td></tr>
+<tr data-key="312"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/312">70 Ophiuchi</a></td><td>6</td><td>0</td><td>Federation</td><td>11,203,757</td><td><strong title="Exploited">E</strong>: Zachary Hudson</td><td>16.58 ly</td></tr>
+<tr data-key="776"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/776">Altair</a></td><td>15</td><td>5</td><td>Federation</td><td>14,696,030</td><td><strong title="Exploited">E</strong>: Zachary Hudson</td><td>16.74 ly</td></tr>
+<tr data-key="4820"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/4820">Flousop</a></td><td>41</td><td>1</td><td>Federation</td><td>469,277</td><td><strong title="Exploited">E</strong>: Zachary Hudson</td><td>17.36 ly</td></tr>
+<tr data-key="11941"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/11941">LHS 2459</a></td><td>6</td><td>0</td><td>Federation</td><td>37,114</td><td><strong title="Exploited">E</strong>: Zachary Hudson</td><td>17.46 ly</td></tr>
+<tr data-key="4966"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/4966">G 99-49</a></td><td>24</td><td>1</td><td>Federation</td><td>699,227</td><td>Contested</td><td>17.52 ly</td></tr>
+<tr data-key="17146"><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17146">Stein 2051</a></td><td>23</td><td>1</td><td>Independent</td><td>149,809</td><td><strong title="Exploited">E</strong>: Zachary Hudson</td><td>18.22 ly</td></tr>
+</tbody></table>
+
+<ul class="pagination"><li class="first disabled"><span>First</span></li>
+<li class="prev disabled"><span>&laquo;</span></li>
+<li class="active"><a href="/system?page=1&amp;per-page=50" data-page="0">1</a></li>
+<li><a href="/system?page=2&amp;per-page=50" data-page="1">2</a></li>
+<li><a href="/system?page=3&amp;per-page=50" data-page="2">3</a></li>
+<li><a href="/system?page=4&amp;per-page=50" data-page="3">4</a></li>
+<li><a href="/system?page=5&amp;per-page=50" data-page="4">5</a></li>
+<li><a href="/system?page=6&amp;per-page=50" data-page="5">6</a></li>
+<li><a href="/system?page=7&amp;per-page=50" data-page="6">7</a></li>
+<li><a href="/system?page=8&amp;per-page=50" data-page="7">8</a></li>
+<li><a href="/system?page=9&amp;per-page=50" data-page="8">9</a></li>
+<li><a href="/system?page=10&amp;per-page=50" data-page="9">10</a></li>
+<li class="next"><a href="/system?page=2&amp;per-page=50" data-page="1">&raquo;</a></li>
+<li class="last"><a href="/system?page=413&amp;per-page=50" data-page="412">Last</a></li></ul>
+
+<input type="hidden" id="inputPage" name="system[page]" value="0"><input type="hidden" id="inputSort" name="system[sort]">
+</div></div>            </div>
+        </div>
+
+    </div>
+
+</form>
+
+
+        
+        
+            <div class="panel panel-eddb bottom-ad">
+                <div class="panel-heading">Advertisement</div>
+                <div class="panel-body">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- bottom full width -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-9828496076338182"
+                         data-ad-slot="3354061357"
+                         data-ad-format="auto"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+            </div>
+
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="pull-left"><strong>&copy; EDDB 2023 - A site about systems, bodies, stations,
+                commodities, materials and trade routes in <a href="https://www.elitedangerous.com/"><i>Elite:
+                        Dangerous</i></a>.</strong></p>
+        <span class="pull-right donate-buttons">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="2C8HCJ2P4KXAA">
+                <input type="image" src="/images/paypal_btn_donate_SM.gif" border="0" name="submit"
+                       alt="Donate with PayPal">
+            </form>
+        </span>
+    </div>
+</footer>
+<script src="/assets/6f43917b/jquery.js?v=1597095590"></script>
+<script src="/assets/6546688b/select2.min.js?v=1597095590"></script>
+<script src="/assets/a254de8d/yii.js?v=1597095590"></script>
+<script src="/assets/a254de8d/yii.validation.js?v=1597095590"></script>
+<script src="/assets/51ce2334/js/bootstrap.js?v=1597095590"></script>
+<script src="/assets/a254de8d/yii.gridView.js?v=1597095590"></script>
+<script src="/assets/a254de8d/yii.activeForm.js?v=1597095590"></script>
+<script src="/assets/e78dfa28/cookieconsent.min.js?v=1597095590"></script>
+<script src="/js/main.js?v=1612015983"></script>
+<script>jQuery(function ($) {
+$('#select2Systems').select2({"placeholder":"Search for a system ...","cacheDataSource":[],"minimumInputLength":2,"cache":true,"ajax":{"url":"https://eddb.io/system/search","quietMillis":500,"dataType":"json","data":function(term, page) {
+                        return {
+                            "system[name]": term,
+                            "expand": "stations",
+                            "system[version]": 2,
+                        };
+                    },"results":function(data, page) {
+                    return {results: data};
+                }},"formatResult":function(result, container, query, escapeMarkup) {
+                    var me = this;
+
+                    function markMatch(string) {
+                        var markup = [];
+                        window.Select2.util.markMatch(string, query.term, markup, function(text) {return text});
+                        return markup.join("");
+                    }
+
+                    var systemName = markMatch(me.escapeMarkup(result.name));
+
+                    var text = "<strong>" + systemName + "</strong>";
+
+                    if (result.stations.length > 0) {
+                        var stationNames = result.stations.map(function(station) {
+                            return markMatch(me.escapeMarkup(station.name));
+                        });
+
+                        text += " (" + stationNames.join(", ") + ")";
+                    }
+
+                    return text;
+                },"formatSelection":function(result) {
+                    var me = this;
+                    var systemName = result.name;
+                    var text = "<strong>" + this.escapeMarkup(systemName) + "</strong>";
+
+                    if (result.stations.length > 0) {
+                        var stationNames = result.stations.map(function(station) {
+                            return me.escapeMarkup(station.name);
+                        });
+
+                        text += " (" + stationNames.join(", ") + ")";
+                    }
+
+                    return text;
+                }});
+$('#system-is_populated').select2({"multiple":false,"allowClear":false,"placeholder":"Yes or No","minimumResultsForSearch":-1,"data":{"results":[{"id":1,"text":"Yes"},{"id":0,"text":"No"}]}});
+$('#system-allegiance_id').select2({"allowClear":true,"placeholder":"Select Allegiance","data":{"results":[{"id":"1","name":"Alliance"},{"id":"2","name":"Empire"},{"id":"3","name":"Federation"},{"id":"8","name":"Guardian"},{"id":"4","name":"Independent"},{"id":"5","name":"None"},{"id":"7","name":"Pilots Federation"},{"id":"6","name":"Pirate"},{"id":"9","name":"Thargoid"}],"text":"name"}});
+$('#system-government_id').select2({"allowClear":true,"placeholder":"Select Allegiance","data":{"results":[{"id":"16","name":"Anarchy"},{"id":"32","name":"Communism"},{"id":"48","name":"Confederacy"},{"id":"64","name":"Corporate"},{"id":"80","name":"Cooperative"},{"id":"96","name":"Democracy"},{"id":"112","name":"Dictatorship"},{"id":"128","name":"Feudal"},{"id":"133","name":"Imperial"},{"id":"144","name":"Patronage"},{"id":"150","name":"Prison Colony"},{"id":"160","name":"Theocracy"},{"id":"165","name":"Workshop"},{"id":"176","name":"None"},{"id":"192","name":"Engineer"},{"id":"208","name":"Prison"},{"id":"209","name":"Private Ownership"}],"text":"name"}});
+$('#system-primary_economy_id').select2({"placeholder":"Select Economy","allowClear":true,"data":{"results":[{"id":"1","name":"Agriculture"},{"id":"2","name":"Extraction"},{"id":"3","name":"High Tech"},{"id":"4","name":"Industrial"},{"id":"5","name":"Military"},{"id":"15","name":"Prison"},{"id":"6","name":"Refinery"},{"id":"7","name":"Service"},{"id":"8","name":"Terraforming"},{"id":"9","name":"Tourism"},{"id":"17","name":"Engineer"},{"id":"11","name":"Colony"},{"id":"16","name":"Private Enterprise"},{"id":"13","name":"Damaged"},{"id":"14","name":"Repair"},{"id":"12","name":"Rescue"},{"id":"10","name":"None"}],"text":"name"}});
+$('#system-factionid').select2({"cacheDataSource":[],"placeholder":"Search for a minor faction ...","minimumInputLength":2,"cache":true,"ajax":{"url":"https://eddb.io/faction/search","quietMillis":300,"dataType":"json","data":
+                    function(term, page) {
+                        var data = {
+                            name: term
+                        };
+                        
+                        var extraParams = [];
+                        
+                        for (var name in extraParams) {
+                            data[name] = extraParams[name];
+                        }
+                        
+                        return {
+                            faction: data
+                        };
+                    }
+                ,"results":
+                    function(data, page) {
+                        return {results: data};
+                    }
+                },"formatResult":
+                function(result, container, query, escapeMarkup) {
+                    function markMatch(string) {
+                        var markup = [];
+                        window.Select2.util.markMatch(string, query.term, markup, function(text) {return text});
+                        return markup.join("");
+                    }
+
+                    var factionName = markMatch(this.escapeMarkup(result.name));
+                    var list = [];
+                    
+                    if (result.allegianceName) {
+                        var allegianceName = this.escapeMarkup(result.allegianceName);
+                        list.push(allegianceName);
+                    }
+                    if (result.governmentName) {
+                        var governmentName = this.escapeMarkup(result.governmentName);
+                        list.push(governmentName);
+                    }
+                    if (result.homeSystemName) {
+                        var homeSystemName = this.escapeMarkup(result.homeSystemName);
+                        list.push(homeSystemName);
+                    }
+                    
+                    var extraText;
+                    
+                    if (list.length > 0) {
+                        extraText = list.join(', ');
+                    } else {
+                        extraText = '?'; 
+                    }
+
+                    var text = "<strong>" + factionName + "</strong> (" + extraText + ")";
+
+                    return text;
+                },"formatSelection":            
+                function(result) {
+                    var factionName = this.escapeMarkup(result.name);
+                    var list = [];
+                    if (result.allegianceName) {
+                        var allegianceName = this.escapeMarkup(result.allegianceName);
+                        list.push(allegianceName);
+                    }
+                    if (result.governmentName) {
+                        var governmentName = this.escapeMarkup(result.governmentName);
+                        list.push(governmentName);
+                    }
+                    if (result.homeSystemName) {
+                        var homeSystemName = this.escapeMarkup(result.homeSystemName);
+                        list.push(homeSystemName);
+                    }
+                    
+                    var extraText;
+                    
+                    if (list.length > 0) {
+                        extraText = list.join(', ');
+                    } else {
+                        extraText = '?'; 
+                    }
+
+                    var text = "<strong>" + factionName + "</strong> (" + extraText + ")";
+
+                    return text;
+                }});
+$('#system-factionpresencetype').select2({"minimumResultsForSearch":-1,"placeholder":"Presence or Control?","allowClear":true,"data":{"results":[{"id":1,"text":"Presence"},{"id":2,"text":"Controlling"}]}});
+$('#system-needs_permit').select2({"allowClear":true,"placeholder":"Yes or No","minimumResultsForSearch":-1,"data":{"results":[{"id":1,"text":"Yes"},{"id":0,"text":"No"}]}});
+$('#system-stationfilter').select2({"minimumResultsForSearch":-1,"placeholder":"Having stations?","allowClear":true,"data":{"results":[{"id":3,"text":"Having stations"},{"id":1,"text":"Having planetary"},{"id":2,"text":"Having orbital"},{"id":4,"text":"Having no stations"}]}});
+$('#system-powerids').select2({"multiple":true,"placeholder":"Add Powers","allowClear":true,"data":{"results":[{"id":"6","name":"Aisling Duval"},{"id":"8","name":"Archon Delaine"},{"id":"5","name":"Arissa Lavigny-Duval"},{"id":"7","name":"Denton Patreus"},{"id":"1","name":"Edmund Mahon"},{"id":"2","name":"Felicia Winters"},{"id":"9","name":"Li Yong-Rui"},{"id":"10","name":"Pranav Antal"},{"id":"11","name":"Yuri Grom"},{"id":"3","name":"Zachary Hudson"},{"id":"4","name":"Zemina Torval"}],"text":"name"}});
+$('#system-powereffecttypes').select2({"multiple":true,"placeholder":"Add Power Effects","allowClear":true,"data":{"results":[{"name":"Control","id":16},{"name":"Exploited","id":32},{"name":"Expansion","id":64}],"text":"name"}});
+$('#system-referencesystemid').select2({"allowClear":true,"cacheDataSource":[],"placeholder":"Search for a system ...","minimumInputLength":2,"cache":true,"ajax":{"url":"https://eddb.io/system/search","quietMillis":500,"dataType":"json","data":function(term, page) {
+                        return {
+                            "system[name]": term,
+                            "expand": "stations",
+                            "system[version]": 2,
+                        };
+                    },"results":function(data, page) {
+                    return {results: data};
+                }},"formatResult":function(result, container, query, escapeMarkup) {
+                    var me = this;
+
+                    function markMatch(string) {
+                        var markup = [];
+                        window.Select2.util.markMatch(string, query.term, markup, function(text) {return text});
+                        return markup.join("");
+                    }
+
+                    var systemName = markMatch(me.escapeMarkup(result.name));
+
+                    var text = "<strong>" + systemName + "</strong>";
+
+                    if (result.stations.length > 0) {
+                        var stationNames = result.stations.map(function(station) {
+                            return markMatch(me.escapeMarkup(station.name));
+                        });
+
+                        text += " (" + stationNames.join(", ") + ")";
+                    }
+
+                    return text;
+                },"formatSelection":function(result) {
+                    var me = this;
+                    var systemName = result.name;
+                    var text = "<strong>" + this.escapeMarkup(systemName) + "</strong>";
+
+                    if (result.stations.length > 0) {
+                        var stationNames = result.stations.map(function(station) {
+                            return me.escapeMarkup(station.name);
+                        });
+
+                        text += " (" + stationNames.join(", ") + ")";
+                    }
+
+                    return text;
+                }});
+$('#system-security_id').select2({"multiple":false,"allowClear":true,"placeholder":"Select Security","data":{"results":[{"id":"16","name":"Low"},{"id":"32","name":"Medium"},{"id":"48","name":"High"},{"id":"64","name":"Anarchy"},{"id":"80","name":"Lawless"}],"text":"name"}});
+$('#system-stateids').select2({"multiple":true,"allowClear":true,"placeholder":"Select State","data":{"results":[{"id":"102","name":"Blight"},{"id":"16","name":"Boom"},{"id":"32","name":"Bust"},{"id":"66","name":"Civil Liberty"},{"id":"48","name":"Civil Unrest"},{"id":"64","name":"Civil War"},{"id":"108","name":"Cold War"},{"id":"109","name":"Colonisation"},{"id":"15","name":"Damaged"},{"id":"103","name":"Drought"},{"id":"65","name":"Election"},{"id":"67","name":"Expansion"},{"id":"37","name":"Famine"},{"id":"110","name":"Historic Event"},{"id":"104","name":"Infrastructure Failure"},{"id":"101","name":"Investment"},{"id":"69","name":"Lockdown"},{"id":"105","name":"Natural Disaster"},{"id":"80","name":"None"},{"id":"72","name":"Outbreak"},{"id":"81","name":"Pirate Attack"},{"id":"106","name":"Public Holiday"},{"id":"96","name":"Retreat"},{"id":"111","name":"Revolution"},{"id":"112","name":"Technological Leap"},{"id":"107","name":"Terrorist Attack"},{"id":"113","name":"Trade War"},{"id":"114","name":"Under Attack"},{"id":"14","name":"Under Repairs"},{"id":"73","name":"War"}],"text":"name"}});
+$(findSystemsForm).on('beforeSubmit', function(e) {
+                $.ajax({"cache":false,"beforeSend":
+                                function() {
+                                    var button = $('#btFindSystems'),
+                                    wrapper = $('#systemSearchResultWrapper');
+                                    button[0].disabled = true;
+                                    wrapper.addClass('panel-is-loading');
+                                    wrapper.prepend(' ');
+                                },"success":
+                                function(html){
+                                    var button = $('#btFindSystems'),
+                                    wrapper = $('#systemSearchResultWrapper'),
+                                    wasEmpty = !wrapper.html().trim();
+
+                                    button[0].disabled = false;
+                                    wrapper.html(html);
+                                    wrapper.slideDown();
+                                    wrapper.removeClass('panel-is-loading');
+                                }
+                            ,"error":
+                                function(error) {
+                                    var button = $('#btFindSystems'),
+                                    wrapper = $('#systemSearchResultWrapper');
+
+                                    wrapper.slideUp();
+                                    wrapper.html('');
+                                    button[0].disabled = false;
+                                }
+                            ,"type":$(findSystemsForm).attr('method'),"url":$(findSystemsForm).attr('action'),"data":$(findSystemsForm).serialize()});
+                return false;
+            });
+$('#btFindSystems').mouseup(function(){
+                $(this).blur();
+            });
+    $('#systemSearchResultWrapper .pagination a').click(function(e) {
+        "use strict";
+        var page = $(this).data('page');
+        $('#inputPage').val(page);
+        $(this).closest('form').submit();
+        return false;
+    });
+    $('#systemSearchResultWrapper table thead a').click(function(e) {
+        "use strict";
+        var sort = $(this).data('sort');
+        $('#inputSort').val(sort);
+        $(this).closest('form').submit();
+        return false;
+    });
+jQuery('#w0').yiiGridView({"filterUrl":"\/system","filterSelector":"#w0-filters input, #w0-filters select","filterOnFocusOut":true});
+jQuery('#findSystemsForm').yiiActiveForm([{"id":"system-is_populated","name":"is_populated","container":".field-system-is_populated","input":"#system-is_populated","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.boolean(value, messages, {"trueValue":"1","falseValue":"0","message":"Only Populated Systems must be either \"1\" or \"0\".","skipOnEmpty":1});}},{"id":"system-allegiance_id","name":"allegiance_id","container":".field-system-allegiance_id","input":"#system-allegiance_id","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Allegiance must be an integer.","skipOnEmpty":1});}},{"id":"system-government_id","name":"government_id","container":".field-system-government_id","input":"#system-government_id","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Government must be an integer.","skipOnEmpty":1});}},{"id":"system-primary_economy_id","name":"primary_economy_id","container":".field-system-primary_economy_id","input":"#system-primary_economy_id","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Primary Economy must be an integer.","skipOnEmpty":1});}},{"id":"system-factionid","name":"factionId","container":".field-system-factionid","input":"#system-factionid","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Minor Faction must be an integer.","skipOnEmpty":1});}},{"id":"system-factionpresencetype","name":"factionPresenceType","container":".field-system-factionpresencetype","input":"#system-factionpresencetype","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Presence Type must be an integer.","skipOnEmpty":1});}},{"id":"system-needs_permit","name":"needs_permit","container":".field-system-needs_permit","input":"#system-needs_permit","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.boolean(value, messages, {"trueValue":"1","falseValue":"0","message":"Needs Permit must be either \"1\" or \"0\".","skipOnEmpty":1});}},{"id":"system-stationfilter","name":"stationFilter","container":".field-system-stationfilter","input":"#system-stationfilter","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Station Filter must be an integer.","skipOnEmpty":1});}},{"id":"system-powerids","name":"powerIds","container":".field-system-powerids","input":"#system-powerids","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {        
+if (typeof value === 'string' && false) {
+    var ids = value.split(',');
+    if (ids.length > null) {
+        messages.push(null);
+    }
+}
+value = yii.validation.trim($form, attribute, [], value);}},{"id":"system-powereffecttypes","name":"powerEffectTypes","container":".field-system-powereffecttypes","input":"#system-powereffecttypes","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {        
+if (typeof value === 'string' && false) {
+    var ids = value.split(',');
+    if (ids.length > null) {
+        messages.push(null);
+    }
+}
+value = yii.validation.trim($form, attribute, [], value);}},{"id":"system-referencesystemid","name":"referenceSystemId","container":".field-system-referencesystemid","input":"#system-referencesystemid","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Reference System must be an integer.","skipOnEmpty":1});}},{"id":"system-security_id","name":"security_id","container":".field-system-security_id","input":"#system-security_id","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Security must be an integer.","skipOnEmpty":1});}},{"id":"system-stateids","name":"stateIds","container":".field-system-stateids","input":"#system-stateids","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {        
+if (typeof value === 'string' && false) {
+    var ids = value.split(',');
+    if (ids.length > null) {
+        messages.push(null);
+    }
+}
+value = yii.validation.trim($form, attribute, [], value);}}], {"successCssClass":""});
+
+(function() {
+
+    var shortNames = {};
+    $.each(window.data.shortParamNames.system, function(short, long) {
+        var name = 'system[' + long + ']';
+        shortNames[name] = short;
+    });
+
+    function updateHref() {
+        var inputList = $('#findSystemsForm')
+            .find('input')
+            .not('[name=_csrf],[name=\"system[page]\"],[name=\"system[sort]\"]')
+            .not('.select2-input,.select2-focusser')
+            .filter(function() {
+                return !!this.value;
+            });
+
+        inputList = inputList.clone();
+        inputList.each(function(index, input) {
+            var name = $(input).attr('name');
+            if (shortNames.hasOwnProperty(name)) {
+                $(input).attr('name', shortNames[name]);
+            }
+        });
+
+        var url = '/system';
+        if (inputList.length > 0) {
+            url += '?' + inputList.serialize();
+        }
+
+        $('#permaUrl').attr('href', url);
+    }
+
+    $('#findSystemsForm').change(function() {
+        updateHref();
+    });
+
+    $('#findSystemsForm input').keyup(function() {
+        updateHref();
+    });
+
+    updateHref();
+})();
+
+
+$('#select2Systems').on('change', function(e) {
+    window.eddb.system.gotoId(e.val);
+});
+
+    var lightFilename = 'eddb-light.min.css'; 
+    var darkFilename = 'eddb-dark.min.css'; 
+
+    $('.theme-switcher .option-light').click(function() {
+        if (!replaceThemeCss(lightFilename)) {
+            return;
+        }
+        
+        $(this).addClass('option-selected');
+        $('.theme-switcher .option-dark').removeClass('option-selected');
+        updateSession('https://eddb.io/user/update-theme?theme=light');
+    });
+       
+    $('.theme-switcher .option-dark').click(function() {
+        if (!replaceThemeCss(darkFilename)) {
+            return;
+        }
+        
+        $(this).addClass('option-selected');
+        $('.theme-switcher .option-light').removeClass('option-selected');
+        updateSession('https://eddb.io/user/update-theme?theme=dark');
+    });
+
+    function replaceThemeCss(newFilename) {
+        var darkLink = $('link[href*="' + darkFilename + '"]');
+        var lightLink = $('link[href*="' + lightFilename + '"]');
+        var currentFilename;
+        var currentLink;
+        
+        if (darkLink.length > 0) {
+            currentFilename = darkFilename;
+            currentLink = darkLink;
+        }
+        
+        if (lightLink.length > 0) {
+            currentFilename = lightFilename;
+            currentLink = lightLink;
+        }
+        
+        if (newFilename === currentFilename) {
+            return false;
+        }
+        
+        var newHref = currentLink.attr('href');
+        newHref = newHref.replace(currentFilename, newFilename);
+        currentLink.attr('href', newHref);
+        
+        return true;
+    }
+    
+    function updateSession(newTheme) {
+        $.post(newTheme);
+    }
+    
+});</script></body>
+</html>

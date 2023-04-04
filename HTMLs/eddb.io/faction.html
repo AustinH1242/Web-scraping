@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="theme-color" content="#09485c">
+    <meta name="apple-mobile-web-app-title" content="EDDB">
+    <meta name="application-name" content="EDDB">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="v5y5D9QuUw67GpWttD2kKfRJIk3NbLo6hHyXvblK9Rva2IxQgUYravJU597VW_xfxzFwL_0N61DSJu2IwDOyYg==">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="manifest" href="/manifest.json">
+    <title>Minor Factions - Search &amp; Find - EDDB</title>
+            <script>
+            window.data = {"reference":[],"content":[],"shortParamNames":{"faction":{"pa":"page","so":"sort","n":"name","a":"allegiance_id","g":"government_id","t":"state_id","h":"home_system_id","i":"is_player_faction","p":"presenceSystemPowerId","m":"anyMissing"}}};
+                </script>
+            <meta name="description" content="Minor Factions in Elite: Dangerous - search, filter, find and sort factions!">
+<link href="/assets/943648ae/select.css?v=1597095590" rel="stylesheet">
+<link href="/assets/6546688b/select2.css?v=1597095590" rel="stylesheet">
+<link href="/assets/c5994544/css/font-awesome.min.css?v=1597095590" rel="stylesheet">
+<link href="/assets/e78dfa28/dark-bottom.css?v=1597095590" rel="stylesheet">
+<link href="/css/eddb-light.min.css?v=1621859153" rel="stylesheet">
+<script>window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website.","dismiss":"Got it!","learnMore":"","link":null,"theme":false};</script>            <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58296939-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-58296939-1', { 'anonymize_ip': true });
+        </script>
+    </head>
+<body class="site-eddb">
+<div class="site-wrap">
+
+    <nav id="w1" class="navbar-inverse navbar-fixed-top navbar"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="/"><img src="/images/logo.png" alt=""></a><div class="theme-switcher">
+    <div class="theme-title">
+        Theme
+    </div>
+    <div class="theme-options">
+        <a class="theme-option option-light option-selected">
+            <i class="option-selected-icon fa fa-check" aria-hidden="true" title="Check"></i>
+        </a>
+        <a class="theme-option option-dark ">
+            <i class="option-selected-icon fa fa-check" aria-hidden="true" title="Check"></i>
+        </a>
+
+    </div>
+</div></div><div id="w1-collapse" class="collapse navbar-collapse"><ul id="w2" class="navbar-nav navbar-right nav"><li><a href="/system">Systems</a></li>
+<li><a href="/station">Stations</a></li>
+<li><a href="/attraction">Attractions</a></li>
+<li><a href="/commodity">Commodities</a></li>
+<li class="active"><a href="/faction">Factions</a></li>
+<li><a href="/body">Bodies</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Trading <span class="caret"></span></a><ul id="w3" class="dropdown-menu"><li><a href="/trade/single" tabindex="-1">Single Hop Trade</a></li>
+<li><a href="/trade/hops" tabindex="-1">Multi Hop Trade Route</a></li>
+<li><a href="/trade/loops" tabindex="-1">Loop Trade Route</a></li>
+<li><a href="/trade/commodity" tabindex="-1">Find Commodity</a></li></ul></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Other <span class="caret"></span></a><ul id="w4" class="dropdown-menu"><li><a href="https://ross.eddb.io/" tabindex="-1"><img src="/images/ross_label_white.png" height="10px" alt=""></a></li>
+<li><a href="/legal/site-notice" tabindex="-1">Site Notice</a></li>
+<li><a href="/legal/privacy-policy" tabindex="-1">Privacy Policy</a></li>
+<li><a href="/contact" tabindex="-1">Contact</a></li>
+<li><a href="/api" tabindex="-1">API</a></li></ul></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Account <span class="caret"></span></a><ul id="w5" class="dropdown-menu"><li><a href="/user/login" tabindex="-1">Login</a></li>
+<li><a href="/user/signup" tabindex="-1">Signup</a></li>
+<li><a href="/user/request-password-reset" tabindex="-1">Reset password</a></li>
+<li><a href="/user/resend-activation-token" tabindex="-1">Resend activation email</a></li>
+<li><a href="/user/faq" tabindex="-1">FAQ</a></li></ul></li></ul></div></div></nav>
+    <div class="container-fluid container-main">
+
+        <ul class="breadcrumb"><li><a href="/">Home</a></li>
+<li class="active">Minor Factions - Search &amp; Find</li>
+</ul>                
+<div class="page-header">
+    <h1>Minor Factions - Search & Find</h1>
+</div>
+
+<div class="selectStandalone">
+    <input type="hidden" id="select2MinorFactions" class="select2MinorFactions" name="select2MinorFactions"></div>
+
+<form id="findFactionsForm" action="/faction" method="post">
+<input type="hidden" name="_csrf" value="v5y5D9QuUw67GpWttD2kKfRJIk3NbLo6hHyXvblK9Rva2IxQgUYravJU597VW_xfxzFwL_0N61DSJu2IwDOyYg==">
+<div id="helpModal" class="fade modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+<div class="modal-title"></div>
+</div>
+<div class="modal-body">
+
+</div>
+<div class="modal-footer">
+<a class="btn btn-primary" data-dismiss="modal">Ok</a>
+</div>
+</div>
+</div>
+</div>
+<div class="form-group field-faction-anymissing">
+
+<div class="input-wrapper"><input type="hidden" id="faction-anymissing" class="form-control" name="faction[anyMissing]" value="">
+</div>
+<p class="help-block help-block-error"></p>
+</div>
+<div class="panel panel-eddb">
+    <div class="panel-heading clearfix">
+        Filter
+        <div class="pull-right panel-heading-link">
+            <i class="fa fa-external-link-square"></i> <a id="permaUrl" title="Bookmark this URL to access your settings fast!">Perma Settings Link</a>
+        </div>
+    </div>
+    <div class="panel-body">
+
+        <div class="row">
+
+            <div class="col-sm-3">
+                <div class="form-group field-faction-allegiance_id">
+<label class="control-label" for="faction-allegiance_id">Allegiance</label>
+<div class="input-wrapper"><input type="hidden" id="faction-allegiance_id" class="form-control" name="faction[allegiance_id]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group field-faction-government_id">
+<label class="control-label" for="faction-government_id">Government</label>
+<div class="input-wrapper"><input type="hidden" id="faction-government_id" class="form-control" name="faction[government_id]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>            </div>
+
+            <div class="col-sm-3">
+                <div class="form-group field-faction-presencesystempowerid">
+<label class="control-label" for="faction-presencesystempowerid">Power Influence</label>
+<div class="input-wrapper"><input type="hidden" id="faction-presencesystempowerid" class="form-control" name="faction[presenceSystemPowerId]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group field-faction-is_player_faction">
+<label class="control-label" for="faction-is_player_faction">Player Faction</label>
+<div class="input-wrapper"><input type="hidden" id="faction-is_player_faction" class="form-control" name="faction[is_player_faction]" value="">
+</div>
+<p class="help-block help-block-error"></p>
+</div>            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group field-faction-name">
+<label class="control-label" for="faction-name">Name</label>
+<div class="input-wrapper"><input type="text" id="faction-name" class="form-control" name="faction[name]" value="" placeholder="Enter partial faction name">
+</div>
+<p class="help-block help-block-error"></p>
+</div>            </div>
+            <div class="col-sm-6">
+                <div class="form-group field-faction-home_system_id">
+<label class="control-label" for="faction-home_system_id">Home System</label>
+<div class="input-wrapper"><input type="hidden" id="faction-home_system_id" class="form-control" name="faction[home_system_id]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-9"></div>
+
+            <div class="col-sm-3 clearfix">
+                <div class="pull-right form-row-button-container">
+
+                    <button type="submit" id="btFindFactions" class="btn btn-primary"><i class="fa fa-cog fa-spin disabled-spinner fa-fw"></i><i class="fa fa-search enabled-spinner fa-fw"></i> Find Minor Factions</button>                </div>
+            </div>
+        </div>
+        <br>
+
+        <div id="factionSearchResultWrapper" class="panel-loading-drop">
+            
+<div>
+    <div id="w0" class="compactGrid factionSearchResult">
+    <div class="summary">Found <strong class="totalCount">77,837</strong> minor factions. Showing <strong>1 - 50</strong>.</div>
+
+
+<ul class="pagination"><li class="first disabled"><span>First</span></li>
+<li class="prev disabled"><span>&laquo;</span></li>
+<li class="active"><a href="/faction?page=1&amp;per-page=50" data-page="0">1</a></li>
+<li><a href="/faction?page=2&amp;per-page=50" data-page="1">2</a></li>
+<li><a href="/faction?page=3&amp;per-page=50" data-page="2">3</a></li>
+<li><a href="/faction?page=4&amp;per-page=50" data-page="3">4</a></li>
+<li><a href="/faction?page=5&amp;per-page=50" data-page="4">5</a></li>
+<li><a href="/faction?page=6&amp;per-page=50" data-page="5">6</a></li>
+<li><a href="/faction?page=7&amp;per-page=50" data-page="6">7</a></li>
+<li><a href="/faction?page=8&amp;per-page=50" data-page="7">8</a></li>
+<li><a href="/faction?page=9&amp;per-page=50" data-page="8">9</a></li>
+<li><a href="/faction?page=10&amp;per-page=50" data-page="9">10</a></li>
+<li class="next"><a href="/faction?page=2&amp;per-page=50" data-page="1">&raquo;</a></li>
+<li class="last"><a href="/faction?page=1557&amp;per-page=50" data-page="1556">Last</a></li></ul>
+
+<table class="compactGridTable table table-striped table-bordered"><thead>
+<tr><th><a class="btn btn-primary btn-table-action asc" href="/faction?sort=-name" data-sort="-name"><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> Faction</a></th><th><a class="btn btn-primary btn-table-action" href="/faction?sort=presenceSystemsCount" data-sort="presenceSystemsCount"><i class="fa fa-dot-circle-o"></i> P</a></th><th><a class="btn btn-primary btn-table-action" href="/faction?sort=controllingSystemsCount" data-sort="controllingSystemsCount"><i class="fa fa-dot-circle-o"></i> C</a></th><th><a class="btn btn-primary btn-table-action" href="/faction?sort=controllingStationsCount" data-sort="controllingStationsCount"><i class="fa fa-building-o"></i> C</a></th><th><a class="btn btn-primary btn-table-action" href="/faction?sort=controllingAttractionsCount" data-sort="controllingAttractionsCount"><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> C</a></th><th><a class="btn btn-primary btn-table-action" href="/faction?sort=allegiance_id" data-sort="allegiance_id">Allegiance</a></th><th><a class="btn btn-primary btn-table-action" href="/faction?sort=government_id" data-sort="government_id">Government</a></th><th><a class="btn btn-primary btn-table-action" href="/faction?sort=homeSystemName" data-sort="homeSystemName"><i class="fa fa-home" aria-hidden="true" title="Home System"></i> Home System</a></th></tr>
+</thead>
+<tbody>
+<tr data-key="77880"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/77880">&quot;Fearless&quot; Bounty Hunters Corp.</a> <i class="fa fa-street-view" aria-hidden="true" title="Player Faction"></i></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 1</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Corporate</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/6085">HIP 104256</a></td></tr>
+<tr data-key="31816"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/31816">1 G. Caeli Empire League</a></td><td><i class="fa fa-dot-circle-o"></i> 4</td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-building-o"></i> 12</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Empire</td><td>Patronage</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/1">1 G. Caeli</a></td></tr>
+<tr data-key="54518"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/54518">1 G. Caeli Jet Raiders</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 1</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Anarchy</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/1">1 G. Caeli</a></td></tr>
+<tr data-key="54517"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/54517">1 G. Caeli PLC</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 1</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Corporate</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/1">1 G. Caeli</a></td></tr>
+<tr data-key="56679"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/56679">1 Geminorum Blue Vision Partners</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Corporate</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/2">1 Geminorum</a></td></tr>
+<tr data-key="56678"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/56678">1 Geminorum Defence Force</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Dictatorship</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/2">1 Geminorum</a></td></tr>
+<tr data-key="56677"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/56677">1 Geminorum Liberals</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-building-o"></i> 3</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Federation</td><td>Democracy</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/2">1 Geminorum</a></td></tr>
+<tr data-key="56680"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/56680">1 Geminorum Partnership</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Anarchy</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/2">1 Geminorum</a></td></tr>
+<tr data-key="26309"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/26309">1 Hydrae Party</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Dictatorship</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/3">1 Hydrae</a></td></tr>
+<tr data-key="26308"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/26308">1 Hydrae Purple Major Org</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Corporate</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/3">1 Hydrae</a></td></tr>
+<tr data-key="26310"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/26310">1 Hydrae Vision Solutions</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Corporate</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/3">1 Hydrae</a></td></tr>
+<tr data-key="7699"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/7699">1 i Centauri &amp; Co</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 1</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Federation</td><td>Corporate</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/4">1 i Centauri</a></td></tr>
+<tr data-key="7697"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/7697">1 i Centauri Nationalists</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Dictatorship</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/4">1 i Centauri</a></td></tr>
+<tr data-key="7694"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/7694">1 i Centauri Values Party</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 3</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Federation</td><td>Democracy</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/4">1 i Centauri</a></td></tr>
+<tr data-key="68554"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/68554">1 Kappa Cygni Co</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Corporate</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/5">1 Kappa Cygni</a></td></tr>
+<tr data-key="68556"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/68556">1 Kappa Cygni Movement</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 4</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Dictatorship</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/5">1 Kappa Cygni</a></td></tr>
+<tr data-key="68553"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/68553">1 Kappa Cygni Party</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 2</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Dictatorship</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/5">1 Kappa Cygni</a></td></tr>
+<tr data-key="68555"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/68555">1 Kappa Cygni Purple Family</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 3</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Anarchy</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/5">1 Kappa Cygni</a></td></tr>
+<tr data-key="5237"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/5237">10 a Piscium The Crimson Council</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Anarchy</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/16">10 Theta Piscium</a></td></tr>
+<tr data-key="7167"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/7167">10 Arietis Purple Netcoms Hldgs</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Federation</td><td>Corporate</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/6">10 Arietis</a></td></tr>
+<tr data-key="67856"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/67856">10 Canum Venat Alliance Combine</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Alliance</td><td>Patronage</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/7">10 Canum Venaticorum</a></td></tr>
+<tr data-key="49631"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/49631">10 Canum Venaticorum Bridge Ltd</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Alliance</td><td>Corporate</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/7">10 Canum Venaticorum</a></td></tr>
+<tr data-key="67853"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/67853">10 Canum Venaticorum Future</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 1</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Alliance</td><td>Democracy</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/7">10 Canum Venaticorum</a></td></tr>
+<tr data-key="67855"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/67855">10 Canum Venaticorum Holdings</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Corporate</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/7">10 Canum Venaticorum</a></td></tr>
+<tr data-key="547"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/547">10 Delta Coronae Borealis Central Services</a></td><td><i class="fa fa-dot-circle-o"></i> 5</td><td><i class="fa fa-dot-circle-o"></i> 2</td><td><i class="fa fa-building-o"></i> 5</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Federation</td><td>Corporate</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/8">10 Delta Coronae Borealis</a></td></tr>
+<tr data-key="23379"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/23379">10 G. Canis Majoris Society</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Anarchy</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/9">10 G. Canis Majoris</a></td></tr>
+<tr data-key="23377"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/23377">10 G. Canis Majoris Solutions</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Corporate</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/9">10 G. Canis Majoris</a></td></tr>
+<tr data-key="514"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/514">10 Hydrae Co-op</a></td><td><i class="fa fa-dot-circle-o"></i> 2</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Cooperative</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/10">10 Hydrae</a></td></tr>
+<tr data-key="513"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/513">10 Hydrae Comms Services</a></td><td><i class="fa fa-dot-circle-o"></i> 5</td><td><i class="fa fa-dot-circle-o"></i> 3</td><td><i class="fa fa-building-o"></i> 3</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Corporate</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/10">10 Hydrae</a></td></tr>
+<tr data-key="511"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/511">10 Hydrae Noblement</a></td><td><i class="fa fa-dot-circle-o"></i> 9</td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-building-o"></i> 1</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Feudal</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/10">10 Hydrae</a></td></tr>
+<tr data-key="44419"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/44419">10 Iota Cygni Front</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Dictatorship</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/11">10 Iota Cygni</a></td></tr>
+<tr data-key="44418"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/44418">10 Iota Cygni Purple Society</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 1</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Anarchy</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/11">10 Iota Cygni</a></td></tr>
+<tr data-key="44417"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/44417">10 Iota Cygni Systems</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 1</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Corporate</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/11">10 Iota Cygni</a></td></tr>
+<tr data-key="44415"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/44415">10 Iota Cygni Values Party</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 2</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Federation</td><td>Democracy</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/11">10 Iota Cygni</a></td></tr>
+<tr data-key="7330"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/7330">10 Kappa Pegasi Free</a></td><td><i class="fa fa-dot-circle-o"></i> 2</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 6</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Federation</td><td>Democracy</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/12">10 Kappa Pegasi</a></td></tr>
+<tr data-key="7333"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/7333">10 Kappa Pegasi Limited</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Corporate</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/12">10 Kappa Pegasi</a></td></tr>
+<tr data-key="12351"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/12351">10 Rho-3 Eridani General Exchange</a></td><td><i class="fa fa-dot-circle-o"></i> 2</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Federation</td><td>Corporate</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/13">10 Rho-3 Eridani</a></td></tr>
+<tr data-key="12354"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/12354">10 Rho-3 Eridani Gold Organisation</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Anarchy</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/13">10 Rho-3 Eridani</a></td></tr>
+<tr data-key="45814"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/45814">10 Serpentis Gold Partnership</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 3</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Anarchy</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/14">10 Serpentis</a></td></tr>
+<tr data-key="45816"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/45816">10 Serpentis Ltd</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 1</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Corporate</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/14">10 Serpentis</a></td></tr>
+<tr data-key="45817"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/45817">10 Serpentis Monarchy</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Feudal</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/14">10 Serpentis</a></td></tr>
+<tr data-key="13246"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/13246">10 Tauri Group</a></td><td><i class="fa fa-dot-circle-o"></i> 2</td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-building-o"></i> 19</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Federation</td><td>Corporate</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/15">10 Tauri</a></td></tr>
+<tr data-key="5233"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/5233">10 Theta Piscium Purple Creative</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 2</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Corporate</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/16">10 Theta Piscium</a></td></tr>
+<tr data-key="973"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/973">101 Tauri Labour</a></td><td><i class="fa fa-dot-circle-o"></i> 10</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 19</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Federation</td><td>Democracy</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/18">101 Tauri</a></td></tr>
+<tr data-key="44327"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/44327">101 Tauri Ltd</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Corporate</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/18">101 Tauri</a></td></tr>
+<tr data-key="44328"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/44328">101 Tauri Party</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 0</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Dictatorship</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/18">101 Tauri</a></td></tr>
+<tr data-key="44329"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/44329">101 Tauri Power Industries</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 1</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Corporate</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/18">101 Tauri</a></td></tr>
+<tr data-key="75314"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/75314">101st Recon Company</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-building-o"></i> 32</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Dictatorship</td><td>?</td></tr>
+<tr data-key="61932"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/61932">104th Phoenix Discovery Group</a> <i class="fa fa-street-view" aria-hidden="true" title="Player Faction"></i></td><td><i class="fa fa-dot-circle-o"></i> 2</td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-building-o"></i> 4</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Empire</td><td>Patronage</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/19264">Woyo Mina</a></td></tr>
+<tr data-key="67748"><td><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> <a href="/faction/67748">108 Herculis aristocrats</a></td><td><i class="fa fa-dot-circle-o"></i> 1</td><td><i class="fa fa-dot-circle-o"></i> 0</td><td><i class="fa fa-building-o"></i> 1</td><td><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> 0</td><td>Independent</td><td>Feudal</td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/19">108 Herculis</a></td></tr>
+</tbody></table>
+
+<ul class="pagination"><li class="first disabled"><span>First</span></li>
+<li class="prev disabled"><span>&laquo;</span></li>
+<li class="active"><a href="/faction?page=1&amp;per-page=50" data-page="0">1</a></li>
+<li><a href="/faction?page=2&amp;per-page=50" data-page="1">2</a></li>
+<li><a href="/faction?page=3&amp;per-page=50" data-page="2">3</a></li>
+<li><a href="/faction?page=4&amp;per-page=50" data-page="3">4</a></li>
+<li><a href="/faction?page=5&amp;per-page=50" data-page="4">5</a></li>
+<li><a href="/faction?page=6&amp;per-page=50" data-page="5">6</a></li>
+<li><a href="/faction?page=7&amp;per-page=50" data-page="6">7</a></li>
+<li><a href="/faction?page=8&amp;per-page=50" data-page="7">8</a></li>
+<li><a href="/faction?page=9&amp;per-page=50" data-page="8">9</a></li>
+<li><a href="/faction?page=10&amp;per-page=50" data-page="9">10</a></li>
+<li class="next"><a href="/faction?page=2&amp;per-page=50" data-page="1">&raquo;</a></li>
+<li class="last"><a href="/faction?page=1557&amp;per-page=50" data-page="1556">Last</a></li></ul>
+
+<input type="hidden" id="inputPage" name="faction[page]" value="0"><input type="hidden" id="inputSort" name="faction[sort]" value="">
+</div></div>
+
+<hr>
+
+<table class="table-property-list labelAutoWidth">
+    
+            <tr>
+            <td class="table-property-label text-right">
+                <i class="fa fa-dot-circle-o"></i> P:
+            </td>
+            <td class="table-property-value">
+                System Presence Count            </td>
+        </tr>
+            <tr>
+            <td class="table-property-label text-right">
+                <i class="fa fa-dot-circle-o"></i> C:
+            </td>
+            <td class="table-property-value">
+                System Controlling Count            </td>
+        </tr>
+            <tr>
+            <td class="table-property-label text-right">
+                <i class="fa fa-building-o"></i> C:
+            </td>
+            <td class="table-property-value">
+                Station Controlling Count            </td>
+        </tr>
+            <tr>
+            <td class="table-property-label text-right">
+                <i class="fa fa-map" aria-hidden="true" title="Attraction"></i> C:
+            </td>
+            <td class="table-property-value">
+                Attraction Controlling Count            </td>
+        </tr>
+    
+</table>        </div>
+    </div>
+
+</div>
+
+</form>
+
+
+        
+        
+            <div class="panel panel-eddb bottom-ad">
+                <div class="panel-heading">Advertisement</div>
+                <div class="panel-body">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- bottom full width -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-9828496076338182"
+                         data-ad-slot="3354061357"
+                         data-ad-format="auto"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+            </div>
+
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="pull-left"><strong>&copy; EDDB 2023 - A site about systems, bodies, stations,
+                commodities, materials and trade routes in <a href="https://www.elitedangerous.com/"><i>Elite:
+                        Dangerous</i></a>.</strong></p>
+        <span class="pull-right donate-buttons">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="2C8HCJ2P4KXAA">
+                <input type="image" src="/images/paypal_btn_donate_SM.gif" border="0" name="submit"
+                       alt="Donate with PayPal">
+            </form>
+        </span>
+    </div>
+</footer>
+<script src="/assets/6f43917b/jquery.js?v=1597095590"></script>
+<script src="/assets/6546688b/select2.min.js?v=1597095590"></script>
+<script src="/assets/51ce2334/js/bootstrap.js?v=1597095590"></script>
+<script src="/assets/a254de8d/yii.js?v=1597095590"></script>
+<script src="/assets/a254de8d/yii.validation.js?v=1597095590"></script>
+<script src="/assets/a254de8d/yii.gridView.js?v=1597095590"></script>
+<script src="/assets/a254de8d/yii.activeForm.js?v=1597095590"></script>
+<script src="/assets/e78dfa28/cookieconsent.min.js?v=1597095590"></script>
+<script src="/js/main.js?v=1612015983"></script>
+<script>jQuery(function ($) {
+$('#select2MinorFactions').select2({"cacheDataSource":[],"placeholder":"Jump to a minor faction...","minimumInputLength":2,"cache":true,"ajax":{"url":"https://eddb.io/faction/search","quietMillis":300,"dataType":"json","data":
+                    function(term, page) {
+                        var data = {
+                            name: term
+                        };
+                        
+                        var extraParams = [];
+                        
+                        for (var name in extraParams) {
+                            data[name] = extraParams[name];
+                        }
+                        
+                        return {
+                            faction: data
+                        };
+                    }
+                ,"results":
+                    function(data, page) {
+                        return {results: data};
+                    }
+                },"formatResult":
+                function(result, container, query, escapeMarkup) {
+                    function markMatch(string) {
+                        var markup = [];
+                        window.Select2.util.markMatch(string, query.term, markup, function(text) {return text});
+                        return markup.join("");
+                    }
+
+                    var factionName = markMatch(this.escapeMarkup(result.name));
+                    var list = [];
+                    
+                    if (result.allegianceName) {
+                        var allegianceName = this.escapeMarkup(result.allegianceName);
+                        list.push(allegianceName);
+                    }
+                    if (result.governmentName) {
+                        var governmentName = this.escapeMarkup(result.governmentName);
+                        list.push(governmentName);
+                    }
+                    if (result.homeSystemName) {
+                        var homeSystemName = this.escapeMarkup(result.homeSystemName);
+                        list.push(homeSystemName);
+                    }
+                    
+                    var extraText;
+                    
+                    if (list.length > 0) {
+                        extraText = list.join(', ');
+                    } else {
+                        extraText = '?'; 
+                    }
+
+                    var text = "<strong>" + factionName + "</strong> (" + extraText + ")";
+
+                    return text;
+                },"formatSelection":            
+                function(result) {
+                    var factionName = this.escapeMarkup(result.name);
+                    var list = [];
+                    if (result.allegianceName) {
+                        var allegianceName = this.escapeMarkup(result.allegianceName);
+                        list.push(allegianceName);
+                    }
+                    if (result.governmentName) {
+                        var governmentName = this.escapeMarkup(result.governmentName);
+                        list.push(governmentName);
+                    }
+                    if (result.homeSystemName) {
+                        var homeSystemName = this.escapeMarkup(result.homeSystemName);
+                        list.push(homeSystemName);
+                    }
+                    
+                    var extraText;
+                    
+                    if (list.length > 0) {
+                        extraText = list.join(', ');
+                    } else {
+                        extraText = '?'; 
+                    }
+
+                    var text = "<strong>" + factionName + "</strong> (" + extraText + ")";
+
+                    return text;
+                }});
+jQuery('#helpModal').modal({"show":false});
+$('#faction-allegiance_id').select2({"allowClear":true,"placeholder":"Select Allegiance","data":{"results":[{"id":"1","name":"Alliance"},{"id":"2","name":"Empire"},{"id":"3","name":"Federation"},{"id":"8","name":"Guardian"},{"id":"4","name":"Independent"},{"id":"5","name":"None"},{"id":"7","name":"Pilots Federation"},{"id":"6","name":"Pirate"},{"id":"9","name":"Thargoid"}],"text":"name"}});
+$('#faction-government_id').select2({"allowClear":true,"placeholder":"Select Allegiance","data":{"results":[{"id":"16","name":"Anarchy"},{"id":"32","name":"Communism"},{"id":"48","name":"Confederacy"},{"id":"64","name":"Corporate"},{"id":"80","name":"Cooperative"},{"id":"96","name":"Democracy"},{"id":"112","name":"Dictatorship"},{"id":"128","name":"Feudal"},{"id":"133","name":"Imperial"},{"id":"144","name":"Patronage"},{"id":"150","name":"Prison Colony"},{"id":"160","name":"Theocracy"},{"id":"165","name":"Workshop"},{"id":"176","name":"None"},{"id":"192","name":"Engineer"},{"id":"208","name":"Prison"},{"id":"209","name":"Private Ownership"}],"text":"name"}});
+$('#faction-presencesystempowerid').select2({"multiple":false,"placeholder":"Select Power","allowClear":true,"data":{"results":[{"id":"6","name":"Aisling Duval"},{"id":"8","name":"Archon Delaine"},{"id":"5","name":"Arissa Lavigny-Duval"},{"id":"7","name":"Denton Patreus"},{"id":"1","name":"Edmund Mahon"},{"id":"2","name":"Felicia Winters"},{"id":"9","name":"Li Yong-Rui"},{"id":"10","name":"Pranav Antal"},{"id":"11","name":"Yuri Grom"},{"id":"3","name":"Zachary Hudson"},{"id":"4","name":"Zemina Torval"}],"text":"name"}});
+$('#faction-is_player_faction').select2({"placeholder":"Is?","multiple":false,"allowClear":false,"minimumResultsForSearch":-1,"data":{"results":[{"id":1,"text":"Yes"},{"id":0,"text":"Any"}]}});
+$('#faction-home_system_id').select2({"allowClear":true,"cacheDataSource":[],"placeholder":"Search for a system ...","minimumInputLength":2,"cache":true,"ajax":{"url":"https://eddb.io/system/search","quietMillis":500,"dataType":"json","data":function(term, page) {
+                        return {
+                            "system[name]": term,
+                            "expand": "stations",
+                            "system[version]": 2,
+                        };
+                    },"results":function(data, page) {
+                    return {results: data};
+                }},"formatResult":function(result, container, query, escapeMarkup) {
+                    var me = this;
+
+                    function markMatch(string) {
+                        var markup = [];
+                        window.Select2.util.markMatch(string, query.term, markup, function(text) {return text});
+                        return markup.join("");
+                    }
+
+                    var systemName = markMatch(me.escapeMarkup(result.name));
+
+                    var text = "<strong>" + systemName + "</strong>";
+
+                    if (result.stations.length > 0) {
+                        var stationNames = result.stations.map(function(station) {
+                            return markMatch(me.escapeMarkup(station.name));
+                        });
+
+                        text += " (" + stationNames.join(", ") + ")";
+                    }
+
+                    return text;
+                },"formatSelection":function(result) {
+                    var me = this;
+                    var systemName = result.name;
+                    var text = "<strong>" + this.escapeMarkup(systemName) + "</strong>";
+
+                    if (result.stations.length > 0) {
+                        var stationNames = result.stations.map(function(station) {
+                            return me.escapeMarkup(station.name);
+                        });
+
+                        text += " (" + stationNames.join(", ") + ")";
+                    }
+
+                    return text;
+                }});
+$(findFactionsForm).on('beforeSubmit', function(e) {
+                $.ajax({"cache":false,"beforeSend":
+                                function() {
+                                    var button = $('#btFindFactions'),
+                                    wrapper = $('#factionSearchResultWrapper');
+                                    button[0].disabled = true;
+                                    wrapper.addClass('panel-is-loading');
+                                    wrapper.prepend(' ');
+                                },"success":
+                                function(html){
+                                    var button = $('#btFindFactions'),
+                                    wrapper = $('#factionSearchResultWrapper'),
+                                    wasEmpty = !wrapper.html().trim();
+
+                                    button[0].disabled = false;
+                                    wrapper.html(html);
+                                    wrapper.slideDown();
+                                    wrapper.removeClass('panel-is-loading');
+                                }
+                            ,"error":
+                                function(error) {
+                                    var button = $('#btFindFactions'),
+                                    wrapper = $('#factionSearchResultWrapper');
+
+                                    wrapper.slideUp();
+                                    wrapper.html('');
+                                    button[0].disabled = false;
+                                }
+                            ,"type":$(findFactionsForm).attr('method'),"url":$(findFactionsForm).attr('action'),"data":$(findFactionsForm).serialize()});
+                return false;
+            });
+$('#btFindFactions').mouseup(function(){
+                $(this).blur();
+            });
+    $('#factionSearchResultWrapper .pagination a').click(function(e) {
+        "use strict";
+        var page = $(this).data('page');
+        $('#inputPage').val(page);
+        $(this).closest('form').submit();
+        return false;
+    });
+    $('#factionSearchResultWrapper table thead a').click(function(e) {
+        "use strict";
+        var sort = $(this).data('sort');
+        $('#inputSort').val(sort);
+        $(this).closest('form').submit();
+        return false;
+    });
+jQuery('#w0').yiiGridView({"filterUrl":"\/faction","filterSelector":"#w0-filters input, #w0-filters select","filterOnFocusOut":true});
+jQuery('#findFactionsForm').yiiActiveForm([{"id":"faction-anymissing","name":"anyMissing","container":".field-faction-anymissing","input":"#faction-anymissing","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.boolean(value, messages, {"trueValue":"1","falseValue":"0","message":"Any Missing must be either \"1\" or \"0\".","skipOnEmpty":1});}},{"id":"faction-allegiance_id","name":"allegiance_id","container":".field-faction-allegiance_id","input":"#faction-allegiance_id","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Allegiance must be an integer.","skipOnEmpty":1});}},{"id":"faction-government_id","name":"government_id","container":".field-faction-government_id","input":"#faction-government_id","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Government must be an integer.","skipOnEmpty":1});}},{"id":"faction-presencesystempowerid","name":"presenceSystemPowerId","container":".field-faction-presencesystempowerid","input":"#faction-presencesystempowerid","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Power Influence must be an integer.","skipOnEmpty":1});}},{"id":"faction-is_player_faction","name":"is_player_faction","container":".field-faction-is_player_faction","input":"#faction-is_player_faction","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.boolean(value, messages, {"trueValue":"1","falseValue":"0","message":"Player Faction must be either \"1\" or \"0\".","skipOnEmpty":1});}},{"id":"faction-name","name":"name","container":".field-faction-name","input":"#faction-name","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {value = yii.validation.trim($form, attribute, [], value);yii.validation.string(value, messages, {"message":"Name must be a string.","skipOnEmpty":1});}},{"id":"faction-home_system_id","name":"home_system_id","container":".field-faction-home_system_id","input":"#faction-home_system_id","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Home System must be an integer.","skipOnEmpty":1});}}], {"successCssClass":""});
+
+(function() {
+
+    var shortNames = {};
+    $.each(window.data.shortParamNames.faction, function(short, long) {
+        var name = 'faction[' + long + ']';
+        shortNames[name] = short;
+    });
+
+    function updateHref() {
+        var inputList = $('#findFactionsForm')
+            .find('input')
+            .not('[name=_csrf],[name=\"faction[page]\"],[name=\"faction[sort]\"]')
+            .not('.select2-input,.select2-focusser')
+            .filter(function() {
+                return !!this.value;
+            });
+
+        inputList = inputList.clone();
+        inputList.each(function(index, input) {
+            var name = $(input).attr('name');
+            if (shortNames.hasOwnProperty(name)) {
+                $(input).attr('name', shortNames[name]);
+            }
+        });
+
+        var url = '/faction';
+        if (inputList.length > 0) {
+            url += '?' + inputList.serialize();
+        }
+
+        $('#permaUrl').attr('href', url);
+    }
+
+    $('#findFactionsForm').change(function() {
+        updateHref();
+    });
+
+    $('#findFactionsForm input').keyup(function() {
+        updateHref();
+    });
+
+    updateHref();
+})();
+
+
+$('#select2MinorFactions').on('change', function(e) {
+    window.eddb.minorFaction.gotoId(e.added.id);
+});
+
+    var lightFilename = 'eddb-light.min.css'; 
+    var darkFilename = 'eddb-dark.min.css'; 
+
+    $('.theme-switcher .option-light').click(function() {
+        if (!replaceThemeCss(lightFilename)) {
+            return;
+        }
+        
+        $(this).addClass('option-selected');
+        $('.theme-switcher .option-dark').removeClass('option-selected');
+        updateSession('https://eddb.io/user/update-theme?theme=light');
+    });
+       
+    $('.theme-switcher .option-dark').click(function() {
+        if (!replaceThemeCss(darkFilename)) {
+            return;
+        }
+        
+        $(this).addClass('option-selected');
+        $('.theme-switcher .option-light').removeClass('option-selected');
+        updateSession('https://eddb.io/user/update-theme?theme=dark');
+    });
+
+    function replaceThemeCss(newFilename) {
+        var darkLink = $('link[href*="' + darkFilename + '"]');
+        var lightLink = $('link[href*="' + lightFilename + '"]');
+        var currentFilename;
+        var currentLink;
+        
+        if (darkLink.length > 0) {
+            currentFilename = darkFilename;
+            currentLink = darkLink;
+        }
+        
+        if (lightLink.length > 0) {
+            currentFilename = lightFilename;
+            currentLink = lightLink;
+        }
+        
+        if (newFilename === currentFilename) {
+            return false;
+        }
+        
+        var newHref = currentLink.attr('href');
+        newHref = newHref.replace(currentFilename, newFilename);
+        currentLink.attr('href', newHref);
+        
+        return true;
+    }
+    
+    function updateSession(newTheme) {
+        $.post(newTheme);
+    }
+    
+});</script></body>
+</html>

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="theme-color" content="#09485c">
+    <meta name="apple-mobile-web-app-title" content="EDDB">
+    <meta name="application-name" content="EDDB">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="PdTT6AU9ir4Ma1ALGQ7zMwEiIlni3EaE3KKI9-9lQ21aopKbSFfg60cjJFNtPZZSU1IVC6CrBbKT0tGRggQqAQ==">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="manifest" href="/manifest.json">
+    <title>API - EDDB</title>
+            <script>
+            window.data = {"reference":[],"content":[]};
+                </script>
+            <meta name="description" content="A site about systems, bodies, stations, commodities, materials and trade routes in Elite: Dangerous">
+<link href="/assets/943648ae/select.css?v=1597095590" rel="stylesheet">
+<link href="/assets/6546688b/select2.css?v=1597095590" rel="stylesheet">
+<link href="/assets/c5994544/css/font-awesome.min.css?v=1597095590" rel="stylesheet">
+<link href="/assets/e78dfa28/dark-bottom.css?v=1597095590" rel="stylesheet">
+<link href="/css/eddb-light.min.css?v=1621859153" rel="stylesheet">
+<script>window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website.","dismiss":"Got it!","learnMore":"","link":null,"theme":false};</script>            <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58296939-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-58296939-1', { 'anonymize_ip': true });
+        </script>
+    </head>
+<body class="site-eddb">
+<div class="site-wrap">
+
+    <nav id="w0" class="navbar-inverse navbar-fixed-top navbar"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w0-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="/"><img src="/images/logo.png" alt=""></a><div class="theme-switcher">
+    <div class="theme-title">
+        Theme
+    </div>
+    <div class="theme-options">
+        <a class="theme-option option-light option-selected">
+            <i class="option-selected-icon fa fa-check" aria-hidden="true" title="Check"></i>
+        </a>
+        <a class="theme-option option-dark ">
+            <i class="option-selected-icon fa fa-check" aria-hidden="true" title="Check"></i>
+        </a>
+
+    </div>
+</div></div><div id="w0-collapse" class="collapse navbar-collapse"><ul id="w1" class="navbar-nav navbar-right nav"><li><a href="/system">Systems</a></li>
+<li><a href="/station">Stations</a></li>
+<li><a href="/attraction">Attractions</a></li>
+<li><a href="/commodity">Commodities</a></li>
+<li><a href="/faction">Factions</a></li>
+<li><a href="/body">Bodies</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Trading <span class="caret"></span></a><ul id="w2" class="dropdown-menu"><li><a href="/trade/single" tabindex="-1">Single Hop Trade</a></li>
+<li><a href="/trade/hops" tabindex="-1">Multi Hop Trade Route</a></li>
+<li><a href="/trade/loops" tabindex="-1">Loop Trade Route</a></li>
+<li><a href="/trade/commodity" tabindex="-1">Find Commodity</a></li></ul></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Other <span class="caret"></span></a><ul id="w3" class="dropdown-menu"><li><a href="https://ross.eddb.io/" tabindex="-1"><img src="/images/ross_label_white.png" height="10px" alt=""></a></li>
+<li><a href="/legal/site-notice" tabindex="-1">Site Notice</a></li>
+<li><a href="/legal/privacy-policy" tabindex="-1">Privacy Policy</a></li>
+<li><a href="/contact" tabindex="-1">Contact</a></li>
+<li class="active"><a href="/api" tabindex="-1">API</a></li></ul></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Account <span class="caret"></span></a><ul id="w4" class="dropdown-menu"><li><a href="/user/login" tabindex="-1">Login</a></li>
+<li><a href="/user/signup" tabindex="-1">Signup</a></li>
+<li><a href="/user/request-password-reset" tabindex="-1">Reset password</a></li>
+<li><a href="/user/resend-activation-token" tabindex="-1">Resend activation email</a></li>
+<li><a href="/user/faq" tabindex="-1">FAQ</a></li></ul></li></ul></div></div></nav>
+    <div class="container-fluid container-main">
+
+        <ul class="breadcrumb"><li><a href="/">Home</a></li>
+<li class="active">API</li>
+</ul>                
+<div class="page-header">
+    <h1>API</h1>
+</div>
+
+
+<div class="panel panel-eddb">
+    <div class="panel-heading">
+        Nightly JSON dumps
+        <span class="pull-right highlight">VERSION: v6</span>
+    </div>
+    <div class="panel-body">
+        <p>Most of the information on EDDB gets saved as downloadable files every night. The schema should be
+            self-explanatory. I'm too lazy to write a documentation. If the data is erroneous or something's missing,
+            drop me a message!</p>
+        <p>The data is meant to serve as base for other applications. If your application depends on the EDDB data, the
+            best approach would be to mirror the files to your place and feed your userbase from there. I would be glad
+            to hear what's coming out of this!</p>
+        <p><strong>Hint:</strong> To enable compression, add the <code>Accept-Encoding: gzip, deflate, sdch</code> entry
+            to your request header.</p>
+        <table class="table  table-striped table-publicArchive">
+            <thead>
+            <tr>
+                <td></td>
+                <td>JSON</td>
+                <td>Line-delimited JSON</td>
+                <td>CSV</td>
+            </tr>
+            </thead>
+
+            <tbody>
+                            <tr>
+                    <td>
+                            <span class="title">
+                                Systems                            </span>
+
+                                                    <br>
+                            <div class="fileMeta">
+                                Contains all systems without faction information.                            </div>
+                                            </td>
+                    <td>
+                                            </td>
+                    <td>
+                                            </td>
+                    <td>
+                                                    <a href="/archive/v6/systems.csv">systems.csv</a><br>
+                            <div class="fileMeta">
+                                7,758,616&nbsp;kb
+                                | 14 hours ago
+                            </div>
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                            <span class="title">
+                                Recently Changed Systems                            </span>
+
+                                                    <br>
+                            <div class="fileMeta">
+                                Contains systems that changed or have been created within the past 7 days. Without faction information.                            </div>
+                                            </td>
+                    <td>
+                                            </td>
+                    <td>
+                                            </td>
+                    <td>
+                                                    <a href="/archive/v6/systems_recently.csv">systems_recently.csv</a><br>
+                            <div class="fileMeta">
+                                27,280&nbsp;kb
+                                | 14 hours ago
+                            </div>
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                            <span class="title">
+                                Populated Systems                            </span>
+
+                                                    <br>
+                            <div class="fileMeta">
+                                Contains all populated systems, includes faction information.                            </div>
+                                            </td>
+                    <td>
+                                                    <a href="/archive/v6/systems_populated.json">systems_populated.json</a><br>
+                            <div class="fileMeta">
+                                33,947&nbsp;kb
+                                | 14 hours ago
+                            </div>
+                                            </td>
+                    <td>
+                                                    <a href="/archive/v6/systems_populated.jsonl">systems_populated.jsonl</a><br>
+                            <div class="fileMeta">
+                                33,947&nbsp;kb
+                                | 14 hours ago
+                            </div>
+                                            </td>
+                    <td>
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                            <span class="title">
+                                Bodies                            </span>
+
+                                                    <br>
+                            <div class="fileMeta">
+                                This file will not be updated right now.                            </div>
+                                            </td>
+                    <td>
+                                            </td>
+                    <td>
+                                                    <a href="#">bodies.jsonl</a><br>
+                            <div class="fileMeta">
+                                0&nbsp;kb
+                                | 0 secs ago
+                            </div>
+                                            </td>
+                    <td>
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                            <span class="title">
+                                Recent Bodies                            </span>
+
+                                                    <br>
+                            <div class="fileMeta">
+                                Contains all bodies that received an EDDN update during the past 2 days, even if no properties have changed.                            </div>
+                                            </td>
+                    <td>
+                                            </td>
+                    <td>
+                                                    <a href="#">bodies_recently.jsonl</a><br>
+                            <div class="fileMeta">
+                                0&nbsp;kb
+                                | 0 secs ago
+                            </div>
+                                            </td>
+                    <td>
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                            <span class="title">
+                                Stations                            </span>
+
+                                            </td>
+                    <td>
+                                                    <a href="/archive/v6/stations.json">stations.json</a><br>
+                            <div class="fileMeta">
+                                337,997&nbsp;kb
+                                | 14 hours ago
+                            </div>
+                                            </td>
+                    <td>
+                                                    <a href="/archive/v6/stations.jsonl">stations.jsonl</a><br>
+                            <div class="fileMeta">
+                                337,997&nbsp;kb
+                                | 14 hours ago
+                            </div>
+                                            </td>
+                    <td>
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                            <span class="title">
+                                Attractions                            </span>
+
+                                            </td>
+                    <td>
+                                                    <a href="/archive/v6/attractions.json">attractions.json</a><br>
+                            <div class="fileMeta">
+                                96,911&nbsp;kb
+                                | 14 hours ago
+                            </div>
+                                            </td>
+                    <td>
+                                                    <a href="/archive/v6/attractions.jsonl">attractions.jsonl</a><br>
+                            <div class="fileMeta">
+                                96,911&nbsp;kb
+                                | 14 hours ago
+                            </div>
+                                            </td>
+                    <td>
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                            <span class="title">
+                                Minor Factions                            </span>
+
+                                            </td>
+                    <td>
+                                                    <a href="/archive/v6/factions.json">factions.json</a><br>
+                            <div class="fileMeta">
+                                15,617&nbsp;kb
+                                | 17 hours ago
+                            </div>
+                                            </td>
+                    <td>
+                                                    <a href="/archive/v6/factions.jsonl">factions.jsonl</a><br>
+                            <div class="fileMeta">
+                                15,617&nbsp;kb
+                                | 17 hours ago
+                            </div>
+                                            </td>
+                    <td>
+                                                    <a href="/archive/v6/factions.csv">factions.csv</a><br>
+                            <div class="fileMeta">
+                                5,735&nbsp;kb
+                                | 17 hours ago
+                            </div>
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                            <span class="title">
+                                Prices                            </span>
+
+                                            </td>
+                    <td>
+                                            </td>
+                    <td>
+                                            </td>
+                    <td>
+                                                    <a href="/archive/v6/listings.csv">listings.csv</a><br>
+                            <div class="fileMeta">
+                                472,259&nbsp;kb
+                                | 13 hours ago
+                            </div>
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                            <span class="title">
+                                Commodity Reference                            </span>
+
+                                            </td>
+                    <td>
+                                                    <a href="/archive/v6/commodities.json">commodities.json</a><br>
+                            <div class="fileMeta">
+                                114&nbsp;kb
+                                | 17 hours ago
+                            </div>
+                                            </td>
+                    <td>
+                                            </td>
+                    <td>
+                                            </td>
+                </tr>
+                            <tr>
+                    <td>
+                            <span class="title">
+                                Module Reference                            </span>
+
+                                            </td>
+                    <td>
+                                                    <a href="/archive/v6/modules.json">modules.json</a><br>
+                            <div class="fileMeta">
+                                365&nbsp;kb
+                                | 14 hours ago
+                            </div>
+                                            </td>
+                    <td>
+                                            </td>
+                    <td>
+                                            </td>
+                </tr>
+                        </tbody>
+        </table>
+
+        <p><strong>Changelog v6.0 (05-01-19):</strong></p>
+
+        <ul>
+            <li>Properties <code>state</code> and <code>state_id</code> have been removed from table
+                <code>minor_faction</code>.
+            </li>
+
+            <li>Properties <code>state</code> and <code>state_id</code> have been removed from <code>station</code>.
+            </li>
+            <li>Property <code>states</code>has been added to <code>station</code>.</li>
+
+            <li>Properties <code>state</code> and <code>state_id</code> have been removed from <code>system</code>.</li>
+            <li>Property <code>states</code> has been added to <code>system</code>.</li>
+
+            <li>Property <code>state</code> has been removed from <code>system.minor_faction_presences</code>.</li>
+            <li>Property <code>happiness_id</code> has been added to <code>system.minor_faction_presences</code>.</li>
+            <li>Properties <code>active_states</code>, <code>pending_states</code> and <code>recovering_states</code>
+                have been added to <code>system.minor_faction_presences</code>.
+            </li>
+        </ul>
+        <div class="alert alert-danger" role="alert">
+            <strong>Due to structural changes, this update changes the API major version from v5 to v6. All download
+                paths have been changed. The old files will not get any updates from now on and be removed after a week.<br>
+                E.g. <code>https://eddb.io/archive/v5/stations.csv</code> to
+                <code>https://eddb.io/archive/v6/stations.csv</code>
+            </strong>
+        </div>
+
+        <hr>
+
+        <p><strong>Changelog v5.1 (04-02-17):</strong></p>
+
+
+
+        <ul>
+            <li>Due to the huge filesize <code>bodies.json</code> has been removed. It reached the 3GB mark, which is
+                pretty memory hungry to create and to parse. Only <code>bodies.jsonl</code> will remain.
+            </li>
+        </ul>
+
+        <p><strong>Changelog v5.0 (16-10-16):</strong></p>
+
+        <div class="alert alert-danger" role="alert">
+            <strong>Due to structural changes, this update changes the API major version from v4 to v5. All download
+                paths have been changed. The old files will not get any updates from now on and be removed after a week.<br>
+                E.g. <code>https://eddb.io/archive/v4/systems.csv</code> to
+                <code>https://eddb.io/archive/v5/systems.csv</code>
+
+            </strong>
+        </div>
+        <ul>
+            <li>Due to the huge filesize <code>systems.json</code> and <code>systems.jsonl</code> have been removed.
+                Only <code>systems.csv</code> will remain which does not include the new faction presence data.
+            </li>
+            <li>Additionally <code>systems_recently.csv</code> has been added. It has the same structure as <code>systems.csv</code>
+                and contains systems that changed or have been created within the past 7 days. Again, it does not
+                include the new faction presence data.
+            </li>
+            <li><code>system_populated.minor_faction_presences</code> has been has been added. It contains the factions
+                that are present in the system, including system specific state and influence.
+            </li>
+            <li><code>system.faction</code> has been replaced with <code>system.controlling_minor_faction</code> and
+                <code>system.controlling_minor_faction_id</code>.
+            </li>
+            <li><code>system.security_id</code> has been added.</li>
+            <li><code>system.primary_economy_id</code> has been added.</li>
+            <li><code>system.reserve_type_id</code> has been added.</li>
+            <li><code>station.faction</code> has been replaced with <code>stations.controlling_minor_faction_id</code>.
+            </li>
+            <li><code>station.type_id</code> has been added.</li>
+            <li><code>station.settlement_size_id</code> has been added.</li>
+            <li><code>station.settlement_size</code> has been added.</li>
+            <li><code>station.settlement_security_id</code> has been added.</li>
+            <li><code>station.settlement_security</code> has been added.</li>
+            <li><code>station.body_id</code> has been added.</li>
+            <li><code>factions.json|jsonl|csv</code> have been added.</li>
+            <li><strong>Please note: The order of CSV properties is always defined by the order of
+                    the header. The order might change anytime, but the name of the propertes will not.</strong></li>
+        </ul>
+
+
+        <p><strong>Changelog v4.5 (11-09-16):</strong></p>
+        <ul>
+            <li>You can download the files in up to 3 different formats from now on. Line-delimited JSON has been
+                introduced to make it easy for apps to import the data line by line.
+            </li>
+            <li><code>elements.csv</code> has been removed. Instead the material data is in the <code>bodies</code> dump
+                now.
+            </li>
+            <li>As I noticed that the <code>listing.update_count</code> was broken (always 0), I completely removed it.
+            </li>
+            <li><code>system.power</code> will yield <code>null</code> instead of <code>None</code> in case of no value.
+            </li>
+        </ul>
+
+        <p><strong>Changelog v4.4 (17-07-16):</strong></p>
+        <ul>
+            <li><code>systems_populated.json</code> has been added, which contains only systems that are populated.</li>
+        </ul>
+
+        <p><strong>Changelog v4.3 (11-07-16):</strong></p>
+        <ul>
+            <li><code>edsm_id</code> and <code>reserve_type</code> have been added to the <code>systems.json</code>
+                dump.
+            </li>
+        </ul>
+
+        <p><strong>Changelog v4.2 (27-06-16):</strong></p>
+        <ul>
+            <li><code>bodies.json</code> has been added to the nightly dumps. All type of bodies are in one unified
+                format. You will only find data that is allowed for the specific body group.
+            </li>
+            <li><code>elements.csv</code> has been added to the nightly dumps. One row is one occurence, including a
+                specific count.
+            </li>
+        </ul>
+
+
+        <p><strong>Changelog v4.1 (27-12-15):</strong></p>
+        <ul>
+            <li><code>station.market_updated_at</code> has been added: Unixtimestamp of the last price update.</li>
+            <li><code>station.is_planetary</code> has been added.</li>
+        </ul>
+
+        <p><strong>Changelog v4 (25-10-15):</strong></p>
+        <ul>
+            <li><code>modules.json</code> has been added. It contains all modules with their ID, which are being
+                referenced by the stations.
+            </li>
+            <li><code>stations_lite.json</code> has been removed.</li>
+            <li><code>station.listings</code> has been removed. Due to the filesize the listings are in a seperate CSV
+                file now: <code>listings.csv</code>.
+            </li>
+            <li><code>station.selling_modules</code> has been added. Use <code>modules.json</code> as reference.</li>
+            <li><code>station.selling_ships</code> has been added.</li>
+            <li><code>station.has_commodities</code> has been removed. Instead, <code>station.has_market</code> have
+                been added. It generally reflects the market existence.
+            </li>
+            <li><code>system.power_control_faction</code> has been removed. Instead, <code>system.power</code> and
+                <code>system.power_state</code> have been added.
+            </li>
+        </ul>
+
+        <p><strong>Changelog v3 (15-03-15):</strong></p>
+        <ul>
+            <li><code>station.max_landing_pad_size</code> now contains the name (L, M) instead of reference numbers (30,
+                20).</code></li>
+            <li><code>station.updated_at</code> and <code>system.updated_at</code> has been added</li>
+            <li><code>listing.update_count</code> has been added.</li>
+            <li><code>system.needs_permit</code> has been added.</li>
+            <li><code>station.faction</code> and <code>system.faction</code> will not contain <code>"-"</code> on empty
+                value anymore.
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="panel panel-eddb">
+    <div class="panel-heading">REST</div>
+    <div class="panel-body">
+        <p>Although I talked about a JSON API initially, I'm not ready to publish one yet. Please don't wait for it. If
+            and when it comes is not decided yet.</p>
+    </div>
+</div>
+
+        
+        
+            <div class="panel panel-eddb bottom-ad">
+                <div class="panel-heading">Advertisement</div>
+                <div class="panel-body">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- bottom full width -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-9828496076338182"
+                         data-ad-slot="3354061357"
+                         data-ad-format="auto"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+            </div>
+
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="pull-left"><strong>&copy; EDDB 2023 - A site about systems, bodies, stations,
+                commodities, materials and trade routes in <a href="https://www.elitedangerous.com/"><i>Elite:
+                        Dangerous</i></a>.</strong></p>
+        <span class="pull-right donate-buttons">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="2C8HCJ2P4KXAA">
+                <input type="image" src="/images/paypal_btn_donate_SM.gif" border="0" name="submit"
+                       alt="Donate with PayPal">
+            </form>
+        </span>
+    </div>
+</footer>
+<script src="/assets/6f43917b/jquery.js?v=1597095590"></script>
+<script src="/assets/6546688b/select2.min.js?v=1597095590"></script>
+<script src="/assets/a254de8d/yii.js?v=1597095590"></script>
+<script src="/assets/e78dfa28/cookieconsent.min.js?v=1597095590"></script>
+<script src="/js/main.js?v=1612015983"></script>
+<script src="/assets/51ce2334/js/bootstrap.js?v=1597095590"></script>
+<script>jQuery(function ($) {
+    var lightFilename = 'eddb-light.min.css'; 
+    var darkFilename = 'eddb-dark.min.css'; 
+
+    $('.theme-switcher .option-light').click(function() {
+        if (!replaceThemeCss(lightFilename)) {
+            return;
+        }
+        
+        $(this).addClass('option-selected');
+        $('.theme-switcher .option-dark').removeClass('option-selected');
+        updateSession('https://eddb.io/user/update-theme?theme=light');
+    });
+       
+    $('.theme-switcher .option-dark').click(function() {
+        if (!replaceThemeCss(darkFilename)) {
+            return;
+        }
+        
+        $(this).addClass('option-selected');
+        $('.theme-switcher .option-light').removeClass('option-selected');
+        updateSession('https://eddb.io/user/update-theme?theme=dark');
+    });
+
+    function replaceThemeCss(newFilename) {
+        var darkLink = $('link[href*="' + darkFilename + '"]');
+        var lightLink = $('link[href*="' + lightFilename + '"]');
+        var currentFilename;
+        var currentLink;
+        
+        if (darkLink.length > 0) {
+            currentFilename = darkFilename;
+            currentLink = darkLink;
+        }
+        
+        if (lightLink.length > 0) {
+            currentFilename = lightFilename;
+            currentLink = lightLink;
+        }
+        
+        if (newFilename === currentFilename) {
+            return false;
+        }
+        
+        var newHref = currentLink.attr('href');
+        newHref = newHref.replace(currentFilename, newFilename);
+        currentLink.attr('href', newHref);
+        
+        return true;
+    }
+    
+    function updateSession(newTheme) {
+        $.post(newTheme);
+    }
+    
+});</script></body>
+</html>

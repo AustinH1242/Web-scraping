@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="theme-color" content="#09485c">
+    <meta name="apple-mobile-web-app-title" content="EDDB">
+    <meta name="application-name" content="EDDB">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="iKdsl9GPGYNSai0VSF8IwIdqN8dnOC4MAz5DFeCPRsLq4wnapb8s9h1ZGFI7PXz5yDoCoClweEhOai9tg-QxsA==">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="manifest" href="/manifest.json">
+    <title>Login - EDDB</title>
+            <script>
+            window.data = {"reference":[],"content":[]};
+                </script>
+            <link href="/assets/943648ae/select.css?v=1597095590" rel="stylesheet">
+<link href="/assets/6546688b/select2.css?v=1597095590" rel="stylesheet">
+<link href="/assets/c5994544/css/font-awesome.min.css?v=1597095590" rel="stylesheet">
+<link href="/assets/e78dfa28/dark-bottom.css?v=1597095590" rel="stylesheet">
+<link href="/css/eddb-light.min.css?v=1621859153" rel="stylesheet">
+<script>window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website.","dismiss":"Got it!","learnMore":"","link":null,"theme":false};</script>            <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58296939-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-58296939-1', { 'anonymize_ip': true });
+        </script>
+    </head>
+<body class="site-eddb">
+<div class="site-wrap">
+
+    <nav id="w0" class="navbar-inverse navbar-fixed-top navbar"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w0-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="/"><img src="/images/logo.png" alt=""></a><div class="theme-switcher">
+    <div class="theme-title">
+        Theme
+    </div>
+    <div class="theme-options">
+        <a class="theme-option option-light option-selected">
+            <i class="option-selected-icon fa fa-check" aria-hidden="true" title="Check"></i>
+        </a>
+        <a class="theme-option option-dark ">
+            <i class="option-selected-icon fa fa-check" aria-hidden="true" title="Check"></i>
+        </a>
+
+    </div>
+</div></div><div id="w0-collapse" class="collapse navbar-collapse"><ul id="w1" class="navbar-nav navbar-right nav"><li><a href="/system">Systems</a></li>
+<li><a href="/station">Stations</a></li>
+<li><a href="/attraction">Attractions</a></li>
+<li><a href="/commodity">Commodities</a></li>
+<li><a href="/faction">Factions</a></li>
+<li><a href="/body">Bodies</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Trading <span class="caret"></span></a><ul id="w2" class="dropdown-menu"><li><a href="/trade/single" tabindex="-1">Single Hop Trade</a></li>
+<li><a href="/trade/hops" tabindex="-1">Multi Hop Trade Route</a></li>
+<li><a href="/trade/loops" tabindex="-1">Loop Trade Route</a></li>
+<li><a href="/trade/commodity" tabindex="-1">Find Commodity</a></li></ul></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Other <span class="caret"></span></a><ul id="w3" class="dropdown-menu"><li><a href="https://ross.eddb.io/" tabindex="-1"><img src="/images/ross_label_white.png" height="10px" alt=""></a></li>
+<li><a href="/legal/site-notice" tabindex="-1">Site Notice</a></li>
+<li><a href="/legal/privacy-policy" tabindex="-1">Privacy Policy</a></li>
+<li><a href="/contact" tabindex="-1">Contact</a></li>
+<li><a href="/api" tabindex="-1">API</a></li></ul></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Account <span class="caret"></span></a><ul id="w4" class="dropdown-menu"><li class="active"><a href="/user/login" tabindex="-1">Login</a></li>
+<li><a href="/user/signup" tabindex="-1">Signup</a></li>
+<li><a href="/user/request-password-reset" tabindex="-1">Reset password</a></li>
+<li><a href="/user/resend-activation-token" tabindex="-1">Resend activation email</a></li>
+<li><a href="/user/faq" tabindex="-1">FAQ</a></li></ul></li></ul></div></div></nav>
+    <div class="container-fluid container-main">
+
+        <ul class="breadcrumb"><li><a href="/">Home</a></li>
+<li class="active">Login</li>
+</ul>                
+<div class="page-header">
+    <h1>Login</h1>
+</div>
+
+<div class="panel panel-eddb">
+    <div class="panel-heading">
+        Please fill out the following fields to login:
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-12">
+                <form id="login-form" action="/user/login" method="post">
+<input type="hidden" name="_csrf" value="iKdsl9GPGYNSai0VSF8IwIdqN8dnOC4MAz5DFeCPRsLq4wnapb8s9h1ZGFI7PXz5yDoCoClweEhOai9tg-QxsA==">                    <div class="form-group field-loginform-username required">
+<label class="control-label" for="loginform-username">Username</label>
+<input type="text" id="loginform-username" class="form-control" name="LoginForm[username]" aria-required="true">
+
+<p class="help-block help-block-error"></p>
+</div>                    <div class="form-group field-loginform-password required">
+<label class="control-label" for="loginform-password">Password</label>
+<input type="password" id="loginform-password" class="form-control" name="LoginForm[password]" aria-required="true">
+
+<p class="help-block help-block-error"></p>
+</div>                    <div class="form-group field-loginform-rememberme">
+<div class="checkbox">
+<label for="loginform-rememberme">
+<input type="hidden" name="LoginForm[rememberMe]" value="0"><input type="checkbox" id="loginform-rememberme" name="LoginForm[rememberMe]" value="1" checked>
+Remember Me
+</label>
+<p class="help-block help-block-error"></p>
+
+</div>
+</div>                    <div style="color:#999;margin:1em 0">
+                        If you forgot your password you can <a href="/user/request-password-reset">reset it here</a>.
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" name="login-button">Login</button>                    </div>
+                </form>            </div>
+        </div>
+    </div>
+</div>
+
+        
+            </div>
+
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="pull-left"><strong>&copy; EDDB 2023 - A site about systems, bodies, stations,
+                commodities, materials and trade routes in <a href="https://www.elitedangerous.com/"><i>Elite:
+                        Dangerous</i></a>.</strong></p>
+        <span class="pull-right donate-buttons">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="2C8HCJ2P4KXAA">
+                <input type="image" src="/images/paypal_btn_donate_SM.gif" border="0" name="submit"
+                       alt="Donate with PayPal">
+            </form>
+        </span>
+    </div>
+</footer>
+<script src="/assets/6f43917b/jquery.js?v=1597095590"></script>
+<script src="/assets/a254de8d/yii.js?v=1597095590"></script>
+<script src="/assets/a254de8d/yii.validation.js?v=1597095590"></script>
+<script src="/assets/a254de8d/yii.activeForm.js?v=1597095590"></script>
+<script src="/assets/6546688b/select2.min.js?v=1597095590"></script>
+<script src="/assets/e78dfa28/cookieconsent.min.js?v=1597095590"></script>
+<script src="/js/main.js?v=1612015983"></script>
+<script src="/assets/51ce2334/js/bootstrap.js?v=1597095590"></script>
+<script>jQuery(function ($) {
+jQuery('#login-form').yiiActiveForm([{"id":"loginform-username","name":"username","container":".field-loginform-username","input":"#loginform-username","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Username cannot be blank."});}},{"id":"loginform-password","name":"password","container":".field-loginform-password","input":"#loginform-password","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Password cannot be blank."});}},{"id":"loginform-rememberme","name":"rememberMe","container":".field-loginform-rememberme","input":"#loginform-rememberme","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.boolean(value, messages, {"trueValue":"1","falseValue":"0","message":"Remember Me must be either \"1\" or \"0\".","skipOnEmpty":1});}}], {"successCssClass":""});
+    var lightFilename = 'eddb-light.min.css'; 
+    var darkFilename = 'eddb-dark.min.css'; 
+
+    $('.theme-switcher .option-light').click(function() {
+        if (!replaceThemeCss(lightFilename)) {
+            return;
+        }
+        
+        $(this).addClass('option-selected');
+        $('.theme-switcher .option-dark').removeClass('option-selected');
+        updateSession('https://eddb.io/user/update-theme?theme=light');
+    });
+       
+    $('.theme-switcher .option-dark').click(function() {
+        if (!replaceThemeCss(darkFilename)) {
+            return;
+        }
+        
+        $(this).addClass('option-selected');
+        $('.theme-switcher .option-light').removeClass('option-selected');
+        updateSession('https://eddb.io/user/update-theme?theme=dark');
+    });
+
+    function replaceThemeCss(newFilename) {
+        var darkLink = $('link[href*="' + darkFilename + '"]');
+        var lightLink = $('link[href*="' + lightFilename + '"]');
+        var currentFilename;
+        var currentLink;
+        
+        if (darkLink.length > 0) {
+            currentFilename = darkFilename;
+            currentLink = darkLink;
+        }
+        
+        if (lightLink.length > 0) {
+            currentFilename = lightFilename;
+            currentLink = lightLink;
+        }
+        
+        if (newFilename === currentFilename) {
+            return false;
+        }
+        
+        var newHref = currentLink.attr('href');
+        newHref = newHref.replace(currentFilename, newFilename);
+        currentLink.attr('href', newHref);
+        
+        return true;
+    }
+    
+    function updateSession(newTheme) {
+        $.post(newTheme);
+    }
+    
+});</script></body>
+</html>

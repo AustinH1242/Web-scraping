@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="theme-color" content="#09485c">
+    <meta name="apple-mobile-web-app-title" content="EDDB">
+    <meta name="application-name" content="EDDB">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="PUMrqP-dp-R0hbGwtIveGkKVvIbHsFcVFWtWqMw2pZFSF1OcldnDigfX4PLzxYcuNP30sJHCNV98RhDv_X3U9w==">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="manifest" href="/manifest.json">
+    <title>Bodies - Search &amp; Find - EDDB</title>
+            <script>
+            window.data = {"reference":[],"content":[],"shortParamNames":{"body":{"pa":"page","so":"sort","r":"referenceSystemId","y":"system_id","p":"systemIsPopulated","e":"systemReserveTypeId","i":"distance_to_spawn","g":"groupIds","m":"materialIds","s":"spectralClassIds","u":"luminosityClassIds","t":"is_main_star","n":"ring_type_id","c":"compactStarTypeIds","l":"planetTypeIds","d":"canLand","x":"extraAttribute","o":"powerId","h":"hasRings","a":"maxReferenceDistance"}}};
+                </script>
+            <meta name="description" content="Bodies in Elite: Dangerous - search, filter, find and sort systems ... and find the materials you need!">
+<link href="/assets/943648ae/select.css?v=1597095590" rel="stylesheet">
+<link href="/assets/6546688b/select2.css?v=1597095590" rel="stylesheet">
+<link href="/assets/c5994544/css/font-awesome.min.css?v=1597095590" rel="stylesheet">
+<link href="/assets/e78dfa28/dark-bottom.css?v=1597095590" rel="stylesheet">
+<link href="/css/eddb-light.min.css?v=1621859153" rel="stylesheet">
+<script>window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website.","dismiss":"Got it!","learnMore":"","link":null,"theme":false};</script>            <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58296939-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-58296939-1', { 'anonymize_ip': true });
+        </script>
+    </head>
+<body class="site-eddb">
+<div class="site-wrap">
+
+    <nav id="w0" class="navbar-inverse navbar-fixed-top navbar"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w0-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="/"><img src="/images/logo.png" alt=""></a><div class="theme-switcher">
+    <div class="theme-title">
+        Theme
+    </div>
+    <div class="theme-options">
+        <a class="theme-option option-light option-selected">
+            <i class="option-selected-icon fa fa-check" aria-hidden="true" title="Check"></i>
+        </a>
+        <a class="theme-option option-dark ">
+            <i class="option-selected-icon fa fa-check" aria-hidden="true" title="Check"></i>
+        </a>
+
+    </div>
+</div></div><div id="w0-collapse" class="collapse navbar-collapse"><ul id="w1" class="navbar-nav navbar-right nav"><li><a href="/system">Systems</a></li>
+<li><a href="/station">Stations</a></li>
+<li><a href="/attraction">Attractions</a></li>
+<li><a href="/commodity">Commodities</a></li>
+<li><a href="/faction">Factions</a></li>
+<li class="active"><a href="/body">Bodies</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Trading <span class="caret"></span></a><ul id="w2" class="dropdown-menu"><li><a href="/trade/single" tabindex="-1">Single Hop Trade</a></li>
+<li><a href="/trade/hops" tabindex="-1">Multi Hop Trade Route</a></li>
+<li><a href="/trade/loops" tabindex="-1">Loop Trade Route</a></li>
+<li><a href="/trade/commodity" tabindex="-1">Find Commodity</a></li></ul></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Other <span class="caret"></span></a><ul id="w3" class="dropdown-menu"><li><a href="https://ross.eddb.io/" tabindex="-1"><img src="/images/ross_label_white.png" height="10px" alt=""></a></li>
+<li><a href="/legal/site-notice" tabindex="-1">Site Notice</a></li>
+<li><a href="/legal/privacy-policy" tabindex="-1">Privacy Policy</a></li>
+<li><a href="/contact" tabindex="-1">Contact</a></li>
+<li><a href="/api" tabindex="-1">API</a></li></ul></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Account <span class="caret"></span></a><ul id="w4" class="dropdown-menu"><li><a href="/user/login" tabindex="-1">Login</a></li>
+<li><a href="/user/signup" tabindex="-1">Signup</a></li>
+<li><a href="/user/request-password-reset" tabindex="-1">Reset password</a></li>
+<li><a href="/user/resend-activation-token" tabindex="-1">Resend activation email</a></li>
+<li><a href="/user/faq" tabindex="-1">FAQ</a></li></ul></li></ul></div></div></nav>
+    <div class="container-fluid container-main">
+
+        <ul class="breadcrumb"><li><a href="/">Home</a></li>
+<li class="active">Bodies - Search &amp; Find</li>
+</ul>                
+<div class="page-header">
+    <h1>Bodies - Search & Find</h1>
+</div>
+
+<div class="selectStandalone">
+    <input type="hidden" id="select2Bodies" class="select2Bodies" name="select2Bodies"></div>
+
+<form id="findBodiesForm" action="/body" method="post">
+<input type="hidden" name="_csrf" value="PUMrqP-dp-R0hbGwtIveGkKVvIbHsFcVFWtWqMw2pZFSF1OcldnDigfX4PLzxYcuNP30sJHCNV98RhDv_X3U9w==">
+<div id="helpModal" class="fade modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+<div class="modal-title"></div>
+</div>
+<div class="modal-body">
+
+</div>
+<div class="modal-footer">
+<a class="btn btn-primary" data-dismiss="modal">Ok</a>
+</div>
+</div>
+</div>
+</div>
+    <div class="panel panel-eddb">
+        <div class="panel-heading clearfix">
+            Filter
+        </div>
+        <div class="panel-body">
+
+            <div class="row">
+
+
+                <div class="col-sm-6">
+                    <div class="form-group form-group-withHelp field-body-materialids">
+<label class="control-label" for="body-materialids">Material Finder</label>
+<div class="input-wrapper"><input type="hidden" id="body-materialids" class="form-control" name="body[materialIds]">
+<a class="btn btn-help btn-primary help-popover" id="help-button-1"><i class="fa fa-question" aria-hidden="true"></i></a></div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group field-body-systemreservetypeid">
+<label class="control-label" for="body-systemreservetypeid">System Reserve</label>
+<div class="input-wrapper"><input type="hidden" id="body-systemreservetypeid" class="form-control" name="body[systemReserveTypeId]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+
+
+                <div class="col-sm-3">
+                    <div class="form-group form-group-withHelp field-body-ring_type_id">
+<label class="control-label" for="body-ring_type_id">Ring Type</label>
+<div class="input-wrapper"><input type="hidden" id="body-ring_type_id" class="form-control" name="body[ring_type_id]">
+<a class="btn btn-help btn-primary help-popover" id="help-button-2"><i class="fa fa-question" aria-hidden="true"></i></a></div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+
+            </div>
+
+            <hr>
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <div class="form-group form-group-withHelp field-body-system_id">
+<label class="control-label" for="body-system_id">Filter System</label>
+<div class="input-wrapper"><input type="hidden" id="body-system_id" class="form-control" name="body[system_id]">
+<a class="btn btn-help btn-primary help-popover" id="help-button-3"><i class="fa fa-question" aria-hidden="true"></i></a></div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group field-body-systemispopulated">
+<label class="control-label" for="body-systemispopulated">System Is Populated</label>
+<div class="input-wrapper"><input type="hidden" id="body-systemispopulated" class="form-control" name="body[systemIsPopulated]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group field-body-powerid">
+<label class="control-label" for="body-powerid">Power Influence</label>
+<div class="input-wrapper"><input type="hidden" id="body-powerid" class="form-control" name="body[powerId]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="form-group form-group-withHelp field-body-groupids">
+<label class="control-label" for="body-groupids">Body Group</label>
+<div class="input-wrapper"><input type="hidden" id="body-groupids" class="form-control" name="body[groupIds]">
+<a class="btn btn-help btn-primary help-modal" id="help-button-4"><i class="fa fa-question" aria-hidden="true"></i></a></div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+                <div class="col-sm-2">
+                    <div class="form-group field-body-hasrings">
+<label class="control-label" for="body-hasrings">Has Rings</label>
+<div class="input-wrapper"><input type="hidden" id="body-hasrings" class="form-control" name="body[hasRings]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group field-body-planettypeids">
+<label class="control-label" for="body-planettypeids">Planet Type</label>
+<div class="input-wrapper"><input type="hidden" id="body-planettypeids" class="form-control" name="body[planetTypeIds]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+
+
+                <div class="col-sm-3">
+                    <div class="form-group field-body-compactstartypeids">
+<label class="control-label" for="body-compactstartypeids">Compact Star Type</label>
+<div class="input-wrapper"><input type="hidden" id="body-compactstartypeids" class="form-control" name="body[compactStarTypeIds]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="form-group field-body-distance_to_spawn">
+<label class="control-label" for="body-distance_to_spawn">Max Distance to Arrival</label>
+<div class="input-wrapper"><div class="input-group"><input type="text" id="body-distance_to_spawn" class="form-control" name="body[distance_to_spawn]" placeholder="Distance"><span class="input-group-addon">ls</span></div>
+</div>
+<p class="help-block help-block-error"></p>
+
+</div>                </div>
+
+
+                <div class="col-sm-3">
+                    <div class="form-group field-body-is_main_star">
+<label class="control-label" for="body-is_main_star">Arrival Star</label>
+<div class="input-wrapper"><input type="hidden" id="body-is_main_star" class="form-control" name="body[is_main_star]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group field-body-spectralclassids">
+<label class="control-label" for="body-spectralclassids">Star Spectral Class</label>
+<div class="input-wrapper"><input type="hidden" id="body-spectralclassids" class="form-control" name="body[spectralClassIds]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+                <div class="col-sm-3">
+                    <div class="form-group field-body-luminosityclassids">
+<label class="control-label" for="body-luminosityclassids">Star Luminosity Class</label>
+<div class="input-wrapper"><input type="hidden" id="body-luminosityclassids" class="form-control" name="body[luminosityClassIds]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+            </div>
+
+            <div class="row">
+
+            </div>
+
+            <div class="row">
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <div class="form-group field-body-canland">
+<label class="control-label" for="body-canland">Planetary Landing</label>
+<div class="input-wrapper"><input type="hidden" id="body-canland" class="form-control" name="body[canLand]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-group-withHelp field-body-extraattribute">
+<label class="control-label" for="body-extraattribute">Extra Column</label>
+<div class="input-wrapper"><input type="hidden" id="body-extraattribute" class="form-control" name="body[extraAttribute]">
+<a class="btn btn-help btn-primary help-popover" id="help-button-5"><i class="fa fa-question" aria-hidden="true"></i></a></div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group form-group-withHelp field-body-referencesystemid">
+<label class="control-label" for="body-referencesystemid">Reference System</label>
+<div class="input-wrapper"><input type="hidden" id="body-referencesystemid" class="form-control" name="body[referenceSystemId]" value="17072">
+<a class="btn btn-help btn-primary help-popover" id="help-button-6"><i class="fa fa-question" aria-hidden="true"></i></a></div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+                <div class="col-sm-6">
+                    <div class="form-group form-group-withHelp field-body-maxreferencedistance">
+<label class="control-label" for="body-maxreferencedistance">Maximum Reference Distance</label>
+<div class="input-wrapper"><input type="text" id="body-maxreferencedistance" class="form-control" name="body[maxReferenceDistance]" value="100">
+<a class="btn btn-help btn-primary help-modal" id="help-button-7"><i class="fa fa-question" aria-hidden="true"></i></a></div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-9"></div>
+
+                <div class="col-sm-3 clearfix">
+                    <div class="pull-right form-row-button-container">
+
+                        <button type="submit" id="btFindBodies" class="btn btn-primary"><i class="fa fa-cog fa-spin disabled-spinner fa-fw"></i><i class="fa fa-search enabled-spinner fa-fw"></i> Find Bodies</button>                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div id="bodySearchResultWrapper" class="panel-loading-drop">
+
+            </div>
+        </div>
+
+    </div>
+
+</form>
+<!--<h3>The Body Search feature is temporarily not available. Sorry for the inconvenience. In the meantime you can use this: <a href="https://spansh.co.uk/bodies">https://spansh.co.uk/bodies</a></h3>-->
+
+
+        
+        
+            <div class="panel panel-eddb bottom-ad">
+                <div class="panel-heading">Advertisement</div>
+                <div class="panel-body">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- bottom full width -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-9828496076338182"
+                         data-ad-slot="3354061357"
+                         data-ad-format="auto"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+            </div>
+
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="pull-left"><strong>&copy; EDDB 2023 - A site about systems, bodies, stations,
+                commodities, materials and trade routes in <a href="https://www.elitedangerous.com/"><i>Elite:
+                        Dangerous</i></a>.</strong></p>
+        <span class="pull-right donate-buttons">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="2C8HCJ2P4KXAA">
+                <input type="image" src="/images/paypal_btn_donate_SM.gif" border="0" name="submit"
+                       alt="Donate with PayPal">
+            </form>
+        </span>
+    </div>
+</footer>
+<script src="/assets/6f43917b/jquery.js?v=1597095590"></script>
+<script src="/assets/6546688b/select2.min.js?v=1597095590"></script>
+<script src="/assets/51ce2334/js/bootstrap.js?v=1597095590"></script>
+<script src="/assets/a254de8d/yii.js?v=1597095590"></script>
+<script src="/assets/a254de8d/yii.validation.js?v=1597095590"></script>
+<script src="/assets/a254de8d/yii.activeForm.js?v=1597095590"></script>
+<script src="/assets/e78dfa28/cookieconsent.min.js?v=1597095590"></script>
+<script src="/js/main.js?v=1612015983"></script>
+<script>jQuery(function ($) {
+$('#select2Bodies').select2({"cacheDataSource":[],"placeholder":"Jump to a body...","minimumInputLength":2,"cache":true,"ajax":{"url":"https://eddb.io/body/search","quietMillis":300,"dataType":"json","data":
+                    function(term, page) {
+                        var data = {
+                            name: term
+                        };
+                        
+                        var extraParams = {"groupIds":[6,2,1,3,4]};
+                        
+                        for (var name in extraParams) {
+                            data[name] = extraParams[name];
+                        }
+                        
+                        return {
+                            body: data
+                        };
+                    }
+                ,"results":
+                    function(data, page) {
+                        return {results: data};
+                    }
+                },"formatResult":
+                function(result, container, query, escapeMarkup) {
+                    function markMatch(string) {
+                        var markup = [];
+                        window.Select2.util.markMatch(string, query.term, markup, function(text) {return text});
+                        return markup.join("");
+                    }
+
+                    var bodyName = markMatch(this.escapeMarkup(result.name));
+                    var groupName = this.escapeMarkup(result.groupName);
+                    var systemName = this.escapeMarkup(result.systemName);
+
+                    var text = "<strong>" + bodyName + "</strong> (" + groupName + " in " + systemName + ")";
+
+                    return text;
+                },"formatSelection":            
+                function(result) {
+                    var bodyName = result.name;
+                    var groupName = result.groupName;
+
+                    var systemName = this.escapeMarkup(result.systemName);
+
+                    var text = "<strong>" + bodyName + "</strong> (" + groupName + " in " + systemName + ")";
+                    return text;
+                }});
+jQuery('#helpModal').modal({"show":false});
+$('#body-materialids').select2({"placeholder":"Select Material","multiple":true,"allowClear":true,"escapeMarkup":function(m) {return m;},"formatSelection":            function(result) {
+                var name = "<img class=\"image-inline\" src=\"/images/materials/grade-" + result.grade_id + ".svg\" style=\"margin-bottom: .15em;\"> <strong>" + result.name + "</strong>";
+
+                if (result.rarity_group && result.element_symbol) {
+                    name += " <span class=\"select-meta material-rarity-group material-rarity-group-" + result.rarity_group + "\">" + result.element_symbol + "</span>";
+                }
+                return name;
+            },"formatResult":            function(result) {
+                var name = "<img class=\"image-inline\" src=\"/images/materials/grade-" + result.grade_id + ".svg\" style=\"margin-bottom: .15em;\"> <strong>" + result.name + "</strong>";
+
+                if (result.rarity_group && result.element_symbol) {
+                    name += " <span class=\"select-meta material-rarity-group material-rarity-group-" + result.rarity_group + "\">" + result.element_symbol + "</span>";
+                }
+                return name;
+            },"data":{"results":[{"id":"20","name":"Antimony","element_symbol":"Sb","rarity_group":"40","grade_id":"4"},{"id":"6","name":"Arsenic","element_symbol":"As","rarity_group":"20","grade_id":"2"},{"id":"14","name":"Cadmium","element_symbol":"Cd","rarity_group":"30","grade_id":"3"},{"id":"1","name":"Carbon","element_symbol":"C","rarity_group":"10","grade_id":"1"},{"id":"7","name":"Chromium","element_symbol":"Cr","rarity_group":"20","grade_id":"2"},{"id":"8","name":"Germanium","element_symbol":"Ge","rarity_group":"20","grade_id":"2"},{"id":"2","name":"Iron","element_symbol":"Fe","rarity_group":"10","grade_id":"1"},{"id":"9","name":"Manganese","element_symbol":"Mn","rarity_group":"20","grade_id":"2"},{"id":"15","name":"Mercury","element_symbol":"Hg","rarity_group":"30","grade_id":"3"},{"id":"16","name":"Molybdenum","element_symbol":"Mo","rarity_group":"30","grade_id":"3"},{"id":"3","name":"Nickel","element_symbol":"Ni","rarity_group":"10","grade_id":"1"},{"id":"17","name":"Niobium","element_symbol":"Nb","rarity_group":"30","grade_id":"3"},{"id":"4","name":"Phosphorus","element_symbol":"P","rarity_group":"10","grade_id":"1"},{"id":"21","name":"Polonium","element_symbol":"Po","rarity_group":"40","grade_id":"4"},{"id":"22","name":"Ruthenium","element_symbol":"Ru","rarity_group":"40","grade_id":"4"},{"id":"10","name":"Selenium","element_symbol":"Se","rarity_group":"20","grade_id":"4"},{"id":"5","name":"Sulphur","element_symbol":"S","rarity_group":"10","grade_id":"1"},{"id":"23","name":"Technetium","element_symbol":"Tc","rarity_group":"40","grade_id":"4"},{"id":"24","name":"Tellurium","element_symbol":"Te","rarity_group":"40","grade_id":"4"},{"id":"18","name":"Tin","element_symbol":"Sn","rarity_group":"30","grade_id":"3"},{"id":"19","name":"Tungsten","element_symbol":"W","rarity_group":"30","grade_id":"3"},{"id":"11","name":"Vanadium","element_symbol":"V","rarity_group":"20","grade_id":"2"},{"id":"25","name":"Yttrium","element_symbol":"Y","rarity_group":"40","grade_id":"4"},{"id":"12","name":"Zinc","element_symbol":"Zn","rarity_group":"20","grade_id":"2"},{"id":"13","name":"Zirconium","element_symbol":"Zr","rarity_group":"20","grade_id":"2"}],"text":"name"}});
+
+                (function() {
+                    var title = '';
+                    var contentB64 = 'RmlsdGVyIHRoZSByZXN1bHQgYnkgcGxhbmV0cyB0aGF0IGhhdmUgdGhlIHNlbGVjdGVkIG1hdGVyaWFscy4=';
+                    var content = decodeURIComponent(escape(window.atob(contentB64)))
+
+                    $('#help-button-1').popover({
+                        content: content,
+                        title: title,
+                        html: true,
+                        placement: 'top'
+                    });
+                })();
+$('#body-systemreservetypeid').select2({"allowClear":true,"placeholder":"Select Reserve Type","data":{"results":[{"id":"1","created_at":"1466612759","updated_at":"1491999617","order_index":"10","name":"Pristine","ed_symbol":"PristineResources"},{"id":"2","created_at":"1466612759","updated_at":"1491999617","order_index":"20","name":"Major","ed_symbol":"MajorResources"},{"id":"3","created_at":"1466612759","updated_at":"1491999617","order_index":"30","name":"Common","ed_symbol":"CommonResources"},{"id":"4","created_at":"1466612759","updated_at":"1491999617","order_index":"40","name":"Low","ed_symbol":"LowResources"},{"id":"5","created_at":"1466612759","updated_at":"1491999617","order_index":"50","name":"Depleted","ed_symbol":"DepletedResources"}],"text":"name"}});
+$('#body-ring_type_id').select2({"allowClear":true,"placeholder":"Select Ring Type","data":{"results":[{"id":"1","created_at":"1466612759","updated_at":"1477402648","order_index":"10","name":"Icy","ed_symbol":"eRingClass_Icy"},{"id":"2","created_at":"1466612759","updated_at":"1477402648","order_index":"20","name":"Metal Rich","ed_symbol":"eRingClass_MetalRich"},{"id":"3","created_at":"1466612759","updated_at":"1477402648","order_index":"30","name":"Metallic","ed_symbol":"eRingClass_Metalic"},{"id":"4","created_at":"1466612759","updated_at":"1477402648","order_index":"40","name":"Rocky","ed_symbol":"eRingClass_Rocky"}],"text":"name"}});
+
+                (function() {
+                    var title = '';
+                    var contentB64 = 'U2VsZWN0aW5nIGFueSByaW5nIHR5cGUgd2lsbCByZXN1bHQgb25seSByaW5ncyBhbmQgYmVsdHMu';
+                    var content = decodeURIComponent(escape(window.atob(contentB64)))
+
+                    $('#help-button-2').popover({
+                        content: content,
+                        title: title,
+                        html: true,
+                        placement: 'top'
+                    });
+                })();
+$('#body-system_id').select2({"allowClear":true,"cacheDataSource":[],"placeholder":"Search for a system ...","minimumInputLength":2,"cache":true,"ajax":{"url":"https://eddb.io/system/search","quietMillis":500,"dataType":"json","data":function(term, page) {
+                        return {
+                            "system[name]": term,
+                            "expand": "stations",
+                            "system[version]": 2,
+                        };
+                    },"results":function(data, page) {
+                    return {results: data};
+                }},"formatResult":function(result, container, query, escapeMarkup) {
+                    var me = this;
+
+                    function markMatch(string) {
+                        var markup = [];
+                        window.Select2.util.markMatch(string, query.term, markup, function(text) {return text});
+                        return markup.join("");
+                    }
+
+                    var systemName = markMatch(me.escapeMarkup(result.name));
+
+                    var text = "<strong>" + systemName + "</strong>";
+
+                    if (result.stations.length > 0) {
+                        var stationNames = result.stations.map(function(station) {
+                            return markMatch(me.escapeMarkup(station.name));
+                        });
+
+                        text += " (" + stationNames.join(", ") + ")";
+                    }
+
+                    return text;
+                },"formatSelection":function(result) {
+                    var me = this;
+                    var systemName = result.name;
+                    var text = "<strong>" + this.escapeMarkup(systemName) + "</strong>";
+
+                    if (result.stations.length > 0) {
+                        var stationNames = result.stations.map(function(station) {
+                            return me.escapeMarkup(station.name);
+                        });
+
+                        text += " (" + stationNames.join(", ") + ")";
+                    }
+
+                    return text;
+                }});
+
+                (function() {
+                    var title = '';
+                    var contentB64 = 'UmVzdWx0IG9ubHkgYm9kaWVzIGluIHRoZSBnaXZlbiBzeXN0ZW0u';
+                    var content = decodeURIComponent(escape(window.atob(contentB64)))
+
+                    $('#help-button-3').popover({
+                        content: content,
+                        title: title,
+                        html: true,
+                        placement: 'top'
+                    });
+                })();
+$('#body-systemispopulated').select2({"multiple":false,"allowClear":false,"minimumResultsForSearch":-1,"placeholder":"Has?","data":{"results":[{"id":1,"text":"Yes"},{"id":0,"text":"Any"}]}});
+$('#body-powerid').select2({"multiple":false,"allowClear":true,"placeholder":"Select Power","data":{"results":[{"id":"6","name":"Aisling Duval"},{"id":"8","name":"Archon Delaine"},{"id":"5","name":"Arissa Lavigny-Duval"},{"id":"7","name":"Denton Patreus"},{"id":"1","name":"Edmund Mahon"},{"id":"2","name":"Felicia Winters"},{"id":"9","name":"Li Yong-Rui"},{"id":"10","name":"Pranav Antal"},{"id":"11","name":"Yuri Grom"},{"id":"3","name":"Zachary Hudson"},{"id":"4","name":"Zemina Torval"}],"text":"name"}});
+$('#body-groupids').select2({"multiple":true,"placeholder":"Select Body Group","allowClear":true,"data":{"results":[{"id":"1","created_at":"1466612759","updated_at":"1466612759","order_index":"20","name":"Compact star"},{"id":"2","created_at":"1466612759","updated_at":"1466612759","order_index":"10","name":"Star"},{"id":"3","created_at":"1466612759","updated_at":"1466612759","order_index":"40","name":"Belt"},{"id":"4","created_at":"1466612759","updated_at":"1466612759","order_index":"50","name":"Ring"},{"id":"6","created_at":"1466612759","updated_at":"1466612759","order_index":"30","name":"Planet"}],"text":"name"}});
+
+                $('#help-button-4').click(function() {
+                    var title = 'Body Group';
+                    var contentB64 = 'CjxwPkJvZGllcyBhcmUgZGl2aWRlZCBpbnRvIGZpdmUgZ2VuZXJhbCBncm91cHMuIEV2ZXJ5IGdyb3VwIGhhcyBhIGRpZmZlcmVudCBzZXQgb2YgcHJvcGVydGllcy48L3A+Cgo8dWw+CiAgICA8bGk+CiAgICAgICAgPHN0cm9uZz5Db21wYWN0IHN0YXI8L3N0cm9uZz46IE1vc3QgY29tcGFjdCBzdGFycyBhcmUgdGhlIGVuZHBvaW50cyBvZiBzdGVsbGFyIGV2b2x1dGlvbiBhbmQgYXJlIHRodXMgb2Z0ZW4gcmVmZXJyZWQgdG8gYXMgc3RlbGxhciByZW1uYW50cy4gPGJyPgogICAgICAgIFN1YnR5cGVzIGFyZQogICAgICAgIDxzcGFuIGNsYXNzPSJzZW1pLXN0cm9uZyI+CiAgICAgICAgICAgIEJsYWNrIGhvbGUsIFN1cGVybWFzc2l2ZSBibGFjayBob2xlLCBOZXV0cm9uIHN0YXIgICAgICAgIDwvc3Bhbj4KICAgIDwvbGk+CiAgICA8bGk+CiAgICAgICAgPHN0cm9uZz5TdGFyPC9zdHJvbmc+OiBBIHN0YXIgaXMgYSBsdW1pbm91cyBzcGhlcmUgb2YgcGxhc21hIGhlbGQgdG9nZXRoZXIgYnkgaXRzIG93biBncmF2aXR5LgogICAgPC9saT4KICAgIDxsaT4KICAgICAgICA8c3Ryb25nPlBsYW5ldDwvc3Ryb25nPjogSW4gdGhpcyBjb250ZXh0IGEgcGxhbmV0IGNhbiBiZSBhIG1vb24gYXMgd2VsbCBhcyBhIGNvbnZlbnRpb25hbCBwbGFuZXQuPGJyPgogICAgICAgIFN1YnR5cGVzIGFyZQogICAgICAgIDxzcGFuIGNsYXNzPSJzZW1pLXN0cm9uZyI+CiAgICAgICAgICAgIEFtbW9uaWEgd29ybGQsIENsYXNzIEkgZ2FzIGdpYW50LCBDbGFzcyBJSSBnYXMgZ2lhbnQsIENsYXNzIElJSSBnYXMgZ2lhbnQsIENsYXNzIElWIGdhcyBnaWFudCwgQ2xhc3MgViBnYXMgZ2lhbnQsIEVhcnRoLWxpa2Ugd29ybGQsIEdhcyBnaWFudCB3aXRoIGFtbW9uaWEtYmFzZWQgbGlmZSwgR2FzIGdpYW50IHdpdGggd2F0ZXItYmFzZWQgbGlmZSwgSGVsaXVtLXJpY2ggZ2FzIGdpYW50LCBIaWdoIG1ldGFsIGNvbnRlbnQgd29ybGQsIEljeSBib2R5LCBNZXRhbC1yaWNoIGJvZHksIFJvY2t5IGJvZHksIFJvY2t5IGljZSB3b3JsZCwgV2F0ZXIgZ2lhbnQsIFdhdGVyIHdvcmxkICAgICAgICA8L3NwYW4+CiAgICA8L2xpPgogICAgPGxpPgogICAgICAgIDxzdHJvbmc+QmVsdDwvc3Ryb25nPjogQSBiZWx0IGlzIGEgY2lyY3Vtc3RlbGxhciBkaXNjLiBJdCBpcyBhIHRvcnVzLCBwYW5jYWtlIG9yIHJpbmctc2hhcGVkIGFjY3VtdWxhdGlvbiBvZiBtYXR0ZXIgY29tcG9zZWQgb2YgZ2FzLCBkdXN0LCBwbGFuZXRlc2ltYWxzLCBhc3Rlcm9pZHMgb3IgY29sbGlzaW9uIGZyYWdtZW50cyBpbiBvcmJpdC4KICAgIDwvbGk+CiAgICA8bGk+CiAgICAgICAgPHN0cm9uZz5SaW5nPC9zdHJvbmc+OiBBIHJpbmcgc3lzdGVtIGlzIGEgZGlzYyBvciByaW5nIG9yYml0aW5nIGFuIGFzdHJvbm9taWNhbCBvYmplY3QgdGhhdCBpcyBjb21wb3NlZCBvZiBzb2xpZCBtYXRlcmlhbCBzdWNoIGFzIGR1c3QgYW5kIG1vb25sZXRzLCBhbmQgaXMgYSBjb21tb24gY29tcG9uZW50IG9mIHNhdGVsbGl0ZSBzeXN0ZW1zIGFyb3VuZCBnaWFudCBwbGFuZXRzLiBBIHJpbmcgc3lzdGVtIGFyb3VuZCBhIHBsYW5ldCBpcyBhbHNvIGtub3duIGFzIGEgcGxhbmV0YXJ5IHJpbmcgc3lzdGVtLgogICAgPC9saT4KCjwvdWw+';
+                    var content = decodeURIComponent(escape(window.atob(contentB64)))
+
+                    $('#helpModal .modal-title').html(title);
+                    $('#helpModal .modal-body').html(content);
+
+                    $('#helpModal').modal('show');
+                });
+$('#body-hasrings').select2({"minimumResultsForSearch":-1,"placeholder":"Has?","allowClear":true,"data":{"results":[{"id":1,"text":"Yes"},{"id":0,"text":"Any"}]}});
+$('#body-planettypeids').select2({"multiple":true,"placeholder":"Select Planet","allowClear":true,"data":{"results":[{"id":20,"created_at":1466612759,"updated_at":1477402648,"order_index":40,"group_id":6,"name":"Ammonia world","description":"<p>Terrestrial ammonia world with an active ammonia-based chemistry and carbon-ammonia based life.</p>","ed_symbol":"Ammonia world"},{"id":21,"created_at":1466612759,"updated_at":1477402648,"order_index":50,"group_id":6,"name":"Class I gas giant","description":"<p>Class I or jovian gas giants have primarily hydrogen and helium atmospheres. Coloration comes from clouds in the upper atmosphere of ammonia, water vapour, hydrogen sulphide, phosphine and sulphur. The temperature at the top of their upper cloud layers is typically less than 150 K.</p>","ed_symbol":"Sudarsky class I gas giant"},{"id":22,"created_at":1466612759,"updated_at":1477402648,"order_index":60,"group_id":6,"name":"Class II gas giant","description":"<p>Class II gas giants have primarily hydrogen and helium atmospheres. Water vapour in the upper cloud layers gives them a much higher albedo. Their surface temperature is typically up to or around 250 K.</p>","ed_symbol":"Sudarsky class II gas giant"},{"id":23,"created_at":1466612759,"updated_at":1477402648,"order_index":70,"group_id":6,"name":"Class III gas giant","description":"<p>Class III gas giants have primarily hydrogen and helium atmospheres without distinctive cloud layers. Their surface temperature typically ranges between 350 K and 800 K. They are primarily blue in colour because of optical scattering in the atmosphere - with the chance of wispy cloud layers from sulphides and chlorides.</p>","ed_symbol":"Sudarsky class III gas giant"},{"id":24,"created_at":1466612759,"updated_at":1477402648,"order_index":80,"group_id":6,"name":"Class IV gas giant","description":"<p>Class IV gas giants have primarily hydrogen and helium atmospheres with carbon monoxide and upper clouds of alkali metals above lower cloud layers of silicates and iron compounds, hence he brighter colours. The temperature of their upper cloud layers is typically above 900 K.</p>","ed_symbol":"Sudarsky class IV gas giant"},{"id":25,"created_at":1466612759,"updated_at":1477402648,"order_index":90,"group_id":6,"name":"Class V gas giant","description":"<p>Class V gas giants have primarily hydrogen and helium atmospheres, with thick clouds of silicates and iron compounds, even metallic iron.They are the hottest type of gas giants with temperatures at their upper cloud decks above 1400 K, and much hotter in the lower layers, often emitting a dull glow from the internal heat within.</p>","ed_symbol":"Sudarsky class V gas giant"},{"id":26,"created_at":1466612759,"updated_at":1477402648,"order_index":100,"group_id":6,"name":"Earth-like world","description":"<p>Outdoor world with a human-breathable atmosphere and indigenous life. The atmosphere is far from chemical equilibrium as a result.</p>","ed_symbol":"Earthlike body"},{"id":27,"created_at":1466612759,"updated_at":1477402648,"order_index":110,"group_id":6,"name":"Gas giant with ammonia-based life","description":"<p>Gas giant with ammonia-based life. This is primarily a hydrogen and helium-based atmospheric gas giant, but a little below the surface cloud layers, life exists based in the ammonia-cloud layer. The chemistry of this gaseous region is far from equilibrium, with a surprising excess of oxygen and many carbon-based compounds giving it some vivid colours. As with many such gaseous living systems, it is underpinned by vast quantities of free-floating radioplankton - tiny carbon-based algae, each retaining small quantity of liquid ammonia, extracting their energy from the intense radiation flux.</p>","ed_symbol":"Gas giant with ammonia based life"},{"id":28,"created_at":1466612759,"updated_at":1477402648,"order_index":120,"group_id":6,"name":"Gas giant with water-based life","description":"<p>Gas giant with water-based life. This is primarily a hydrogen and helium based atmospheric gas giant, but not far below the surface exists life based in the water-cloud layer just below the atmospheric surface. The chemistry of this gaseous region is far from equilibrium, with a surprising excess of oxygen and many carbon-based compounds giving it some vivid colours. As with many such gaseous living systems, it is underpinned by vast quantities of free-floating radioplankton - tiny carbon-based algae, each retaining small quantity of liquid water, extracting their energy from the intense radiation flux.</p>","ed_symbol":"Gas giant with water based life"},{"id":29,"created_at":1466612759,"updated_at":1477402648,"order_index":130,"group_id":6,"name":"Helium-rich gas giant","description":"<p>Helium-rich gas giants have a greatly inflated percentage of helium compared to the hydrogen in their atmosphere. Much of their hydrogen has been lost over time because they have insufficient mass to hold on to it. It may also be because temperatures in their past were much higher, driving off the hydrogen at a greater rate.</p>","ed_symbol":"Helium rich gas giant"},{"id":30,"created_at":1466612759,"updated_at":1477402648,"order_index":140,"group_id":6,"name":"High metal content world","description":"<p>High metal content world with a metallic core. Worlds like this can have metallic ores near the surface in places, especially around areas of past volcanism.</p>","ed_symbol":"High metal content body"},{"id":31,"created_at":1466612759,"updated_at":1477402648,"order_index":150,"group_id":6,"name":"Icy body","description":"<p>Ice world composed mainly of water ice. Worlds like this will not have had much heating in the past, forming in the cooler regions of a star system and have retained many volatiles as solids in their crust.</p>","ed_symbol":"Icy body"},{"id":32,"created_at":1466612759,"updated_at":1477402648,"order_index":160,"group_id":6,"name":"Metal-rich body","description":"<p>Metal rich worlds like this have a large metallic core, with plentiful metallic ores even at the surface. In places, especially around areas of past or current volcanism or liquid erosion, some higher metals can be found in their elemental form too. Mining is therefore very efficient, so these worlds are highly valued.</p>","ed_symbol":"Metal rich body"},{"id":33,"created_at":1466612759,"updated_at":1477402648,"order_index":170,"group_id":6,"name":"Rocky body","description":"<p>Rocky world with little or no surface metal content. Worlds like this have lost most of their volatiles due to past heating, and any metallic content will form a small central core.</p>","ed_symbol":"Rocky body"},{"id":34,"created_at":1466612759,"updated_at":1477402648,"order_index":180,"group_id":6,"name":"Rocky ice world","description":"<p>Typically formed in the cooler regions of a star system these worlds have a small metal core and thick rocky mantle with a crust of very deep ice. Geological activity is common in these worlds because of the large quantities of volatiles in the crust, often creating a thin, sometimes seasonal atmosphere.</p>","ed_symbol":"Rocky ice body"},{"id":35,"created_at":1466612759,"updated_at":1477402648,"order_index":190,"group_id":6,"name":"Water giant","description":"<p>Worlds like this have a large atmosphere made mainly of water vapour. It most likely formed when a large icy body warmed up enough to evaporate a large amount of its surface ice. This would in turn trigger a runaway greenhouse effect leading to a very thick atmosphere made of the evaporated ices.</p>","ed_symbol":"Water giant"},{"id":36,"created_at":1466612759,"updated_at":1477402649,"order_index":200,"group_id":6,"name":"Water world","description":"<p>Terrestrial water world with an active water-based chemistry and carbon-water-based life.</p>","ed_symbol":"Water world"}],"text":"name"}});
+$('#body-compactstartypeids').select2({"multiple":true,"placeholder":"Select Compact Star","allowClear":true,"data":{"results":[{"id":2,"created_at":1466612759,"updated_at":1466612759,"order_index":10,"group_id":1,"name":"Supermassive black hole","description":"<p>Super massive black holes tend to form when an initial black hole begins to swallow ever more mass, including other black holes. With time they acquire a vast mass and become a key component of the galaxy, with much of the other galactic mass rotating around them, and can be several million solar masses.</p>","ed_symbol":null},{"id":1,"created_at":1466612759,"updated_at":1466612759,"order_index":20,"group_id":1,"name":"Black hole","description":"<p>Black holes are typically the stellar remnants of super massive stars of twenty solar masses or more, that have reached the end of their lives. Nuclear fusion has ceased, and the star collapsed to the most extreme point possible - where gravity was so extreme light can no longer escape. If matter should fall on to such a body, an extreme burst of gamma radiation will be emitted, but otherwise the body is only visible by the gravitational distortion in the vicinity. In many cases black holes can be seen emitting brightly in X-rays because of matter falling on to their surface from a companion body.</p>","ed_symbol":null},{"id":3,"created_at":1466612759,"updated_at":1466612759,"order_index":30,"group_id":1,"name":"Neutron star","description":"<p>Neutron stars are the stellar remnants of massive stars that have reached the end of their lives. Once nuclear fusion was exhausted, the star collapsed into a tiny volume. Because of its high mass, the matter has collapsed into an extremely high density state made up entirely of neutrons, though with insufficient mass to become a black hole.</p>","ed_symbol":null}],"text":"name"}});
+$('#body-is_main_star').select2({"multiple":false,"allowClear":false,"minimumResultsForSearch":-1,"placeholder":"Has?","data":{"results":[{"id":1,"text":"Yes"},{"id":0,"text":"Any"}]}});
+$('#body-spectralclassids').select2({"multiple":true,"placeholder":"Select Spectral Class","allowClear":true,"escapeMarkup":function(m) {return m;},"formatSelection":function(result) {
+                var name = "<strong>" + result.name + "</strong>";
+                name += " <span class=\"select-meta\"> - " + result.description + "</span>";
+                name = "<span class=\"select-name\">" + name + "</span>";
+                return name;
+            },"formatResult":function(result) {
+                var name = "<strong>" + result.name + "</strong>";
+                name += " <span class=\"select-meta\"> - " + result.description + "</span>";
+                name = "<span class=\"select-name\">" + name + "</span>";
+                return name;
+            },"data":{"results":[{"id":"A","name":"A","description":"A-type star"},{"id":"AEBE","name":"AEBE","description":"Herbig Ae/Be star"},{"id":"B","name":"B","description":"B-type star"},{"id":"C","name":"C","description":"Carbon star"},{"id":"CH","name":"CH","description":"Carbon star"},{"id":"CHd","name":"CHd","description":"Carbon star"},{"id":"CJ","name":"CJ","description":"Carbon star"},{"id":"CN","name":"CN","description":"Class C-N star"},{"id":"CS","name":"CS","description":"Carbon star"},{"id":"D","name":"D","description":"Class D white dwarf"},{"id":"DA","name":"DA","description":"Class DA white dwarf"},{"id":"DAB","name":"DAB","description":"Class DAB white dwarf"},{"id":"DAO","name":"DAO","description":"Class DAO white dwarf"},{"id":"DAV","name":"DAV","description":"Class DA variable white dwarf"},{"id":"DAZ","name":"DAZ","description":"Class DAZ white dwarf"},{"id":"DB","name":"DB","description":"Class DB white dwarf"},{"id":"DBV","name":"DBV","description":"Class DB variable white dwarf"},{"id":"DBZ","name":"DBZ","description":"Class DBZ white dwarf"},{"id":"DC","name":"DC","description":"Class DC white dwarf"},{"id":"DCV","name":"DCV","description":"Class DC variable white dwarf"},{"id":"DO","name":"DO","description":"Class DO white dwarf"},{"id":"DOV","name":"DOV","description":"Class DOV white dwarf"},{"id":"DQ","name":"DQ","description":"Class DQ white dwarf"},{"id":"DX","name":"DX","description":"Class DX white dwarf"},{"id":"F","name":"F","description":"F-type star"},{"id":"G","name":"G","description":"G-type star"},{"id":"K","name":"K","description":"K-type star"},{"id":"L","name":"L","description":"L-type dwarf"},{"id":"M","name":"M","description":"M-type star"},{"id":"MS","name":"MS","description":"MS-type star"},{"id":"O","name":"O","description":"O-type star"},{"id":"S","name":"S","description":"S-type star"},{"id":"T","name":"T","description":"T-type dwarf"},{"id":"TTS","name":"TTS","description":"T Tauri star"},{"id":"W","name":"W","description":"Wolf–Rayet star"},{"id":"WC","name":"WC","description":"Wolf–Rayet C star"},{"id":"WN","name":"WN","description":"Wolf–Rayet N star"},{"id":"WNC","name":"WNC","description":"Wolf–Rayet NC star"},{"id":"WNO","name":"WNO","description":"Wolf–Rayet NO star"},{"id":"WO","name":"WO","description":"Wolf–Rayet O star"},{"id":"Y","name":"Y","description":"Y-type dwarf"}],"text":"name"}});
+$('#body-luminosityclassids').select2({"multiple":true,"placeholder":"Select Luminosity Class","allowClear":true,"escapeMarkup":function(m) {return m;},"formatSelection":function(result) {
+                var name = "<strong>" + result.name + "</strong>";
+                name += " <span class=\"select-meta\"> - " + result.description + "</span>";
+                name = "<span class=\"select-name\">" + name + "</span>";
+                return name;
+            },"formatResult":function(result) {
+                var name = "<strong>" + result.name + "</strong>";
+                name += " <span class=\"select-meta\"> - " + result.description + "</span>";
+                name = "<span class=\"select-name\">" + name + "</span>";
+                return name;
+            },"data":{"results":[{"id":"0","name":"0","description":"Hypergiant"},{"id":"I","name":"I","description":"Supergiant"},{"id":"II","name":"II","description":"Bright giant"},{"id":"III","name":"III","description":"Giant"},{"id":"IV","name":"IV","description":"Subgiant"},{"id":"V","name":"V","description":"Main-sequence star (dwarf)"},{"id":"VI","name":"VI","description":"Subdwarf"},{"id":"VII","name":"VII","description":"White dwarf"}],"text":"name"}});
+$('#body-canland').select2({"multiple":false,"allowClear":false,"minimumResultsForSearch":-1,"placeholder":"Has?","data":{"results":[{"id":1,"text":"Yes"},{"id":0,"text":"Any"}]}});
+$('#body-extraattribute').select2({"multiple":false,"allowClear":true,"placeholder":"Select Extra Attribute","data":{"results":[{"id":"age","name":"Age"},{"id":"arg_of_periapsis","name":"Arg Of Periapsis"},{"id":"atmosphere_type_id","name":"Atmosphere"},{"id":"axis_tilt","name":"Axis Tilt"},{"id":"earth_masses","name":"Earth Masses"},{"id":"full_spectral_class","name":"Full Spectral Class"},{"id":"gravity","name":"Gravity"},{"id":"ring_inner_radius","name":"Inner Radius"},{"id":"luminosity_class","name":"Luminosity Class"},{"id":"ring_mass","name":"Mass"},{"id":"belt_moon_masses","name":"Moon Masses"},{"id":"orbital_eccentricity","name":"Orbital Eccentricity"},{"id":"orbital_inclination","name":"Orbital Inclination"},{"id":"orbital_period","name":"Orbital Period"},{"id":"ring_outer_radius","name":"Outer Radius"},{"id":"radius","name":"Radius"},{"id":"rotational_period","name":"Rotational Period"},{"id":"semi_major_axis","name":"Semi Major Axis"},{"id":"solar_masses","name":"Solar Masses"},{"id":"solar_radius","name":"Solar Radius"},{"id":"spectral_class","name":"Spectral Class"},{"id":"surface_pressure","name":"Surface Pressure"},{"id":"surface_temperature","name":"Surface Temperature"},{"id":"terraforming_state_id","name":"Terraforming"},{"id":"volcanism_type_id","name":"Volcanism"}],"text":"name"}});
+
+                (function() {
+                    var title = '';
+                    var contentB64 = 'U2VsZWN0IGFueSBleHRyYSBhdHRyaWJ1dGUgdGhhdCBnZXRzIGFkZGVkIGFzIGEgZnVsbHkgc29ydGFibGUgcmVzdWx0IGNvbHVtbi4=';
+                    var content = decodeURIComponent(escape(window.atob(contentB64)))
+
+                    $('#help-button-5').popover({
+                        content: content,
+                        title: title,
+                        html: true,
+                        placement: 'top'
+                    });
+                })();
+$('#body-referencesystemid').select2({"allowClear":true,"cacheDataSource":[],"placeholder":"Search for a system ...","minimumInputLength":2,"cache":true,"ajax":{"url":"https://eddb.io/system/search","quietMillis":500,"dataType":"json","data":function(term, page) {
+                        return {
+                            "system[name]": term,
+                            "expand": "stations",
+                            "system[version]": 2,
+                        };
+                    },"results":function(data, page) {
+                    return {results: data};
+                }},"formatResult":function(result, container, query, escapeMarkup) {
+                    var me = this;
+
+                    function markMatch(string) {
+                        var markup = [];
+                        window.Select2.util.markMatch(string, query.term, markup, function(text) {return text});
+                        return markup.join("");
+                    }
+
+                    var systemName = markMatch(me.escapeMarkup(result.name));
+
+                    var text = "<strong>" + systemName + "</strong>";
+
+                    if (result.stations.length > 0) {
+                        var stationNames = result.stations.map(function(station) {
+                            return markMatch(me.escapeMarkup(station.name));
+                        });
+
+                        text += " (" + stationNames.join(", ") + ")";
+                    }
+
+                    return text;
+                },"formatSelection":function(result) {
+                    var me = this;
+                    var systemName = result.name;
+                    var text = "<strong>" + this.escapeMarkup(systemName) + "</strong>";
+
+                    if (result.stations.length > 0) {
+                        var stationNames = result.stations.map(function(station) {
+                            return me.escapeMarkup(station.name);
+                        });
+
+                        text += " (" + stationNames.join(", ") + ")";
+                    }
+
+                    return text;
+                },"initSelection":function(element, callback) {
+                        // if the swap button is being used, a select2({data:...}) call or the change trigger als triggers this
+                        // so we all we have to do is make sure this is only being called once!
+                        window.eddbStatusInitialied = window.eddbStatusInitialied || {};
+                        if (!window.eddbStatusInitialied[element[0].id]) {
+                            window.eddbStatusInitialied[element[0].id] = true;
+                            callback({"id":17072,"name":"Sol","x":0,"y":0,"z":0,"faction":"Mother Gaia","population":22780919531,"allegiance_id":3,"government_id":96,"needs_permit":true,"updated_at":1680634829,"simbad_ref":"","is_populated":true,"stations":[{"id":166993,"name":"Abimbola Metallurgic Reserve","system_id":17072,"max_landing_pad_size":"L","distance_to_star":9154,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1674849397,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1673198339},{"id":18,"name":"Abraham Lincoln","system_id":17072,"max_landing_pad_size":"L","distance_to_star":495,"faction":"Mother Gaia","type_id":8,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":true,"has_outfitting":true,"has_shipyard":true,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":true,"has_social_space":true,"updated_at":1680634801,"shipyard_updated_at":1680634801,"outfitting_updated_at":1680621891,"market_updated_at":1680626428},{"id":162647,"name":"Adebisi Hospitality Zone","system_id":17072,"max_landing_pad_size":"L","distance_to_star":25531,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1678302666,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1675783771},{"id":165294,"name":"Aithal Garrison","system_id":17072,"max_landing_pad_size":"L","distance_to_star":4906,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":true,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1679771365,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1679771364},{"id":161930,"name":"Alasa Industries","system_id":17072,"max_landing_pad_size":"L","distance_to_star":2713,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1680369820,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1680369820},{"id":162771,"name":"Amos Mining Hub","system_id":17072,"max_landing_pad_size":"L","distance_to_star":9155,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1679111129,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1677885520},{"id":180930,"name":"Avery Excavation Hub","system_id":17072,"max_landing_pad_size":"M","distance_to_star":18637,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1674696860,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1668007010},{"id":161894,"name":"Avery Manufacturing Hub","system_id":17072,"max_landing_pad_size":"L","distance_to_star":9155,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1675594825,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1675591470},{"id":163152,"name":"Awolowo Mineralogic Base","system_id":17072,"max_landing_pad_size":"L","distance_to_star":18636,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1675844838,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1674566336},{"id":164383,"name":"Banyard Command Outpost","system_id":17072,"max_landing_pad_size":"L","distance_to_star":4912,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":true,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1679117789,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1675808534},{"id":162612,"name":"Beauchene's Horizon","system_id":17072,"max_landing_pad_size":"L","distance_to_star":19062,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1678673091,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1678673091},{"id":181217,"name":"Bibeau's Wandering","system_id":17072,"max_landing_pad_size":"L","distance_to_star":4916,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1678343394,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1674810172},{"id":165773,"name":"Bourne Mining Installation","system_id":17072,"max_landing_pad_size":"M","distance_to_star":2716,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1677274522,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1675266593},{"id":183496,"name":"Bruno's Encampment","system_id":17072,"max_landing_pad_size":"M","distance_to_star":2717,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":true,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1679596510,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1678156233},{"id":4645,"name":"Burnell Station","system_id":17072,"max_landing_pad_size":"M","distance_to_star":362,"faction":"Sol Workers' Party","type_id":1,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":true,"has_outfitting":true,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":true,"has_social_space":true,"updated_at":1680519149,"shipyard_updated_at":null,"outfitting_updated_at":1680519149,"market_updated_at":1680519083},{"id":1429,"name":"Columbus","system_id":17072,"max_landing_pad_size":"L","distance_to_star":2716,"faction":"Mother Gaia","type_id":7,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":true,"has_outfitting":true,"has_shipyard":true,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":true,"has_social_space":true,"updated_at":1680551768,"shipyard_updated_at":1680374958,"outfitting_updated_at":1680551768,"market_updated_at":1680457797},{"id":175829,"name":"Correa Entertainment Complex","system_id":17072,"max_landing_pad_size":"L","distance_to_star":9154,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1678132144,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1672507000},{"id":128,"name":"Daedalus","system_id":17072,"max_landing_pad_size":"L","distance_to_star":157,"faction":"Mother Gaia","type_id":8,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":true,"has_outfitting":true,"has_shipyard":true,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":true,"has_social_space":true,"updated_at":1680634501,"shipyard_updated_at":1680634175,"outfitting_updated_at":1680634416,"market_updated_at":1680634501},{"id":63491,"name":"Dekker's Yard","system_id":17072,"max_landing_pad_size":"L","distance_to_star":4901,"faction":null,"type_id":13,"has_blackmarket":false,"has_refuel":true,"has_repair":true,"has_rearm":true,"has_outfitting":true,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1680630212,"shipyard_updated_at":null,"outfitting_updated_at":1680630212,"market_updated_at":1680630212},{"id":168677,"name":"Deshpande Mining Exchange","system_id":17072,"max_landing_pad_size":"S","distance_to_star":9155,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1676274735,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1676274735},{"id":170359,"name":"Dewsnap Prospecting Station","system_id":17072,"max_landing_pad_size":"L","distance_to_star":2706,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1676200618,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1676200618},{"id":42856,"name":"Durrance Camp","system_id":17072,"max_landing_pad_size":"L","distance_to_star":2712,"faction":"Sol Workers' Party","type_id":13,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":true,"has_outfitting":true,"has_shipyard":true,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":true,"has_social_space":true,"updated_at":1679423025,"shipyard_updated_at":1679423025,"outfitting_updated_at":1679423025,"market_updated_at":1679423025},{"id":42238,"name":"Ehrlich City","system_id":17072,"max_landing_pad_size":"L","distance_to_star":161,"faction":"Sol Workers' Party","type_id":14,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":true,"has_outfitting":true,"has_shipyard":true,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":true,"has_social_space":true,"updated_at":1680434681,"shipyard_updated_at":1680434681,"outfitting_updated_at":1680365284,"market_updated_at":1680367967},{"id":175613,"name":"Fincham Drilling Hub","system_id":17072,"max_landing_pad_size":"M","distance_to_star":18636,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1675470381,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1671176459},{"id":162524,"name":"Florianz Mining Prospect","system_id":17072,"max_landing_pad_size":"L","distance_to_star":18635,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1679716688,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1673209605},{"id":162582,"name":"Fraser Industrial Moulding","system_id":17072,"max_landing_pad_size":"L","distance_to_star":2716,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1677275033,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1675686538},{"id":42519,"name":"Furukawa Enterprise","system_id":17072,"max_landing_pad_size":"L","distance_to_star":165,"faction":"Sol Workers' Party","type_id":13,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":true,"has_outfitting":true,"has_shipyard":true,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":true,"has_social_space":true,"updated_at":1680294889,"shipyard_updated_at":1680030996,"outfitting_updated_at":1680099131,"market_updated_at":1680030996},{"id":19,"name":"Galileo","system_id":17072,"max_landing_pad_size":"L","distance_to_star":496,"faction":"Mother Gaia","type_id":7,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":true,"has_outfitting":true,"has_shipyard":true,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":true,"has_social_space":true,"updated_at":1680627171,"shipyard_updated_at":1680614213,"outfitting_updated_at":1680614213,"market_updated_at":1680614320},{"id":161204,"name":"Grebby Prospecting","system_id":17072,"max_landing_pad_size":"L","distance_to_star":2711,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1678655423,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1678655423},{"id":42442,"name":"Haberlandt Survey","system_id":17072,"max_landing_pad_size":"L","distance_to_star":2714,"faction":"Sol Workers' Party","type_id":13,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":true,"has_outfitting":true,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":true,"has_social_space":true,"updated_at":1680586858,"shipyard_updated_at":1622277144,"outfitting_updated_at":1680586858,"market_updated_at":1679422651},{"id":167419,"name":"Hao's Steal","system_id":17072,"max_landing_pad_size":"M","distance_to_star":25322,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1679446491,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1679446364},{"id":161594,"name":"Hidalgo's Slumber","system_id":17072,"max_landing_pad_size":"L","distance_to_star":2708,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1679259514,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1668860001},{"id":165597,"name":"Hirano Mineralogic Territory","system_id":17072,"max_landing_pad_size":"M","distance_to_star":9153,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1679000470,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1673152069},{"id":161165,"name":"Ikeda Tourist Zone","system_id":17072,"max_landing_pad_size":"L","distance_to_star":4911,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1679855263,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1675041233},{"id":173268,"name":"Indongo Bay","system_id":17072,"max_landing_pad_size":"L","distance_to_star":9154,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1680390806,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1668001749},{"id":183506,"name":"Ji's Slumber","system_id":17072,"max_landing_pad_size":"L","distance_to_star":18635,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1680392709,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1678165386},{"id":161122,"name":"Kvitka Dredging Enterprise","system_id":17072,"max_landing_pad_size":"M","distance_to_star":2712,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1679237676,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1679237676},{"id":169382,"name":"Kvitka's Origin","system_id":17072,"max_landing_pad_size":"L","distance_to_star":4914,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1678992192,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1669486788},{"id":162059,"name":"Lamar's Prospect","system_id":17072,"max_landing_pad_size":"S","distance_to_star":9155,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1676943113,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1674429884},{"id":21,"name":"Li Qing Jao","system_id":17072,"max_landing_pad_size":"L","distance_to_star":495,"faction":"Federal Congress","type_id":8,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":true,"has_outfitting":true,"has_shipyard":true,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":true,"has_social_space":true,"updated_at":1680635000,"shipyard_updated_at":1680635000,"outfitting_updated_at":1680634834,"market_updated_at":1680634834},{"id":122,"name":"M.Gorbachev","system_id":17072,"max_landing_pad_size":"L","distance_to_star":495,"faction":"Mother Gaia","type_id":8,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":true,"has_outfitting":true,"has_shipyard":true,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":true,"has_social_space":true,"updated_at":1680621189,"shipyard_updated_at":1680600140,"outfitting_updated_at":1680600140,"market_updated_at":1680600140},{"id":162066,"name":"Majoro Entertainment Complex","system_id":17072,"max_landing_pad_size":"L","distance_to_star":2715,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1679609565,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1679609565},{"id":163737,"name":"Malins's Camp","system_id":17072,"max_landing_pad_size":"M","distance_to_star":2710,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":true,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1678163389,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1676200093},{"id":1350,"name":"Mars High","system_id":17072,"max_landing_pad_size":"L","distance_to_star":831,"faction":"Sol Workers' Party","type_id":8,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":true,"has_outfitting":true,"has_shipyard":true,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":true,"has_social_space":true,"updated_at":1680581897,"shipyard_updated_at":1680508354,"outfitting_updated_at":1680508353,"market_updated_at":1680508353},{"id":164459,"name":"Mathibeli Excavation Station","system_id":17072,"max_landing_pad_size":"L","distance_to_star":4902,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1680306211,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1680306211},{"id":165339,"name":"Mendy Excavation Site","system_id":17072,"max_landing_pad_size":"M","distance_to_star":4926,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1677265775,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1675613435},{"id":162790,"name":"Navarrete's Prospect","system_id":17072,"max_landing_pad_size":"L","distance_to_star":9154,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1678035357,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1673526786},{"id":163113,"name":"Ndiaye Hospitality Complex","system_id":17072,"max_landing_pad_size":"M","distance_to_star":4913,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1679512139,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1673151225},{"id":162319,"name":"Oshpak's House","system_id":17072,"max_landing_pad_size":"M","distance_to_star":9155,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1677944995,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1676154677},{"id":176602,"name":"Pavlenko's Reception","system_id":17072,"max_landing_pad_size":"L","distance_to_star":9153,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1680587771,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1673423487},{"id":176997,"name":"Ponomarenko's Drilling","system_id":17072,"max_landing_pad_size":"L","distance_to_star":21049,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1679698292,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1679698292},{"id":163748,"name":"Sakurai Tourism Complex","system_id":17072,"max_landing_pad_size":"L","distance_to_star":15808,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1677980539,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1677344821},{"id":42877,"name":"Schottky Reformatory","system_id":17072,"max_landing_pad_size":"L","distance_to_star":2708,"faction":"Sol Nationalists","type_id":13,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":true,"has_outfitting":true,"has_shipyard":true,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":true,"has_social_space":true,"updated_at":1679148562,"shipyard_updated_at":1679148473,"outfitting_updated_at":1679148562,"market_updated_at":1679148472},{"id":165445,"name":"Seidel's Globe","system_id":17072,"max_landing_pad_size":"L","distance_to_star":18636,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1678674555,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1678674555},{"id":164084,"name":"Shen Extraction Rigs","system_id":17072,"max_landing_pad_size":"L","distance_to_star":9155,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1679086938,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1674404493},{"id":1430,"name":"Titan City","system_id":17072,"max_landing_pad_size":"L","distance_to_star":4910,"faction":"Mother Gaia","type_id":8,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":true,"has_outfitting":true,"has_shipyard":true,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":true,"has_social_space":true,"updated_at":1680585738,"shipyard_updated_at":1680585738,"outfitting_updated_at":1680462881,"market_updated_at":1680462881},{"id":164692,"name":"Tsarenko Prospecting Exchange","system_id":17072,"max_landing_pad_size":"M","distance_to_star":15805,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1676474208,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1673169137},{"id":183894,"name":"Uutoni Extraction Platform","system_id":17072,"max_landing_pad_size":"S","distance_to_star":15802,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1674848563,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1672798924},{"id":167361,"name":"Vadamootoo Mining Base","system_id":17072,"max_landing_pad_size":"L","distance_to_star":2709,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1679084317,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1675966816},{"id":174347,"name":"Walachnia's Gate","system_id":17072,"max_landing_pad_size":"L","distance_to_star":15812,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1680312418,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1680312418},{"id":42523,"name":"Walz Depot","system_id":17072,"max_landing_pad_size":"L","distance_to_star":158,"faction":"Sol Workers' Party","type_id":13,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":true,"has_outfitting":true,"has_shipyard":true,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":true,"has_social_space":true,"updated_at":1680609561,"shipyard_updated_at":1680609561,"outfitting_updated_at":1680609561,"market_updated_at":1680609560},{"id":167229,"name":"Yamashita Excavation Territory","system_id":17072,"max_landing_pad_size":"S","distance_to_star":18636,"faction":null,"type_id":25,"has_blackmarket":true,"has_refuel":true,"has_repair":true,"has_rearm":false,"has_outfitting":false,"has_shipyard":false,"has_docking":true,"has_commodities":true,"has_material_trader":false,"has_technology_broker":false,"has_carrier_vendor":false,"has_carrier_administration":false,"has_interstellar_factors":false,"has_universal_cartographics":false,"has_social_space":false,"updated_at":1676668595,"shipyard_updated_at":null,"outfitting_updated_at":null,"market_updated_at":1675444463}]});
+                        }
+
+                        callback(null);
+                    }});
+
+                (function() {
+                    var title = '';
+                    var contentB64 = 'U2V0IHRoZSBSZWZlcmVuY2UgU3lzdGVtIHRvIGRpc3BsYXkgdGhlIGRpc3RhbmNlIHRvIHRoZSBzeXN0ZW0u';
+                    var content = decodeURIComponent(escape(window.atob(contentB64)))
+
+                    $('#help-button-6').popover({
+                        content: content,
+                        title: title,
+                        html: true,
+                        placement: 'top'
+                    });
+                })();
+
+                $('#help-button-7').click(function() {
+                    var title = 'Maximum Reference Distance';
+                    var contentB64 = 'PHA+VGhlIHNlYXJjaCB3aWxsIGJlIHBlcmZvcm1lZCB3aXRoIGEgcmVmZXJlbmNlIHN5c3RlbSBmaWx0ZXIuIEl0IGlzIG5vIHNwaGVyZSwgc2luY2UgTXlTcWwgaW5kZXhpbmcgd291bGQgbm90IGJlIHBvc3NpYmxlLiBJbnN0ZWFkLCB0aGUgcG9zc2libGUgc3lzdGVtIHBvb2wgaXMgYSBjdWJlIHdpdGggdGhlIHJlZmVyZW5jZSBzeXN0ZW0gaW4gdGhlIG1pZGRsZS48L3A+DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8cD5UaGlzIHJlc3VsdHMgaW4gcmVzdWx0aW5nIHN5c3RlbXMgaGF2aW5nIGEgZGlzdGFuY2UgdG8gdGhlIHJlZmVyZW5jZSBzeXN0ZW0gdXAgdG8gYSBmYWN0b3Igb2YgMSw3MyAoU3F1YXJlIG9mIDMpLiBGb3IgaW5zdGFuY2UgaGF2aW5nIHNldCBhIG1heGltdW0gZGlzdGFuY2Ugb2YgMTAwIGx5IHRoZSBmdXJ0aGVzdCBzeXN0ZW0gY291bGQgYmUgMTczIGx5IGF3YXkuIFRoZSBtYXhpbXVtIHBvc3NpYmxlIHN5c3RlbSBkaXN0YW5jZSB3aXRoaW4gYSByZXN1bHQgd291bGQgYmUgMzQ2IGx5LjwvcD4NCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwPlRoaXMgaW1hZ2UgaWxsdXN0cmF0ZXMgdGhlIHJlc3VsdC4gSW1hZ2luZSB0aGUgcmVmZXJlbmNlIHN5c3RlbSBiZWluZyA8c3Ryb25nPk08L3N0cm9uZz4gYW5kIHRoZSByZWZlcmVuY2UgZGlzdGFuY2UgYmVpbmcgPHN0cm9uZz4xLzI8L3N0cm9uZz4uPC9wPg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGltZyB0aXRsZT0iQnkgUGV0cnVzMzc0MyAoT3duIHdvcmspIFtDQyBCWS1TQSA0LjAgKGh0dHBzOi8vY3JlYXRpdmVjb21tb25zLm9yZy9saWNlbnNlcy9ieS1zYS80LjApXSwgdmlhIFdpa2ltZWRpYSBDb21tb25zIiBjbGFzcz0iaW1nLXJlc3BvbnNpdmUiIHdpZHRoPSI1MTIiIGFsdD0iMDEtV8O8cmZlbC1QYXJhbGxlbHBlcnNwZWt0aXZlIiBzcmM9Imh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvZi9mZi8wMS1XJUMzJUJDcmZlbC1QYXJhbGxlbHBlcnNwZWt0aXZlLnN2ZyIvPjwvYT4NCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIA==';
+                    var content = decodeURIComponent(escape(window.atob(contentB64)))
+
+                    $('#helpModal .modal-title').html(title);
+                    $('#helpModal .modal-body').html(content);
+
+                    $('#helpModal').modal('show');
+                });
+$(findBodiesForm).on('beforeSubmit', function(e) {
+                $.ajax({"cache":false,"beforeSend":
+                                function() {
+                                    var button = $('#btFindBodies'),
+                                    wrapper = $('#bodySearchResultWrapper');
+                                    button[0].disabled = true;
+                                    wrapper.addClass('panel-is-loading');
+                                    wrapper.prepend(' ');
+                                },"success":
+                                function(html){
+                                    var button = $('#btFindBodies'),
+                                    wrapper = $('#bodySearchResultWrapper'),
+                                    wasEmpty = !wrapper.html().trim();
+
+                                    button[0].disabled = false;
+                                    wrapper.html(html);
+                                    wrapper.slideDown();
+                                    wrapper.removeClass('panel-is-loading');
+                                }
+                            ,"error":
+                                function(error) {
+                                    var button = $('#btFindBodies'),
+                                    wrapper = $('#bodySearchResultWrapper');
+
+                                    wrapper.slideUp();
+                                    wrapper.html('');
+                                    button[0].disabled = false;
+                                }
+                            ,"type":$(findBodiesForm).attr('method'),"url":$(findBodiesForm).attr('action'),"data":$(findBodiesForm).serialize()});
+                return false;
+            });
+$('#btFindBodies').mouseup(function(){
+                $(this).blur();
+            });
+jQuery('#findBodiesForm').yiiActiveForm([{"id":"body-materialids","name":"materialIds","container":".field-body-materialids","input":"#body-materialids","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {        
+if (typeof value === 'string' && true) {
+    var ids = value.split(',');
+    if (ids.length > 7) {
+        messages.push("The number of items must not exceed 7.");
+    }
+}
+}},{"id":"body-systemreservetypeid","name":"systemReserveTypeId","container":".field-body-systemreservetypeid","input":"#body-systemreservetypeid","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"System Reserve must be an integer.","skipOnEmpty":1});}},{"id":"body-ring_type_id","name":"ring_type_id","container":".field-body-ring_type_id","input":"#body-ring_type_id","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Ring Type must be an integer.","skipOnEmpty":1});}},{"id":"body-system_id","name":"system_id","container":".field-body-system_id","input":"#body-system_id","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Filter System must be an integer.","skipOnEmpty":1});}},{"id":"body-systemispopulated","name":"systemIsPopulated","container":".field-body-systemispopulated","input":"#body-systemispopulated","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.boolean(value, messages, {"trueValue":"1","falseValue":"0","message":"System Is Populated must be either \"1\" or \"0\".","skipOnEmpty":1});}},{"id":"body-powerid","name":"powerId","container":".field-body-powerid","input":"#body-powerid","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Power Influence must be an integer.","skipOnEmpty":1});}},{"id":"body-groupids","name":"groupIds","container":".field-body-groupids","input":"#body-groupids","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {        
+if (typeof value === 'string' && false) {
+    var ids = value.split(',');
+    if (ids.length > null) {
+        messages.push(null);
+    }
+}
+}},{"id":"body-hasrings","name":"hasRings","container":".field-body-hasrings","input":"#body-hasrings","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.boolean(value, messages, {"trueValue":"1","falseValue":"0","message":"Has Rings must be either \"1\" or \"0\".","skipOnEmpty":1});}},{"id":"body-planettypeids","name":"planetTypeIds","container":".field-body-planettypeids","input":"#body-planettypeids","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {        
+if (typeof value === 'string' && false) {
+    var ids = value.split(',');
+    if (ids.length > null) {
+        messages.push(null);
+    }
+}
+}},{"id":"body-compactstartypeids","name":"compactStarTypeIds","container":".field-body-compactstartypeids","input":"#body-compactstartypeids","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {        
+if (typeof value === 'string' && false) {
+    var ids = value.split(',');
+    if (ids.length > null) {
+        messages.push(null);
+    }
+}
+}},{"id":"body-distance_to_spawn","name":"distance_to_spawn","container":".field-body-distance_to_spawn","input":"#body-distance_to_spawn","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Max Distance to Arrival must be an integer.","skipOnEmpty":1});}},{"id":"body-canland","name":"canLand","container":".field-body-canland","input":"#body-canland","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.boolean(value, messages, {"trueValue":"1","falseValue":"0","message":"Planetary Landing must be either \"1\" or \"0\".","skipOnEmpty":1});}},{"id":"body-extraattribute","name":"extraAttribute","container":".field-body-extraattribute","input":"#body-extraattribute","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.range(value, messages, {"range":["surface_temperature","orbital_period","semi_major_axis","orbital_eccentricity","orbital_inclination","arg_of_periapsis","age","solar_masses","solar_radius","terraforming_state_id","earth_masses","radius","gravity","surface_pressure","volcanism_type_id","atmosphere_type_id","rotational_period","axis_tilt","ring_mass","ring_inner_radius","ring_outer_radius","belt_moon_masses","full_spectral_class","spectral_class","luminosity_class"],"not":false,"message":"Extra Column is invalid.","skipOnEmpty":1});}},{"id":"body-referencesystemid","name":"referenceSystemId","container":".field-body-referencesystemid","input":"#body-referencesystemid","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Reference System must be an integer.","skipOnEmpty":1});}},{"id":"body-maxreferencedistance","name":"maxReferenceDistance","container":".field-body-maxreferencedistance","input":"#body-maxreferencedistance","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Maximum Reference Distance must be an integer.","min":0,"tooSmall":"Maximum Reference Distance must be no less than 0.","max":100,"tooBig":"Maximum Reference Distance must be no greater than 100.","skipOnEmpty":1});}}], {"successCssClass":""});
+
+(function() {
+
+    var shortNames = {};
+    $.each(window.data.shortParamNames.body, function(short, long) {
+        var name = 'body[' + long + ']';
+        shortNames[name] = short;
+    });
+
+    function updateHref() {
+        var inputList = $('#findBodiesForm')
+            .find('input')
+            .not('[name=_csrf],[name=\"body[page]\"],[name=\"body[sort]\"]')
+            .not('.select2-input,.select2-focusser')
+            .filter(function() {
+                return !!this.value;
+            });
+
+        inputList = inputList.clone();
+        inputList.each(function(index, input) {
+            var name = $(input).attr('name');
+            if (shortNames.hasOwnProperty(name)) {
+                $(input).attr('name', shortNames[name]);
+            }
+        });
+
+        var url = '/body';
+        if (inputList.length > 0) {
+            url += '?' + inputList.serialize();
+        }
+
+        $('#permaUrl').attr('href', url);
+    }
+
+    $('#findBodiesForm').change(function() {
+        updateHref();
+    });
+
+    $('#findBodiesForm input').keyup(function() {
+        updateHref();
+    });
+
+    updateHref();
+})();
+
+
+$('#select2Bodies').on('change', function(e) {
+    if (parseInt(e.added.isRing)) {
+        window.eddb.body.gotoId(e.added.parentBodyId);
+    } else {
+        window.eddb.body.gotoId(e.added.id);
+    }
+});
+
+    var lightFilename = 'eddb-light.min.css'; 
+    var darkFilename = 'eddb-dark.min.css'; 
+
+    $('.theme-switcher .option-light').click(function() {
+        if (!replaceThemeCss(lightFilename)) {
+            return;
+        }
+        
+        $(this).addClass('option-selected');
+        $('.theme-switcher .option-dark').removeClass('option-selected');
+        updateSession('https://eddb.io/user/update-theme?theme=light');
+    });
+       
+    $('.theme-switcher .option-dark').click(function() {
+        if (!replaceThemeCss(darkFilename)) {
+            return;
+        }
+        
+        $(this).addClass('option-selected');
+        $('.theme-switcher .option-light').removeClass('option-selected');
+        updateSession('https://eddb.io/user/update-theme?theme=dark');
+    });
+
+    function replaceThemeCss(newFilename) {
+        var darkLink = $('link[href*="' + darkFilename + '"]');
+        var lightLink = $('link[href*="' + lightFilename + '"]');
+        var currentFilename;
+        var currentLink;
+        
+        if (darkLink.length > 0) {
+            currentFilename = darkFilename;
+            currentLink = darkLink;
+        }
+        
+        if (lightLink.length > 0) {
+            currentFilename = lightFilename;
+            currentLink = lightLink;
+        }
+        
+        if (newFilename === currentFilename) {
+            return false;
+        }
+        
+        var newHref = currentLink.attr('href');
+        newHref = newHref.replace(currentFilename, newFilename);
+        currentLink.attr('href', newHref);
+        
+        return true;
+    }
+    
+    function updateSession(newTheme) {
+        $.post(newTheme);
+    }
+    
+});</script></body>
+</html>

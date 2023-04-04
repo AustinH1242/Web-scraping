@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="theme-color" content="#09485c">
+    <meta name="apple-mobile-web-app-title" content="EDDB">
+    <meta name="application-name" content="EDDB">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="zFbuALwj2I5S-hi4JEmRuo98UDL4myPci46EtkSsePydYKNh9m2p1GCjV-peE7zz5hYZBJLwU7f42cOBN-JIzA==">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="manifest" href="/manifest.json">
+    <title>Attractions - EDDB</title>
+            <script>
+            window.data = {"reference":[],"content":[],"shortParamNames":{"attraction":{"pa":"page","so":"sort","m":"materialIds","y":"systemRequiresPermit","r":"referenceSystemId","t":"threatLevelId","g":"group_id","p":"settlementTypeId","z":"settlementSizeId","c":"settlementSecurityId","l":"installationTypeId","e":"settlementLayoutId","i":"installationLayoutId","f":"controlling_minor_faction_id"}}};
+                </script>
+            <meta name="description" content="Attractions in Elite: Dangerous - Search, filter, find and sort settlements, crash sites or installations!">
+<link href="/assets/943648ae/select.css?v=1597095590" rel="stylesheet">
+<link href="/assets/6546688b/select2.css?v=1597095590" rel="stylesheet">
+<link href="/assets/c5994544/css/font-awesome.min.css?v=1597095590" rel="stylesheet">
+<link href="/assets/e78dfa28/dark-bottom.css?v=1597095590" rel="stylesheet">
+<link href="/css/eddb-light.min.css?v=1621859153" rel="stylesheet">
+<script>window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website.","dismiss":"Got it!","learnMore":"","link":null,"theme":false};</script>            <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58296939-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-58296939-1', { 'anonymize_ip': true });
+        </script>
+    </head>
+<body class="site-eddb">
+<div class="site-wrap">
+
+    <nav id="w1" class="navbar-inverse navbar-fixed-top navbar"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="/"><img src="/images/logo.png" alt=""></a><div class="theme-switcher">
+    <div class="theme-title">
+        Theme
+    </div>
+    <div class="theme-options">
+        <a class="theme-option option-light option-selected">
+            <i class="option-selected-icon fa fa-check" aria-hidden="true" title="Check"></i>
+        </a>
+        <a class="theme-option option-dark ">
+            <i class="option-selected-icon fa fa-check" aria-hidden="true" title="Check"></i>
+        </a>
+
+    </div>
+</div></div><div id="w1-collapse" class="collapse navbar-collapse"><ul id="w2" class="navbar-nav navbar-right nav"><li><a href="/system">Systems</a></li>
+<li><a href="/station">Stations</a></li>
+<li class="active"><a href="/attraction">Attractions</a></li>
+<li><a href="/commodity">Commodities</a></li>
+<li><a href="/faction">Factions</a></li>
+<li><a href="/body">Bodies</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Trading <span class="caret"></span></a><ul id="w3" class="dropdown-menu"><li><a href="/trade/single" tabindex="-1">Single Hop Trade</a></li>
+<li><a href="/trade/hops" tabindex="-1">Multi Hop Trade Route</a></li>
+<li><a href="/trade/loops" tabindex="-1">Loop Trade Route</a></li>
+<li><a href="/trade/commodity" tabindex="-1">Find Commodity</a></li></ul></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Other <span class="caret"></span></a><ul id="w4" class="dropdown-menu"><li><a href="https://ross.eddb.io/" tabindex="-1"><img src="/images/ross_label_white.png" height="10px" alt=""></a></li>
+<li><a href="/legal/site-notice" tabindex="-1">Site Notice</a></li>
+<li><a href="/legal/privacy-policy" tabindex="-1">Privacy Policy</a></li>
+<li><a href="/contact" tabindex="-1">Contact</a></li>
+<li><a href="/api" tabindex="-1">API</a></li></ul></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Account <span class="caret"></span></a><ul id="w5" class="dropdown-menu"><li><a href="/user/login" tabindex="-1">Login</a></li>
+<li><a href="/user/signup" tabindex="-1">Signup</a></li>
+<li><a href="/user/request-password-reset" tabindex="-1">Reset password</a></li>
+<li><a href="/user/resend-activation-token" tabindex="-1">Resend activation email</a></li>
+<li><a href="/user/faq" tabindex="-1">FAQ</a></li></ul></li></ul></div></div></nav>
+    <div class="container-fluid container-main">
+
+        <ul class="breadcrumb"><li><a href="/">Home</a></li>
+<li class="active">Attractions</li>
+</ul>                
+
+<div class="page-header">
+    <h1><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> Attractions</h1>
+</div>
+
+<div class="selectStandalone">
+    <input type="hidden" id="select2Attractions" class="select2Attractions" name="select2Attractions"></div>
+
+<form id="findAttractionsForm" action="/attraction" method="post">
+<input type="hidden" name="_csrf" value="zFbuALwj2I5S-hi4JEmRuo98UDL4myPci46EtkSsePydYKNh9m2p1GCjV-peE7zz5hYZBJLwU7f42cOBN-JIzA==">
+<div id="helpModal" class="fade modal" role="dialog" tabindex="-1">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+<div class="modal-title"></div>
+</div>
+<div class="modal-body">
+
+</div>
+<div class="modal-footer">
+<a class="btn btn-primary" data-dismiss="modal">Ok</a>
+</div>
+</div>
+</div>
+</div>
+    <div class="panel panel-eddb">
+        <div class="panel-heading clearfix">
+            Filter
+            <div class="pull-right panel-heading-link">
+                <i class="fa fa-external-link-square"></i> <a id="permaUrl" title="Bookmark this URL to access your settings fast!">Perma
+                    Settings Link</a>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group field-attraction-group_id">
+<label class="control-label" for="attraction-group_id">Group</label>
+<div class="input-wrapper"><input type="hidden" id="attraction-group_id" class="form-control" name="attraction[group_id]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group form-group-withHelp field-attraction-materialids">
+<label class="control-label" for="attraction-materialids">Material Finder</label>
+<div class="input-wrapper"><input type="hidden" id="attraction-materialids" class="form-control" name="attraction[materialIds]">
+<a class="btn btn-help btn-primary help-popover" id="help-button-1"><i class="fa fa-question" aria-hidden="true"></i></a></div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group field-attraction-settlementlayoutid">
+<label class="control-label" for="attraction-settlementlayoutid">Settlement Layout</label>
+<div class="input-wrapper"><input type="hidden" id="attraction-settlementlayoutid" class="form-control" name="attraction[settlementLayoutId]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+                <div class="col-sm-6">
+                    <div class="form-group field-attraction-installationlayoutid">
+<label class="control-label" for="attraction-installationlayoutid">Installation Layout</label>
+<div class="input-wrapper"><input type="hidden" id="attraction-installationlayoutid" class="form-control" name="attraction[installationLayoutId]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="form-group field-attraction-settlementtypeid">
+<label class="control-label" for="attraction-settlementtypeid">Settlement Type</label>
+<div class="input-wrapper"><input type="hidden" id="attraction-settlementtypeid" class="form-control" name="attraction[settlementTypeId]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+                <div class="col-sm-3">
+                    <div class="form-group field-attraction-settlementsizeid">
+<label class="control-label" for="attraction-settlementsizeid">Settlement Size</label>
+<div class="input-wrapper"><input type="hidden" id="attraction-settlementsizeid" class="form-control" name="attraction[settlementSizeId]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+                <div class="col-sm-3">
+                    <div class="form-group field-attraction-settlementsecurityid">
+<label class="control-label" for="attraction-settlementsecurityid">Settlement Security</label>
+<div class="input-wrapper"><input type="hidden" id="attraction-settlementsecurityid" class="form-control" name="attraction[settlementSecurityId]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group field-attraction-controlling_minor_faction_id">
+<label class="control-label" for="attraction-controlling_minor_faction_id">Minor Faction</label>
+<div class="input-wrapper"><input type="hidden" id="attraction-controlling_minor_faction_id" class="form-control" name="attraction[controlling_minor_faction_id]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+                <div class="col-sm-3">
+                    <div class="form-group field-attraction-allegiance_id">
+<label class="control-label" for="attraction-allegiance_id">Allegiance</label>
+<div class="input-wrapper"><input type="hidden" id="attraction-allegiance_id" class="form-control" name="attraction[allegiance_id]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+                <div class="col-sm-3">
+                    <div class="form-group field-attraction-government_id">
+<label class="control-label" for="attraction-government_id">Government</label>
+<div class="input-wrapper"><input type="hidden" id="attraction-government_id" class="form-control" name="attraction[government_id]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="form-group field-attraction-systemrequirespermit">
+<label class="control-label" for="attraction-systemrequirespermit">Requires Permit</label>
+<div class="input-wrapper"><input type="hidden" id="attraction-systemrequirespermit" class="form-control" name="attraction[systemRequiresPermit]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group field-attraction-is_planetary">
+<label class="control-label" for="attraction-is_planetary">Is Planetary</label>
+<div class="input-wrapper"><input type="hidden" id="attraction-is_planetary" class="form-control" name="attraction[is_planetary]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group field-attraction-threatlevelid">
+<label class="control-label" for="attraction-threatlevelid">Threat Level</label>
+<div class="input-wrapper"><input type="hidden" id="attraction-threatlevelid" class="form-control" name="attraction[threatLevelId]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group field-attraction-referencesystemid">
+<label class="control-label" for="attraction-referencesystemid">Reference System</label>
+<div class="input-wrapper"><input type="hidden" id="attraction-referencesystemid" class="form-control" name="attraction[referenceSystemId]">
+</div>
+<p class="help-block help-block-error"></p>
+</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-9">
+                </div>
+                <div class="col-xs-3 clearfix">
+                    <div class="pull-right">
+
+                        <button type="submit" id="btFindAttractions" class="btn btn-primary"><i class="fa fa-cog fa-spin disabled-spinner fa-fw"></i><i class="fa fa-search enabled-spinner fa-fw"></i> Find Attractions</button>                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div id="attractionSearchResultWrapper" class="panel-loading-drop">
+                
+
+<div>
+    <div id="w0" class="compactGrid stationSearchResult">
+    <div class="summary">Found <strong class="totalCount">73,938</strong> attractions.
+        Showing <strong>1 - 50</strong>.
+    </div>
+
+
+    <ul class="pagination"><li class="first disabled"><span>First</span></li>
+<li class="prev disabled"><span>&laquo;</span></li>
+<li class="active"><a href="/attraction?page=1&amp;per-page=50" data-page="0">1</a></li>
+<li><a href="/attraction?page=2&amp;per-page=50" data-page="1">2</a></li>
+<li><a href="/attraction?page=3&amp;per-page=50" data-page="2">3</a></li>
+<li><a href="/attraction?page=4&amp;per-page=50" data-page="3">4</a></li>
+<li><a href="/attraction?page=5&amp;per-page=50" data-page="4">5</a></li>
+<li><a href="/attraction?page=6&amp;per-page=50" data-page="5">6</a></li>
+<li><a href="/attraction?page=7&amp;per-page=50" data-page="6">7</a></li>
+<li><a href="/attraction?page=8&amp;per-page=50" data-page="7">8</a></li>
+<li><a href="/attraction?page=9&amp;per-page=50" data-page="8">9</a></li>
+<li><a href="/attraction?page=10&amp;per-page=50" data-page="9">10</a></li>
+<li class="next"><a href="/attraction?page=2&amp;per-page=50" data-page="1">&raquo;</a></li>
+<li class="last"><a href="/attraction?page=1479&amp;per-page=50" data-page="1478">Last</a></li></ul>
+
+    <table class="compactGridTable table table-striped table-bordered"><thead>
+<tr><th class="iconColumn" colspan="2"><a class="btn btn-primary btn-table-action asc" href="/attraction?sort=-name" data-sort="-name">Name</a></th><th style="display:none"></th><th><a class="btn btn-primary btn-table-action" href="/attraction?sort=systemName" data-sort="systemName"><i class="fa fa-dot-circle-o"></i> System</a></th><th><a class="btn btn-primary btn-table-action" href="/attraction?sort=distance_to_spawn" data-sort="distance_to_spawn">Distance</a></th><th><a class="btn btn-primary btn-table-action asc" href="/attraction?sort=-group_id" data-sort="-group_id">Group</a></th><th><span class="btn btn-primary btn-table-action btn-nofunction">Type</span></th><th><a class="btn btn-primary btn-table-action asc" href="/attraction?sort=-referenceDistance" data-sort="-referenceDistance">Distance Sol</a></th></tr>
+</thead>
+<tbody>
+<tr data-key="73654"><td class="iconColumn"><i class="fa fa-ioxhost" aria-hidden="true" title="Installation"></i></td><td><a href="/attraction/73654">Chamberlain Foundation</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>290,381 ls</td><td>Installation</td><td>Unknown</td><td>0.00 ly</td></tr>
+<tr data-key="62732"><td class="iconColumn"><i class="fa fa-ioxhost" aria-hidden="true" title="Installation"></i></td><td><a href="/attraction/62732">Conjoint Mathematic Services</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>14,892 ls</td><td>Installation</td><td>Scientific</td><td>0.00 ly</td></tr>
+<tr data-key="62731"><td class="iconColumn"><i class="fa fa-ioxhost" aria-hidden="true" title="Installation"></i></td><td><a href="/attraction/62731">Delphi Control Chapter</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>21,133 ls</td><td>Installation</td><td>Security</td><td>0.00 ly</td></tr>
+<tr data-key="73866"><td class="iconColumn"><i class="fa fa-ioxhost" aria-hidden="true" title="Installation"></i></td><td><a href="/attraction/73866">Pilots&#039; Memorial : Sol</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>492 ls</td><td>Installation</td><td>Comms</td><td>0.00 ly</td></tr>
+<tr data-key="73655"><td class="iconColumn"><i class="fa fa-ioxhost" aria-hidden="true" title="Installation"></i></td><td><a href="/attraction/73655">Primary Transport Authority</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>484,506 ls</td><td>Installation</td><td>Unknown</td><td>0.00 ly</td></tr>
+<tr data-key="73865"><td class="iconColumn"><i class="fa fa-ioxhost" aria-hidden="true" title="Installation"></i></td><td><a href="/attraction/73865">Unregistered Comms Beacon</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>492 ls</td><td>Installation</td><td>Comms</td><td>0.00 ly</td></tr>
+<tr data-key="329"><td class="iconColumn"><img class="image-inline icon-theme-light" src="/images/stations/icon_settlement_black.svg" style=""><img class="image-inline icon-theme-dark" src="/images/stations/icon_settlement_white.svg" style=""></td><td><a href="/attraction/329">Chargaff Reach</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>2,486 ls</td><td>Settlement</td><td>Tiny Refuge Low Security</td><td>0.00 ly</td></tr>
+<tr data-key="331"><td class="iconColumn"><img class="image-inline icon-theme-light" src="/images/stations/icon_settlement_black.svg" style=""><img class="image-inline icon-theme-dark" src="/images/stations/icon_settlement_white.svg" style=""></td><td><a href="/attraction/331">Daimler Camp</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>2,494 ls</td><td>Settlement</td><td>Tiny Extraction Medium Security</td><td>0.00 ly</td></tr>
+<tr data-key="328"><td class="iconColumn"><img class="image-inline icon-theme-light" src="/images/stations/icon_settlement_black.svg" style=""><img class="image-inline icon-theme-dark" src="/images/stations/icon_settlement_white.svg" style=""></td><td><a href="/attraction/328">Fung&#039;s Claim +++</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>2,486 ls</td><td>Settlement</td><td>Large Industrial High Security</td><td>0.00 ly</td></tr>
+<tr data-key="330"><td class="iconColumn"><img class="image-inline icon-theme-light" src="/images/stations/icon_settlement_black.svg" style=""><img class="image-inline icon-theme-dark" src="/images/stations/icon_settlement_white.svg" style=""></td><td><a href="/attraction/330">Illy Enterprise +++</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>2,486 ls</td><td>Settlement</td><td>Large Scientific Low Security</td><td>0.00 ly</td></tr>
+<tr data-key="73653"><td class="iconColumn"><i class="fa fa-space-shuttle fa-rotate-270" style="transform: rotate(315deg);" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/73653">Crashed Ship</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>21,037 ls</td><td>Shipwreck</td><td>Anaconda</td><td>0.00 ly</td></tr>
+<tr data-key="73693"><td class="iconColumn"><i class="fa fa-space-shuttle fa-rotate-270" style="transform: rotate(315deg);" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/73693">Crashed Ship</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>187 ls</td><td>Shipwreck</td><td>Anaconda</td><td>0.00 ly</td></tr>
+<tr data-key="73694"><td class="iconColumn"><i class="fa fa-space-shuttle fa-rotate-270" style="transform: rotate(315deg);" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/73694">Crashed Ship</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>187 ls</td><td>Shipwreck</td><td>Anaconda</td><td>0.00 ly</td></tr>
+<tr data-key="73367"><td class="iconColumn"><i class="fa fa-map-marker" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/73367">Actaea Ice Fumarole</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>18,658 ls</td><td>Beacon</td><td>Tourist Beacon</td><td>0.00 ly</td></tr>
+<tr data-key="72964"><td class="iconColumn"><i class="fa fa-map-marker" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/72964">Ancient History</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>505 ls</td><td>Beacon</td><td>Tourist Beacon</td><td>0.00 ly</td></tr>
+<tr data-key="72979"><td class="iconColumn"><i class="fa fa-map-marker" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/72979">Congressional Streamlining</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>504 ls</td><td>Beacon</td><td>Tourist Beacon</td><td>0.00 ly</td></tr>
+<tr data-key="72900"><td class="iconColumn"><i class="fa fa-map-marker" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/72900">Cradle of Humanity</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>505 ls</td><td>Beacon</td><td>Tourist Beacon</td><td>0.00 ly</td></tr>
+<tr data-key="73368"><td class="iconColumn"><i class="fa fa-map-marker" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/73368">Europa Ice Geyser</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>2,591 ls</td><td>Beacon</td><td>Tourist Beacon</td><td>0.00 ly</td></tr>
+<tr data-key="73030"><td class="iconColumn"><i class="fa fa-map-marker" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/73030">FCI Information</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>2,588 ls</td><td>Beacon</td><td>Tourist Beacon</td><td>0.00 ly</td></tr>
+<tr data-key="72960"><td class="iconColumn"><i class="fa fa-map-marker" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/72960">Federal Congress</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>751 ls</td><td>Beacon</td><td>Tourist Beacon</td><td>0.00 ly</td></tr>
+<tr data-key="72961"><td class="iconColumn"><i class="fa fa-map-marker" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/72961">Federal Constitution</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>751 ls</td><td>Beacon</td><td>Tourist Beacon</td><td>0.00 ly</td></tr>
+<tr data-key="73031"><td class="iconColumn"><i class="fa fa-map-marker" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/73031">FIA Responsibilities</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>5,008 ls</td><td>Beacon</td><td>Tourist Beacon</td><td>0.00 ly</td></tr>
+<tr data-key="72985"><td class="iconColumn"><i class="fa fa-map-marker" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/72985">Gellan Scandal</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>363 ls</td><td>Beacon</td><td>Tourist Beacon</td><td>0.00 ly</td></tr>
+<tr data-key="73460"><td class="iconColumn"><i class="fa fa-map-marker" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/73460">Halsey Shares Her Vision</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>751 ls</td><td>Beacon</td><td>Tourist Beacon</td><td>0.00 ly</td></tr>
+<tr data-key="73496"><td class="iconColumn"><i class="fa fa-map-marker" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/73496">Interplanetary Road Trip</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>505 ls</td><td>Beacon</td><td>Tourist Beacon</td><td>0.00 ly</td></tr>
+<tr data-key="72970"><td class="iconColumn"><i class="fa fa-map-marker" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/72970">New Leadership</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>505 ls</td><td>Beacon</td><td>Tourist Beacon</td><td>0.00 ly</td></tr>
+<tr data-key="72974"><td class="iconColumn"><i class="fa fa-map-marker" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/72974">NonHuman Relic</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>751 ls</td><td>Beacon</td><td>Tourist Beacon</td><td>0.00 ly</td></tr>
+<tr data-key="73000"><td class="iconColumn"><i class="fa fa-map-marker" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/73000">Notable Presidents</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>15 ls</td><td>Beacon</td><td>Tourist Beacon</td><td>0.00 ly</td></tr>
+<tr data-key="72977"><td class="iconColumn"><i class="fa fa-map-marker" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/72977">Relocation</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>751 ls</td><td>Beacon</td><td>Tourist Beacon</td><td>0.00 ly</td></tr>
+<tr data-key="72975"><td class="iconColumn"><i class="fa fa-map-marker" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/72975">Second Terraforming Attempt</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>751 ls</td><td>Beacon</td><td>Tourist Beacon</td><td>0.00 ly</td></tr>
+<tr data-key="72980"><td class="iconColumn"><i class="fa fa-map-marker" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/72980">The Birthright Wars</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>212 ls</td><td>Beacon</td><td>Tourist Beacon</td><td>0.00 ly</td></tr>
+<tr data-key="72992"><td class="iconColumn"><i class="fa fa-map-marker" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/72992">Tyrell Biggs&#039; Election</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>751 ls</td><td>Beacon</td><td>Tourist Beacon</td><td>0.00 ly</td></tr>
+<tr data-key="73308"><td class="iconColumn"><i class="fa fa-map-marker" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/73308">Voyager</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/17072">Sol</a></td><td>2,317,433 ls</td><td>Beacon</td><td>Tourist Beacon</td><td>0.00 ly</td></tr>
+<tr data-key="62487"><td class="iconColumn"><i class="fa fa-ioxhost" aria-hidden="true" title="Installation"></i></td><td><a href="/attraction/62487">Civilian Installation</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/764">Alpha Centauri</a></td><td>3,549 ls</td><td>Installation</td><td>Civilian</td><td>4.38 ly</td></tr>
+<tr data-key="73957"><td class="iconColumn"><i class="fa fa-ioxhost" aria-hidden="true" title="Installation"></i></td><td><a href="/attraction/73957">Listening Post</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/764">Alpha Centauri</a></td><td>2,885 ls</td><td>Installation</td><td>Comms</td><td>4.38 ly</td></tr>
+<tr data-key="2829"><td class="iconColumn"><img class="image-inline icon-theme-light" src="/images/stations/icon_settlement_black.svg" style=""><img class="image-inline icon-theme-dark" src="/images/stations/icon_settlement_white.svg" style=""></td><td><a href="/attraction/2829">Michelson Vision</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/764">Alpha Centauri</a></td><td>5,655 ls</td><td>Settlement</td><td>Tiny Scientific Medium Security</td><td>4.38 ly</td></tr>
+<tr data-key="73334"><td class="iconColumn"><i class="fa fa-map-marker" aria-hidden="true" title="Beacon"></i></td><td><a href="/attraction/73334">For The Mug!</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/764">Alpha Centauri</a></td><td>6,397,050 ls</td><td>Beacon</td><td>Tourist Beacon</td><td>4.38 ly</td></tr>
+<tr data-key="57506"><td class="iconColumn"><i class="fa fa-ioxhost" aria-hidden="true" title="Installation"></i></td><td><a href="/attraction/57506">Small Forest View</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/1815">Barnard&#039;s Star</a></td><td>?</td><td>Installation</td><td>Tourist</td><td>5.95 ly</td></tr>
+<tr data-key="9974"><td class="iconColumn"><img class="image-inline icon-theme-light" src="/images/stations/icon_settlement_black.svg" style=""><img class="image-inline icon-theme-dark" src="/images/stations/icon_settlement_white.svg" style=""></td><td><a href="/attraction/9974">Clerk Terminal</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/1815">Barnard&#039;s Star</a></td><td>62 ls</td><td>Settlement</td><td>Tiny Refuge Low Security</td><td>5.95 ly</td></tr>
+<tr data-key="9975"><td class="iconColumn"><img class="image-inline icon-theme-light" src="/images/stations/icon_settlement_black.svg" style=""><img class="image-inline icon-theme-dark" src="/images/stations/icon_settlement_white.svg" style=""></td><td><a href="/attraction/9975">Langford Silo</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/1815">Barnard&#039;s Star</a></td><td>4,783 ls</td><td>Settlement</td><td>Tiny Military High Security</td><td>5.95 ly</td></tr>
+<tr data-key="9976"><td class="iconColumn"><img class="image-inline icon-theme-light" src="/images/stations/icon_settlement_black.svg" style=""><img class="image-inline icon-theme-dark" src="/images/stations/icon_settlement_white.svg" style=""></td><td><a href="/attraction/9976">McNair Laboratory</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/1815">Barnard&#039;s Star</a></td><td>3,297 ls</td><td>Settlement</td><td>Tiny Scientific Medium Security</td><td>5.95 ly</td></tr>
+<tr data-key="73695"><td class="iconColumn"><i class="fa fa-ioxhost" aria-hidden="true" title="Installation"></i></td><td><a href="/attraction/73695">Moonlight Keep</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/12934">Luhman 16</a></td><td>4,943 ls</td><td>Installation</td><td>Unauthorised</td><td>6.57 ly</td></tr>
+<tr data-key="13877"><td class="iconColumn"><img class="image-inline icon-theme-light" src="/images/stations/icon_settlement_black.svg" style=""><img class="image-inline icon-theme-dark" src="/images/stations/icon_settlement_white.svg" style=""></td><td><a href="/attraction/13877">Card Arsenal</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/12934">Luhman 16</a></td><td>14 ls</td><td>Settlement</td><td>Tiny Military High Security</td><td>6.57 ly</td></tr>
+<tr data-key="13878"><td class="iconColumn"><img class="image-inline icon-theme-light" src="/images/stations/icon_settlement_black.svg" style=""><img class="image-inline icon-theme-dark" src="/images/stations/icon_settlement_white.svg" style=""></td><td><a href="/attraction/13878">Hamilton Plant +</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/12934">Luhman 16</a></td><td>1,639 ls</td><td>Settlement</td><td>Small Extraction High Security</td><td>6.57 ly</td></tr>
+<tr data-key="13879"><td class="iconColumn"><img class="image-inline icon-theme-light" src="/images/stations/icon_settlement_black.svg" style=""><img class="image-inline icon-theme-dark" src="/images/stations/icon_settlement_white.svg" style=""></td><td><a href="/attraction/13879">Kirtley&#039;s Folly</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/12934">Luhman 16</a></td><td>43 ls</td><td>Settlement</td><td>Tiny Refuge Low Security</td><td>6.57 ly</td></tr>
+<tr data-key="13876"><td class="iconColumn"><img class="image-inline icon-theme-light" src="/images/stations/icon_settlement_black.svg" style=""><img class="image-inline icon-theme-dark" src="/images/stations/icon_settlement_white.svg" style=""></td><td><a href="/attraction/13876">Rice Horizons +</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/12934">Luhman 16</a></td><td>10 ls</td><td>Settlement</td><td>Small Extraction Medium Security</td><td>6.57 ly</td></tr>
+<tr data-key="62501"><td class="iconColumn"><i class="fa fa-ioxhost" aria-hidden="true" title="Installation"></i></td><td><a href="/attraction/62501">Agricultural Installation</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/19046">WISE 0855-0714</a></td><td>?</td><td>Installation</td><td>Agricultural</td><td>7.17 ly</td></tr>
+<tr data-key="36204"><td class="iconColumn"><img class="image-inline icon-theme-light" src="/images/stations/icon_settlement_black.svg" style=""><img class="image-inline icon-theme-dark" src="/images/stations/icon_settlement_white.svg" style=""></td><td><a href="/attraction/36204">Velho Keep ++</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/19046">WISE 0855-0714</a></td><td>921 ls</td><td>Settlement</td><td>Medium Military High Security</td><td>7.17 ly</td></tr>
+<tr data-key="14637"><td class="iconColumn"><img class="image-inline icon-theme-light" src="/images/stations/icon_settlement_black.svg" style=""><img class="image-inline icon-theme-dark" src="/images/stations/icon_settlement_white.svg" style=""></td><td><a href="/attraction/14637">Bova Point +</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/19153">Wolf 359</a></td><td>99 ls</td><td>Settlement</td><td>Small Industrial Medium Security</td><td>7.78 ly</td></tr>
+<tr data-key="14636"><td class="iconColumn"><img class="image-inline icon-theme-light" src="/images/stations/icon_settlement_black.svg" style=""><img class="image-inline icon-theme-dark" src="/images/stations/icon_settlement_white.svg" style=""></td><td><a href="/attraction/14636">Dann Works</a></td><td><i class="fa fa-dot-circle-o"></i> <a href="/system/19153">Wolf 359</a></td><td>99 ls</td><td>Settlement</td><td>Tiny Refuge Low Security</td><td>7.78 ly</td></tr>
+</tbody></table>
+
+    <ul class="pagination"><li class="first disabled"><span>First</span></li>
+<li class="prev disabled"><span>&laquo;</span></li>
+<li class="active"><a href="/attraction?page=1&amp;per-page=50" data-page="0">1</a></li>
+<li><a href="/attraction?page=2&amp;per-page=50" data-page="1">2</a></li>
+<li><a href="/attraction?page=3&amp;per-page=50" data-page="2">3</a></li>
+<li><a href="/attraction?page=4&amp;per-page=50" data-page="3">4</a></li>
+<li><a href="/attraction?page=5&amp;per-page=50" data-page="4">5</a></li>
+<li><a href="/attraction?page=6&amp;per-page=50" data-page="5">6</a></li>
+<li><a href="/attraction?page=7&amp;per-page=50" data-page="6">7</a></li>
+<li><a href="/attraction?page=8&amp;per-page=50" data-page="7">8</a></li>
+<li><a href="/attraction?page=9&amp;per-page=50" data-page="8">9</a></li>
+<li><a href="/attraction?page=10&amp;per-page=50" data-page="9">10</a></li>
+<li class="next"><a href="/attraction?page=2&amp;per-page=50" data-page="1">&raquo;</a></li>
+<li class="last"><a href="/attraction?page=1479&amp;per-page=50" data-page="1478">Last</a></li></ul>
+
+<input type="hidden" id="inputPage" name="attraction[page]" value="0"><input type="hidden" id="inputSort" name="attraction[sort]" value="">
+</div></div>            </div>
+        </div>
+
+    </div>
+
+</form>
+
+
+        
+        
+            <div class="panel panel-eddb bottom-ad">
+                <div class="panel-heading">Advertisement</div>
+                <div class="panel-body">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- bottom full width -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-9828496076338182"
+                         data-ad-slot="3354061357"
+                         data-ad-format="auto"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+            </div>
+
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="pull-left"><strong>&copy; EDDB 2023 - A site about systems, bodies, stations,
+                commodities, materials and trade routes in <a href="https://www.elitedangerous.com/"><i>Elite:
+                        Dangerous</i></a>.</strong></p>
+        <span class="pull-right donate-buttons">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="2C8HCJ2P4KXAA">
+                <input type="image" src="/images/paypal_btn_donate_SM.gif" border="0" name="submit"
+                       alt="Donate with PayPal">
+            </form>
+        </span>
+    </div>
+</footer>
+<script src="/assets/6f43917b/jquery.js?v=1597095590"></script>
+<script src="/assets/6546688b/select2.min.js?v=1597095590"></script>
+<script src="/assets/51ce2334/js/bootstrap.js?v=1597095590"></script>
+<script src="/assets/a254de8d/yii.js?v=1597095590"></script>
+<script src="/assets/a254de8d/yii.validation.js?v=1597095590"></script>
+<script src="/assets/a254de8d/yii.gridView.js?v=1597095590"></script>
+<script src="/assets/a254de8d/yii.activeForm.js?v=1597095590"></script>
+<script src="/assets/e78dfa28/cookieconsent.min.js?v=1597095590"></script>
+<script src="/js/main.js?v=1612015983"></script>
+<script>jQuery(function ($) {
+$('#select2Attractions').select2({"cacheDataSource":[],"placeholder":"Jump to an attraction ...","minimumInputLength":2,"cache":true,"ajax":{"url":"https://eddb.io/attraction/search","quietMillis":300,"dataType":"json","data":
+                    function(term, page) {
+                        return {
+                            'attraction[name]': term,
+                            'expand': 'system',
+                        };
+                    }
+                ,"results":
+                    function(data, page) {
+                        return {results: data};
+                    }
+                },"formatResult":
+                function(result, container, query, escapeMarkup) {
+                    function markMatch(string) {
+                        var markup = [];
+                        window.Select2.util.markMatch(string, query.term, markup, function(text) {return text});
+                        return markup.join("");
+                    }
+
+                    var attractionName = markMatch(this.escapeMarkup(result.name));
+                    var systemName = this.escapeMarkup(result.system.name);
+
+                    var text = "<strong>" + attractionName + "</strong> (" + systemName + ")";
+
+                    return text;
+                }
+            ,"formatSelection":function(result) {
+                    var attractionName = result.name;
+                    var systemName = result.system.name;
+
+                    var text = "<strong>" + this.escapeMarkup(attractionName) + "</strong> (" + this.escapeMarkup(systemName) + ")";
+
+                    return text;
+                }});
+jQuery('#helpModal').modal({"show":false});
+$('#attraction-group_id').select2({"allowClear":true,"placeholder":"Select Attraction Group","data":{"results":[{"id":3,"name":"Abandoned Base","default_is_planetary":1,"can_have_faction_data":0,"can_have_core_data_terminal":0},{"id":5,"name":"Beacon","default_is_planetary":null,"can_have_faction_data":0,"can_have_core_data_terminal":0},{"id":1,"name":"Installation","default_is_planetary":0,"can_have_faction_data":1,"can_have_core_data_terminal":0},{"id":2,"name":"Settlement","default_is_planetary":1,"can_have_faction_data":1,"can_have_core_data_terminal":1},{"id":4,"name":"Shipwreck","default_is_planetary":1,"can_have_faction_data":0,"can_have_core_data_terminal":0}],"text":"name"}});
+$('#attraction-materialids').select2({"placeholder":"Select Material","multiple":true,"allowClear":true,"escapeMarkup":function(m) {return m;},"formatSelection":            function(result) {
+                var name = "<img class=\"image-inline\" src=\"/images/materials/grade-" + result.grade_id + ".svg\" style=\"margin-bottom: .15em;\"> <strong>" + result.name + "</strong>";
+
+                if (result.rarity_group && result.element_symbol) {
+                    name += " <span class=\"select-meta material-rarity-group material-rarity-group-" + result.rarity_group + "\">" + result.element_symbol + "</span>";
+                }
+                return name;
+            },"formatResult":            function(result) {
+                var name = "<img class=\"image-inline\" src=\"/images/materials/grade-" + result.grade_id + ".svg\" style=\"margin-bottom: .15em;\"> <strong>" + result.name + "</strong>";
+
+                if (result.rarity_group && result.element_symbol) {
+                    name += " <span class=\"select-meta material-rarity-group material-rarity-group-" + result.rarity_group + "\">" + result.element_symbol + "</span>";
+                }
+                return name;
+            },"data":{"results":[{"id":"28","name":"Adaptive Encryptors Capture","element_symbol":"AEC","rarity_group":null,"grade_id":"5"},{"id":"29","name":"Anomalous Bulk Scan Data","element_symbol":"ABSD","rarity_group":null,"grade_id":"1"},{"id":"20","name":"Antimony","element_symbol":"Sb","rarity_group":"40","grade_id":"4"},{"id":"32","name":"Atypical Encryption Archives","element_symbol":"AEA","rarity_group":null,"grade_id":"4"},{"id":"33","name":"Basic Conductors","element_symbol":"BC","rarity_group":null,"grade_id":"1"},{"id":"37","name":"Chemical Distillery","element_symbol":"CD","rarity_group":null,"grade_id":"3"},{"id":"38","name":"Chemical Manipulators","element_symbol":"CM","rarity_group":null,"grade_id":"4"},{"id":"39","name":"Chemical Processors","element_symbol":"CP","rarity_group":null,"grade_id":"2"},{"id":"40","name":"Chemical Storage Units","element_symbol":"CSU","rarity_group":null,"grade_id":"1"},{"id":"7","name":"Chromium","element_symbol":"Cr","rarity_group":"20","grade_id":"2"},{"id":"41","name":"Classified Scan Databanks","element_symbol":"CSD","rarity_group":null,"grade_id":"3"},{"id":"42","name":"Classified Scan Fragment","element_symbol":"CSF","rarity_group":null,"grade_id":"5"},{"id":"49","name":"Compound Shielding","element_symbol":"CS","rarity_group":null,"grade_id":"4"},{"id":"43","name":"Conductive Ceramics","element_symbol":"CC","rarity_group":null,"grade_id":"3"},{"id":"46","name":"Conductive Components","element_symbol":"CC","rarity_group":null,"grade_id":"2"},{"id":"48","name":"Conductive Polymers","element_symbol":"CP","rarity_group":null,"grade_id":"4"},{"id":"47","name":"Configurable Components","element_symbol":"CC","rarity_group":null,"grade_id":"4"},{"id":"50","name":"Cracked Industrial Firmware","element_symbol":"CIF","rarity_group":null,"grade_id":"3"},{"id":"51","name":"Crystal Shards","element_symbol":"CS","rarity_group":null,"grade_id":"1"},{"id":"54","name":"Divergent Scan Data","element_symbol":"DSD","rarity_group":null,"grade_id":"4"},{"id":"57","name":"Electrochemical Arrays","element_symbol":"EA","rarity_group":null,"grade_id":"3"},{"id":"61","name":"Flawed Focus Crystals","element_symbol":"FFC","rarity_group":null,"grade_id":"2"},{"id":"62","name":"Focus Crystals","element_symbol":"FC","rarity_group":null,"grade_id":"3"},{"id":"63","name":"Galvanising Alloys","element_symbol":"GA","rarity_group":null,"grade_id":"2"},{"id":"64","name":"Grid Resistors","element_symbol":"GR","rarity_group":null,"grade_id":"1"},{"id":"66","name":"Guardian Power Cell","element_symbol":"GPC","rarity_group":null,"grade_id":"1"},{"id":"67","name":"Guardian Power Conduit","element_symbol":"GPC","rarity_group":null,"grade_id":"2"},{"id":"68","name":"Guardian Sentinel Weapon Parts","element_symbol":"GSWP","rarity_group":null,"grade_id":"3"},{"id":"69","name":"Guardian Sentinel Wreckage Components","element_symbol":"GSWC","rarity_group":null,"grade_id":"1"},{"id":"70","name":"Guardian Technology Component","element_symbol":"GTC","rarity_group":null,"grade_id":"3"},{"id":"73","name":"Heat Conduction Wiring","element_symbol":"HCW","rarity_group":null,"grade_id":"1"},{"id":"74","name":"Heat Dispersion Plate","element_symbol":"HDP","rarity_group":null,"grade_id":"2"},{"id":"75","name":"Heat Exchangers","element_symbol":"HE","rarity_group":null,"grade_id":"3"},{"id":"77","name":"Heat Vanes","element_symbol":"HV","rarity_group":null,"grade_id":"4"},{"id":"78","name":"High Density Composites","element_symbol":"HDC","rarity_group":null,"grade_id":"3"},{"id":"79","name":"Hybrid Capacitors","element_symbol":"HC","rarity_group":null,"grade_id":"2"},{"id":"9","name":"Manganese","element_symbol":"Mn","rarity_group":"20","grade_id":"2"},{"id":"85","name":"Mechanical Components","element_symbol":"MC","rarity_group":null,"grade_id":"3"},{"id":"86","name":"Mechanical Equipment","element_symbol":"ME","rarity_group":null,"grade_id":"2"},{"id":"87","name":"Mechanical Scrap","element_symbol":"MS","rarity_group":null,"grade_id":"1"},{"id":"90","name":"Modified Consumer Firmware","element_symbol":"MCF","rarity_group":null,"grade_id":"2"},{"id":"91","name":"Modified Embedded Firmware","element_symbol":"MEF","rarity_group":null,"grade_id":"5"},{"id":"92","name":"Open Symmetric Keys","element_symbol":"OSK","rarity_group":null,"grade_id":"3"},{"id":"93","name":"Pattern Alpha Obelisk Data","element_symbol":"PAOD","rarity_group":null,"grade_id":"4"},{"id":"94","name":"Pattern Beta Obelisk Data","element_symbol":"PBOD","rarity_group":null,"grade_id":"4"},{"id":"95","name":"Pattern Delta Obelisk Data","element_symbol":"PDOD","rarity_group":null,"grade_id":"4"},{"id":"96","name":"Pattern Epsilon Obelisk Data","element_symbol":"PEOD","rarity_group":null,"grade_id":"4"},{"id":"97","name":"Pattern Gamma Obelisk Data","element_symbol":"PGOD","rarity_group":null,"grade_id":"4"},{"id":"99","name":"Phase Alloys","element_symbol":"PA","rarity_group":null,"grade_id":"3"},{"id":"101","name":"Polymer Capacitors","element_symbol":"PC","rarity_group":null,"grade_id":"4"},{"id":"108","name":"Refined Focus Crystals","element_symbol":"RFC","rarity_group":null,"grade_id":"4"},{"id":"22","name":"Ruthenium","element_symbol":"Ru","rarity_group":"40","grade_id":"4"},{"id":"110","name":"Salvaged Alloys","element_symbol":"SA","rarity_group":null,"grade_id":"1"},{"id":"111","name":"Security Firmware Patch","element_symbol":"SFP","rarity_group":null,"grade_id":"4"},{"id":"112","name":"Sensor Fragment","element_symbol":"SF","rarity_group":null,"grade_id":"5"},{"id":"113","name":"Shield Emitters","element_symbol":"SE","rarity_group":null,"grade_id":"2"},{"id":"115","name":"Shielding Sensors","element_symbol":"SS","rarity_group":null,"grade_id":"3"},{"id":"116","name":"Ship Systems Data","element_symbol":"SSD","rarity_group":null,"grade_id":"4"},{"id":"117","name":"Specialised Legacy Firmware","element_symbol":"SLF","rarity_group":null,"grade_id":"1"},{"id":"119","name":"Tagged Encryption Codes","element_symbol":"TEC","rarity_group":null,"grade_id":"2"},{"id":"24","name":"Tellurium","element_symbol":"Te","rarity_group":"40","grade_id":"4"},{"id":"19","name":"Tungsten","element_symbol":"W","rarity_group":"30","grade_id":"3"},{"id":"133","name":"Unidentified Scan Archives","element_symbol":"USA","rarity_group":null,"grade_id":"2"},{"id":"132","name":"Unusual Encrypted Files","element_symbol":"UEF","rarity_group":null,"grade_id":"1"},{"id":"11","name":"Vanadium","element_symbol":"V","rarity_group":"20","grade_id":"2"},{"id":"136","name":"Worn Shield Emitters","element_symbol":"WSE","rarity_group":null,"grade_id":"1"},{"id":"12","name":"Zinc","element_symbol":"Zn","rarity_group":"20","grade_id":"2"},{"id":"13","name":"Zirconium","element_symbol":"Zr","rarity_group":"20","grade_id":"2"}],"text":"name"}});
+
+                (function() {
+                    var title = '';
+                    var contentB64 = 'RmlsdGVyIHRoZSByZXN1bHQgYnkgYXR0cmFjdGlvbnMgdGhhdCBoYXZlIHRoZSBzZWxlY3RlZCBtYXRlcmlhbHMu';
+                    var content = decodeURIComponent(escape(window.atob(contentB64)))
+
+                    $('#help-button-1').popover({
+                        content: content,
+                        title: title,
+                        html: true,
+                        placement: 'top'
+                    });
+                })();
+$('#attraction-settlementlayoutid').select2({"placeholder":"Select Settlement Layout","allowClear":true,"data":{"results":[{"id":"1","name":"Unknown Settlement"},{"id":"19","name":"Large Exploration High Security L2H"},{"id":"17","name":"Large Exploration Low Security L2L"},{"id":"18","name":"Large Exploration Medium Security L2M"},{"id":"16","name":"Large Industrial High Security L1H"},{"id":"14","name":"Large Industrial Low Security L1L"},{"id":"15","name":"Large Industrial Medium Security L1M"},{"id":"25","name":"Large Military High Security L4H"},{"id":"23","name":"Large Military Medium Security L4M1"},{"id":"24","name":"Large Military Medium Security L4M2"},{"id":"22","name":"Large Scientific High Security L3H"},{"id":"20","name":"Large Scientific Low Security L3L"},{"id":"21","name":"Large Scientific Medium Security L3M"},{"id":"37","name":"Medium Civilian High Security M4H"},{"id":"35","name":"Medium Civilian Low Security M4L"},{"id":"36","name":"Medium Civilian Medium Security M4M"},{"id":"40","name":"Medium Extraction High Security M5H"},{"id":"38","name":"Medium Extraction Low Security M5L"},{"id":"39","name":"Medium Extraction Medium Security M5M"},{"id":"43","name":"Medium Industrial High Security M6H"},{"id":"41","name":"Medium Industrial Low Security M6L"},{"id":"42","name":"Medium Industrial Medium Security M6M"},{"id":"28","name":"Medium Military High Security M1H"},{"id":"26","name":"Medium Military Low Security M1L"},{"id":"27","name":"Medium Military Medium Security M1M"},{"id":"31","name":"Medium Refinery High Security M2H"},{"id":"29","name":"Medium Refinery Low Security M2L"},{"id":"30","name":"Medium Refinery Medium Security M2M"},{"id":"34","name":"Medium Scientific High Security M3H"},{"id":"32","name":"Medium Scientific Low Security M3L"},{"id":"33","name":"Medium Scientific Medium Security M3M"},{"id":"52","name":"Small Civilian High Security S3H"},{"id":"50","name":"Small Civilian Low Security S3L"},{"id":"51","name":"Small Civilian Medium Security S3M"},{"id":"46","name":"Small Extraction High Security S1H"},{"id":"44","name":"Small Extraction Low Security S1L"},{"id":"45","name":"Small Extraction Medium Security S1M"},{"id":"49","name":"Small Hightech High Security S2H"},{"id":"47","name":"Small Hightech Low Security S2L"},{"id":"48","name":"Small Hightech Medium Security S2M"},{"id":"58","name":"Small Industrial High Security S5H"},{"id":"56","name":"Small Industrial Low Security S5L"},{"id":"57","name":"Small Industrial Medium Security S5M"},{"id":"55","name":"Small Outpost High Security S4H"},{"id":"53","name":"Small Outpost Low Security S4L"},{"id":"54","name":"Small Outpost Medium Security S4M"},{"id":"67","name":"Tiny Abandoned Low Security T51"},{"id":"59","name":"Tiny Extraction Low Security T11"},{"id":"60","name":"Tiny Extraction Medium Security T12"},{"id":"63","name":"Tiny Military High Security T23"},{"id":"61","name":"Tiny Refuge Low Security T21"},{"id":"64","name":"Tiny Refuge Low Security T31"},{"id":"66","name":"Tiny Refuge Low Security T41"},{"id":"62","name":"Tiny Refuge Medium Security T22"},{"id":"65","name":"Tiny Scientific Medium Security T32"}],"text":"name"}});
+$('#attraction-installationlayoutid').select2({"placeholder":"Select Installation Layout","allowClear":true,"data":{"results":[{"id":"13","name":"Unknown Installation"},{"id":"2","name":"Agricultural Installation"},{"id":"3","name":"Civilian Installation"},{"id":"4","name":"Comms Installation"},{"id":"5","name":"Government Installation"},{"id":"6","name":"Industrial Installation"},{"id":"835","name":"Listening Post"},{"id":"7","name":"Medical Installation"},{"id":"8","name":"Military Installation"},{"id":"9","name":"Scientific Installation"},{"id":"10","name":"Security Installation"},{"id":"11","name":"Tourist Installation"},{"id":"843","name":"Transmitter"},{"id":"12","name":"Unauthorised Installation"}],"text":"name"}});
+$('#attraction-settlementtypeid').select2({"placeholder":"Select Settlement Type","allowClear":true,"data":{"results":[{"name":"Industrial","id":1},{"name":"Exploration","id":2},{"name":"Scientific","id":3},{"name":"Military","id":4},{"name":"Refinery","id":5},{"name":"Civilian","id":6},{"name":"Extraction","id":7},{"name":"Hightech","id":8},{"name":"Outpost","id":9},{"name":"Refuge","id":10},{"name":"Abandoned","id":11}],"text":"name"}});
+$('#attraction-settlementsizeid').select2({"placeholder":"Select Settlement Size","allowClear":true,"data":{"results":[{"name":"Tiny","id":16},{"name":"Small (+)","id":32},{"name":"Medium (++)","id":48},{"name":"Large (+++)","id":64}],"text":"name"}});
+$('#attraction-settlementsecurityid').select2({"placeholder":"Select Settlement Security","allowClear":true,"data":{"results":[{"name":"Low","id":1},{"name":"Medium","id":2},{"name":"High","id":3},{"name":"None","id":4}],"text":"name"}});
+$('#attraction-controlling_minor_faction_id').select2({"cacheDataSource":[],"placeholder":"Search for a minor faction ...","minimumInputLength":2,"cache":true,"ajax":{"url":"https://eddb.io/faction/search","quietMillis":300,"dataType":"json","data":
+                    function(term, page) {
+                        var data = {
+                            name: term
+                        };
+                        
+                        var extraParams = [];
+                        
+                        for (var name in extraParams) {
+                            data[name] = extraParams[name];
+                        }
+                        
+                        return {
+                            faction: data
+                        };
+                    }
+                ,"results":
+                    function(data, page) {
+                        return {results: data};
+                    }
+                },"formatResult":
+                function(result, container, query, escapeMarkup) {
+                    function markMatch(string) {
+                        var markup = [];
+                        window.Select2.util.markMatch(string, query.term, markup, function(text) {return text});
+                        return markup.join("");
+                    }
+
+                    var factionName = markMatch(this.escapeMarkup(result.name));
+                    var list = [];
+                    
+                    if (result.allegianceName) {
+                        var allegianceName = this.escapeMarkup(result.allegianceName);
+                        list.push(allegianceName);
+                    }
+                    if (result.governmentName) {
+                        var governmentName = this.escapeMarkup(result.governmentName);
+                        list.push(governmentName);
+                    }
+                    if (result.homeSystemName) {
+                        var homeSystemName = this.escapeMarkup(result.homeSystemName);
+                        list.push(homeSystemName);
+                    }
+                    
+                    var extraText;
+                    
+                    if (list.length > 0) {
+                        extraText = list.join(', ');
+                    } else {
+                        extraText = '?'; 
+                    }
+
+                    var text = "<strong>" + factionName + "</strong> (" + extraText + ")";
+
+                    return text;
+                },"formatSelection":            
+                function(result) {
+                    var factionName = this.escapeMarkup(result.name);
+                    var list = [];
+                    if (result.allegianceName) {
+                        var allegianceName = this.escapeMarkup(result.allegianceName);
+                        list.push(allegianceName);
+                    }
+                    if (result.governmentName) {
+                        var governmentName = this.escapeMarkup(result.governmentName);
+                        list.push(governmentName);
+                    }
+                    if (result.homeSystemName) {
+                        var homeSystemName = this.escapeMarkup(result.homeSystemName);
+                        list.push(homeSystemName);
+                    }
+                    
+                    var extraText;
+                    
+                    if (list.length > 0) {
+                        extraText = list.join(', ');
+                    } else {
+                        extraText = '?'; 
+                    }
+
+                    var text = "<strong>" + factionName + "</strong> (" + extraText + ")";
+
+                    return text;
+                },"allowClear":true});
+$('#attraction-allegiance_id').select2({"allowClear":true,"placeholder":"Select Allegiance","data":{"results":[{"id":"1","name":"Alliance"},{"id":"2","name":"Empire"},{"id":"3","name":"Federation"},{"id":"8","name":"Guardian"},{"id":"4","name":"Independent"},{"id":"5","name":"None"},{"id":"7","name":"Pilots Federation"},{"id":"6","name":"Pirate"},{"id":"9","name":"Thargoid"}],"text":"name"}});
+$('#attraction-government_id').select2({"allowClear":true,"placeholder":"Select Allegiance","data":{"results":[{"id":"16","name":"Anarchy"},{"id":"32","name":"Communism"},{"id":"48","name":"Confederacy"},{"id":"64","name":"Corporate"},{"id":"80","name":"Cooperative"},{"id":"96","name":"Democracy"},{"id":"112","name":"Dictatorship"},{"id":"128","name":"Feudal"},{"id":"133","name":"Imperial"},{"id":"144","name":"Patronage"},{"id":"150","name":"Prison Colony"},{"id":"160","name":"Theocracy"},{"id":"165","name":"Workshop"},{"id":"176","name":"None"},{"id":"192","name":"Engineer"},{"id":"208","name":"Prison"},{"id":"209","name":"Private Ownership"}],"text":"name"}});
+$('#attraction-systemrequirespermit').select2({"allowClear":true,"placeholder":"Yes or No","minimumResultsForSearch":-1,"data":{"results":[{"id":1,"text":"Yes"},{"id":0,"text":"No"}]}});
+$('#attraction-is_planetary').select2({"allowClear":true,"placeholder":"Yes or No","minimumResultsForSearch":-1,"data":{"results":[{"id":1,"text":"Yes"},{"id":0,"text":"No"}]}});
+$('#attraction-threatlevelid').select2({"placeholder":"Select Threat Level","multiple":false,"data":{"results":[{"name":"None","id":1},{"name":"Low","id":2},{"name":"High","id":3},{"name":"Extreme","id":4}],"text":"name"}});
+$('#attraction-referencesystemid').select2({"allowClear":true,"cacheDataSource":[],"placeholder":"Search for a system ...","minimumInputLength":2,"cache":true,"ajax":{"url":"https://eddb.io/system/search","quietMillis":500,"dataType":"json","data":function(term, page) {
+                        return {
+                            "system[name]": term,
+                            "expand": "stations",
+                            "system[version]": 2,
+                        };
+                    },"results":function(data, page) {
+                    return {results: data};
+                }},"formatResult":function(result, container, query, escapeMarkup) {
+                    var me = this;
+
+                    function markMatch(string) {
+                        var markup = [];
+                        window.Select2.util.markMatch(string, query.term, markup, function(text) {return text});
+                        return markup.join("");
+                    }
+
+                    var systemName = markMatch(me.escapeMarkup(result.name));
+
+                    var text = "<strong>" + systemName + "</strong>";
+
+                    if (result.stations.length > 0) {
+                        var stationNames = result.stations.map(function(station) {
+                            return markMatch(me.escapeMarkup(station.name));
+                        });
+
+                        text += " (" + stationNames.join(", ") + ")";
+                    }
+
+                    return text;
+                },"formatSelection":function(result) {
+                    var me = this;
+                    var systemName = result.name;
+                    var text = "<strong>" + this.escapeMarkup(systemName) + "</strong>";
+
+                    if (result.stations.length > 0) {
+                        var stationNames = result.stations.map(function(station) {
+                            return me.escapeMarkup(station.name);
+                        });
+
+                        text += " (" + stationNames.join(", ") + ")";
+                    }
+
+                    return text;
+                }});
+$(findAttractionsForm).on('beforeSubmit', function(e) {
+                $.ajax({"cache":false,"beforeSend":
+                                function() {
+                                    var button = $('#btFindAttractions'),
+                                    wrapper = $('#attractionSearchResultWrapper');
+                                    button[0].disabled = true;
+                                    wrapper.addClass('panel-is-loading');
+                                    wrapper.prepend(' ');
+                                },"success":
+                                function(html){
+                                    var button = $('#btFindAttractions'),
+                                    wrapper = $('#attractionSearchResultWrapper'),
+                                    wasEmpty = !wrapper.html().trim();
+
+                                    button[0].disabled = false;
+                                    wrapper.html(html);
+                                    wrapper.slideDown();
+                                    wrapper.removeClass('panel-is-loading');
+                                }
+                            ,"error":
+                                function(error) {
+                                    var button = $('#btFindAttractions'),
+                                    wrapper = $('#attractionSearchResultWrapper');
+
+                                    wrapper.slideUp();
+                                    wrapper.html('');
+                                    button[0].disabled = false;
+                                }
+                            ,"type":$(findAttractionsForm).attr('method'),"url":$(findAttractionsForm).attr('action'),"data":$(findAttractionsForm).serialize()});
+                return false;
+            });
+$('#btFindAttractions').mouseup(function(){
+                $(this).blur();
+            });
+    $('#attractionSearchResultWrapper .pagination a').click(function(e) {
+    "use strict";
+        var page = $(this).data('page');
+        $('#inputPage').val(page);
+        $(this).closest('form').submit();
+        return false;
+    });
+    $('#attractionSearchResultWrapper table thead a').click(function(e) {
+    "use strict";
+        var sort = $(this).data('sort');
+        $('#inputSort').val(sort);
+        $(this).closest('form').submit();
+        return false;
+    });
+jQuery('#w0').yiiGridView({"filterUrl":"\/attraction","filterSelector":"#w0-filters input, #w0-filters select","filterOnFocusOut":true});
+jQuery('#findAttractionsForm').yiiActiveForm([{"id":"attraction-group_id","name":"group_id","container":".field-attraction-group_id","input":"#attraction-group_id","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Group must be an integer.","skipOnEmpty":1});}},{"id":"attraction-materialids","name":"materialIds","container":".field-attraction-materialids","input":"#attraction-materialids","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {        
+if (typeof value === 'string' && true) {
+    var ids = value.split(',');
+    if (ids.length > 7) {
+        messages.push("The number of items must not exceed 7.");
+    }
+}
+}},{"id":"attraction-settlementlayoutid","name":"settlementLayoutId","container":".field-attraction-settlementlayoutid","input":"#attraction-settlementlayoutid","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Settlement Layout must be an integer.","skipOnEmpty":1});}},{"id":"attraction-installationlayoutid","name":"installationLayoutId","container":".field-attraction-installationlayoutid","input":"#attraction-installationlayoutid","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Installation Layout must be an integer.","skipOnEmpty":1});}},{"id":"attraction-settlementtypeid","name":"settlementTypeId","container":".field-attraction-settlementtypeid","input":"#attraction-settlementtypeid","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Settlement Type must be an integer.","skipOnEmpty":1});}},{"id":"attraction-settlementsizeid","name":"settlementSizeId","container":".field-attraction-settlementsizeid","input":"#attraction-settlementsizeid","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Settlement Size must be an integer.","skipOnEmpty":1});}},{"id":"attraction-settlementsecurityid","name":"settlementSecurityId","container":".field-attraction-settlementsecurityid","input":"#attraction-settlementsecurityid","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Settlement Security must be an integer.","skipOnEmpty":1});}},{"id":"attraction-controlling_minor_faction_id","name":"controlling_minor_faction_id","container":".field-attraction-controlling_minor_faction_id","input":"#attraction-controlling_minor_faction_id","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Minor Faction must be an integer.","skipOnEmpty":1});}},{"id":"attraction-allegiance_id","name":"allegiance_id","container":".field-attraction-allegiance_id","input":"#attraction-allegiance_id","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Allegiance must be an integer.","skipOnEmpty":1});}},{"id":"attraction-government_id","name":"government_id","container":".field-attraction-government_id","input":"#attraction-government_id","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Government must be an integer.","skipOnEmpty":1});}},{"id":"attraction-systemrequirespermit","name":"systemRequiresPermit","container":".field-attraction-systemrequirespermit","input":"#attraction-systemrequirespermit","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Requires Permit must be an integer.","skipOnEmpty":1});}},{"id":"attraction-is_planetary","name":"is_planetary","container":".field-attraction-is_planetary","input":"#attraction-is_planetary","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Is Planetary must be an integer.","skipOnEmpty":1});}},{"id":"attraction-threatlevelid","name":"threatLevelId","container":".field-attraction-threatlevelid","input":"#attraction-threatlevelid","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Threat Level must be an integer.","skipOnEmpty":1});}},{"id":"attraction-referencesystemid","name":"referenceSystemId","container":".field-attraction-referencesystemid","input":"#attraction-referencesystemid","error":".help-block.help-block-error","validate":function (attribute, value, messages, deferred, $form) {yii.validation.number(value, messages, {"pattern":/^\s*[+-]?\d+\s*$/,"message":"Reference System must be an integer.","skipOnEmpty":1});}}], {"successCssClass":""});
+
+(function() {
+
+    var shortNames = {};
+    $.each(window.data.shortParamNames.attraction, function(short, long) {
+        var name = 'attraction[' + long + ']';
+        shortNames[name] = short;
+    });
+
+    function updateHref() {
+        var inputList = $('#findAttractionsForm')
+            .find('input')
+            .not('[name=_csrf],[name=\"attraction[page]\"],[name=\"attraction[sort]\"]')
+            .not('.select2-input,.select2-focusser')
+            .filter(function() {
+                return !!this.value;
+            });
+
+        inputList = inputList.clone();
+        inputList.each(function(index, input) {
+            var name = $(input).attr('name');
+            if (shortNames.hasOwnProperty(name)) {
+                $(input).attr('name', shortNames[name]);
+            }
+        });
+
+        $('#permaUrl').attr('href', '/attraction?' + inputList.serialize());
+    }
+
+    $('#findAttractionsForm').change(function() {
+        updateHref();
+    });
+
+    $('#findAttractionsForm input').keyup(function() {
+        updateHref();
+    });
+
+    updateHref();
+})();
+
+
+
+
+$('#select2Attractions').on('change', function(e) {
+    window.eddb.attraction.gotoId(e.val);
+});
+
+    var lightFilename = 'eddb-light.min.css'; 
+    var darkFilename = 'eddb-dark.min.css'; 
+
+    $('.theme-switcher .option-light').click(function() {
+        if (!replaceThemeCss(lightFilename)) {
+            return;
+        }
+        
+        $(this).addClass('option-selected');
+        $('.theme-switcher .option-dark').removeClass('option-selected');
+        updateSession('https://eddb.io/user/update-theme?theme=light');
+    });
+       
+    $('.theme-switcher .option-dark').click(function() {
+        if (!replaceThemeCss(darkFilename)) {
+            return;
+        }
+        
+        $(this).addClass('option-selected');
+        $('.theme-switcher .option-light').removeClass('option-selected');
+        updateSession('https://eddb.io/user/update-theme?theme=dark');
+    });
+
+    function replaceThemeCss(newFilename) {
+        var darkLink = $('link[href*="' + darkFilename + '"]');
+        var lightLink = $('link[href*="' + lightFilename + '"]');
+        var currentFilename;
+        var currentLink;
+        
+        if (darkLink.length > 0) {
+            currentFilename = darkFilename;
+            currentLink = darkLink;
+        }
+        
+        if (lightLink.length > 0) {
+            currentFilename = lightFilename;
+            currentLink = lightLink;
+        }
+        
+        if (newFilename === currentFilename) {
+            return false;
+        }
+        
+        var newHref = currentLink.attr('href');
+        newHref = newHref.replace(currentFilename, newFilename);
+        currentLink.attr('href', newHref);
+        
+        return true;
+    }
+    
+    function updateSession(newTheme) {
+        $.post(newTheme);
+    }
+    
+});</script></body>
+</html>

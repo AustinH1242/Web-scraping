@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="theme-color" content="#09485c">
+    <meta name="apple-mobile-web-app-title" content="EDDB">
+    <meta name="application-name" content="EDDB">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="FLQUI1xtbEFDhwAh5-Uqel53h2krCGpGFBR__C5n3Q9g1VBJChw5eCDJbVvfvFIrBh7sDExfMANZeUmvWz-pdg==">
+
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="manifest" href="/manifest.json">
+    <title>Elite: Dangerous Database - EDDB</title>
+            <script>
+            window.data = {"reference":[],"content":[]};
+                </script>
+            <meta name="description" content="A site about systems, bodies, stations, commodities, materials and trade routes in Elite: Dangerous">
+<link href="/assets/943648ae/select.css?v=1597095590" rel="stylesheet">
+<link href="/assets/6546688b/select2.css?v=1597095590" rel="stylesheet">
+<link href="/assets/c5994544/css/font-awesome.min.css?v=1597095590" rel="stylesheet">
+<link href="/assets/e78dfa28/dark-bottom.css?v=1597095590" rel="stylesheet">
+<link href="/css/eddb-light.min.css?v=1621859153" rel="stylesheet">
+<script>window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website.","dismiss":"Got it!","learnMore":"","link":null,"theme":false};</script>            <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58296939-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-58296939-1', { 'anonymize_ip': true });
+        </script>
+    </head>
+<body class="site-eddb">
+<div class="site-wrap">
+
+    <nav id="w0" class="navbar-inverse navbar-fixed-top navbar"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w0-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="/"><img src="/images/logo.png" alt=""></a><div class="theme-switcher">
+    <div class="theme-title">
+        Theme
+    </div>
+    <div class="theme-options">
+        <a class="theme-option option-light option-selected">
+            <i class="option-selected-icon fa fa-check" aria-hidden="true" title="Check"></i>
+        </a>
+        <a class="theme-option option-dark ">
+            <i class="option-selected-icon fa fa-check" aria-hidden="true" title="Check"></i>
+        </a>
+
+    </div>
+</div></div><div id="w0-collapse" class="collapse navbar-collapse"><ul id="w1" class="navbar-nav navbar-right nav"><li><a href="/system">Systems</a></li>
+<li><a href="/station">Stations</a></li>
+<li><a href="/attraction">Attractions</a></li>
+<li><a href="/commodity">Commodities</a></li>
+<li><a href="/faction">Factions</a></li>
+<li><a href="/body">Bodies</a></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Trading <span class="caret"></span></a><ul id="w2" class="dropdown-menu"><li><a href="/trade/single" tabindex="-1">Single Hop Trade</a></li>
+<li><a href="/trade/hops" tabindex="-1">Multi Hop Trade Route</a></li>
+<li><a href="/trade/loops" tabindex="-1">Loop Trade Route</a></li>
+<li><a href="/trade/commodity" tabindex="-1">Find Commodity</a></li></ul></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Other <span class="caret"></span></a><ul id="w3" class="dropdown-menu"><li><a href="https://ross.eddb.io/" tabindex="-1"><img src="/images/ross_label_white.png" height="10px" alt=""></a></li>
+<li><a href="/legal/site-notice" tabindex="-1">Site Notice</a></li>
+<li><a href="/legal/privacy-policy" tabindex="-1">Privacy Policy</a></li>
+<li><a href="/contact" tabindex="-1">Contact</a></li>
+<li><a href="/api" tabindex="-1">API</a></li></ul></li>
+<li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Account <span class="caret"></span></a><ul id="w4" class="dropdown-menu"><li><a href="/user/login" tabindex="-1">Login</a></li>
+<li><a href="/user/signup" tabindex="-1">Signup</a></li>
+<li><a href="/user/request-password-reset" tabindex="-1">Reset password</a></li>
+<li><a href="/user/resend-activation-token" tabindex="-1">Resend activation email</a></li>
+<li><a href="/user/faq" tabindex="-1">FAQ</a></li></ul></li></ul></div></div></nav>
+    <div class="container-fluid container-main">
+
+                        
+    <div class="page-home">
+
+        <div class="page-header-wrapper">
+            <div class="page-header">
+                <h1>EDDB - Elite: Dangerous Database</h1>
+            </div>
+        </div>
+        <div class="panel panel-eddb">
+            <div class="panel-heading">It's time to say goodbye</div>
+            <div class="panel-body front-news">
+
+
+                <p>Dear EDDB users,</p>
+                <p>when I started developing EDDB over 8 years ago, I never thought that the site would become so big and successful. What impressed me the most was the incredible community of Elite: Dangerous. This was also the reason why I remained loyal to the EDDB project for so long. I have always found motivation to continue developing EDDB, even though I haven't actively played the game for years.</p>
+                <p>Now after 8 years, however, I have to acknowledge that my life has changed and my focus is now on other things. It is therefore with a heavy heart that I have to announce that <strong>EDDB will soon cease operations</strong>. Of course all user data will be deleted completely.</p>
+                <p>I will not publish the source code of the site, because the quality leaves a lot to be desired and does not meet my current standards. However, I am willing to sell the domain eddb.io to interested parties. Serious offers are welcome to be sent to <a href="mailto:themroc@eddb.io">themroc@eddb.io</a>.</p>
+                <p>I know that the decision to shut down EDDB is bad news for some of you. I hope you understand that the work and responsibility required to run EDDB can no longer be done by me.</p>
+                <p>In any case, I want to thank you for the fantastic time I have had in this community. The EDDB project has given me a lot and will definitely not be forgotten.</p>
+                <p>Fly safe o7<br>themroc</p>
+                <p><strong>Update:</strong> People wonder if this is an April Fool's joke. Unfortunately I have to deny that, the end of EDDB is absolute reality. Furthermore, I would like to point out that all data available on EDDB is downloadable: <a href="https://eddb.io/api">eddb.io/api</a>. At least until Easter the data will be available.</p>
+                <p>Finally, I also want to say that there continue to be great community sites in the Elite: Dangerous universe. Much of the functionality can be found elsewhere. To name a few: <a href="https://inara.cz/">inara.cz</a>, <a href="https://www.edsm.net/">edsm.net</a> or <a href="https://spansh.co.uk/">spansh.co.uk</a>.</p>
+
+
+<!--                <hr>-->
+<!--                <ul>-->
+<!--                    <li>Forum thread: <a-->
+<!--                                href="https://forums.frontier.co.uk/threads/eddb-a-site-about-systems-stations-commodities-and-trade-routes-in-elite-dangerous.97059/">https://forums.frontier.co.uk/threads/eddb-a-site-about-systems-stations-commodities-and-trade-routes-in-elite-dangerous.97059/</a>-->
+<!--                    </li>-->
+<!--                    <li>Discord server: <a href="https://discord.gg/d5g4VHe9pa">EDCD</a></li>-->
+<!--                    <li>Bug reports and Feature requests: <a href="https://github.com/themroc5/eddb.io/issues/">https://github.com/themroc5/eddb.io/issues/</a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+
+            </div>
+        </div>
+        <div class="quick-links clearfix">
+
+            <div class="row">
+                <a class="quick-box" href="/system">
+                    <div class="headline"><i class="fa fa-dot-circle-o"></i> Systems</div>
+                    <div class="body">
+                        Browse the universe! Jump to any system or search by many properties.
+                    </div>
+                </a>
+
+
+                <a class="quick-box" href="/body">
+                    <div class="headline"><i class="fa fa-globe" aria-hidden="true"></i> Bodies</div>
+                    <div class="body">
+                        Search & Find - all about bodies! Filter bodies and find materials or resource sites.
+                    </div>
+                </a>
+
+                <a class="quick-box" href="/station">
+                    <div class="headline"><i class="fa fa-building-o"></i> Stations</div>
+                    <div class="body">
+                        Browse the universe! Jump to any station or search by many properties. You can even find the
+                        ship you wanna buy!
+                    </div>
+                </a>
+
+                <a class="quick-box" href="/attraction">
+                    <div class="headline"><i class="fa fa-map" aria-hidden="true" title="Attraction"></i> Attractions</div>
+                    <div class="body">
+                        Looking for Settlements, Installations, Abandoned Bases, Shipwrecks or Beacons? This is for you!
+                    </div>
+                </a>
+            </div>
+            <div class="row">
+
+
+                <a class="quick-box" href="/faction">
+                    <div class="headline"><i class="fa fa-users" aria-hidden="true" title="Minor Faction"></i> Factions</div>
+                    <div class="body">
+                        Search & Find - find your faction and discover all about their systems and stations.
+                    </div>
+                </a>
+
+                <a class="quick-box" href="/commodity">
+                    <div class="headline"><i class="fa fa-cube"></i> Commodities</div>
+                    <div class="body">
+                        Browse commodities, compare and sort by numbers and go into detail to find out who sells or buys
+                        the best!
+                    </div>
+                </a>
+            </div>
+            <div class="row">
+
+                <a class="quick-box" href="/trade/single">
+                    <div class="headline"><i class="fa fa-arrow-right"></i> Single Hop Route</div>
+                    <div class="body">
+                        Wanna trade from A to B? The Single Route Finder gets you the best profit with a lot of filter
+                        options.<br>
+                        A <i class="fa fa-caret-right"></i> B
+                    </div>
+                </a>
+
+                <a class="quick-box" href="/trade/hops">
+                    <div class="headline"><i class="fa fa-arrows-alt"></i> Multi Hop Route</div>
+                    <div class="body">
+                        Bored from being set on the same route? This tool lets you profitably space truck through the
+                        universe.<br>
+                        A <i class="fa fa-caret-right"></i> B <i class="fa fa-caret-right"></i> C <i
+                                class="fa fa-caret-right"></i> D <i class="fa fa-caret-right"></i> E
+                    </div>
+                </a>
+
+                <a class="quick-box" href="/trade/loops">
+                    <div class="headline"><i class="fa fa-repeat"></i> Loop Route</div>
+                    <div class="body">
+                        You want the best profit possible? No matter where or what? The Loop Finder gives you exactly
+                        that!<br>
+                        A <i class="fa fa-caret-right"></i> B <i class="fa fa-caret-right"></i> A <i
+                                class="fa fa-caret-right"></i> B
+                    </div>
+                </a>
+
+                <a class="quick-box" href="/trade/commodity">
+                    <div class="headline"><i class="fa fa-cube"></i> Find Commodity</div>
+                    <div class="body">
+                        Mission problems? Can't find a station that sells you that stuff? Then the Commodity Finder is
+                        what you need!
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <!--    <div class="alert alert-danger">-->
+        <!--        I am aware that the site is so slow and I know the reason. The necessary changes will take a few days. So please be patient :)-->
+        <!--    </div>-->
+
+
+    </div>
+
+
+        
+        
+            <div class="panel panel-eddb bottom-ad">
+                <div class="panel-heading">Advertisement</div>
+                <div class="panel-body">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- bottom full width -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-9828496076338182"
+                         data-ad-slot="3354061357"
+                         data-ad-format="auto"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+            </div>
+
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="pull-left"><strong>&copy; EDDB 2023 - A site about systems, bodies, stations,
+                commodities, materials and trade routes in <a href="https://www.elitedangerous.com/"><i>Elite:
+                        Dangerous</i></a>.</strong></p>
+        <span class="pull-right donate-buttons">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="2C8HCJ2P4KXAA">
+                <input type="image" src="/images/paypal_btn_donate_SM.gif" border="0" name="submit"
+                       alt="Donate with PayPal">
+            </form>
+        </span>
+    </div>
+</footer>
+<script src="/assets/6f43917b/jquery.js?v=1597095590"></script>
+<script src="/assets/6546688b/select2.min.js?v=1597095590"></script>
+<script src="/assets/a254de8d/yii.js?v=1597095590"></script>
+<script src="/assets/e78dfa28/cookieconsent.min.js?v=1597095590"></script>
+<script src="/js/main.js?v=1612015983"></script>
+<script src="/assets/51ce2334/js/bootstrap.js?v=1597095590"></script>
+<script>jQuery(function ($) {
+
+$('.more-news-link').click(function() {
+   $('.more-news').slideDown();
+   $(this).parent('p').slideUp();
+   return false;
+});
+
+    var lightFilename = 'eddb-light.min.css'; 
+    var darkFilename = 'eddb-dark.min.css'; 
+
+    $('.theme-switcher .option-light').click(function() {
+        if (!replaceThemeCss(lightFilename)) {
+            return;
+        }
+        
+        $(this).addClass('option-selected');
+        $('.theme-switcher .option-dark').removeClass('option-selected');
+        updateSession('https://eddb.io/user/update-theme?theme=light');
+    });
+       
+    $('.theme-switcher .option-dark').click(function() {
+        if (!replaceThemeCss(darkFilename)) {
+            return;
+        }
+        
+        $(this).addClass('option-selected');
+        $('.theme-switcher .option-light').removeClass('option-selected');
+        updateSession('https://eddb.io/user/update-theme?theme=dark');
+    });
+
+    function replaceThemeCss(newFilename) {
+        var darkLink = $('link[href*="' + darkFilename + '"]');
+        var lightLink = $('link[href*="' + lightFilename + '"]');
+        var currentFilename;
+        var currentLink;
+        
+        if (darkLink.length > 0) {
+            currentFilename = darkFilename;
+            currentLink = darkLink;
+        }
+        
+        if (lightLink.length > 0) {
+            currentFilename = lightFilename;
+            currentLink = lightLink;
+        }
+        
+        if (newFilename === currentFilename) {
+            return false;
+        }
+        
+        var newHref = currentLink.attr('href');
+        newHref = newHref.replace(currentFilename, newFilename);
+        currentLink.attr('href', newHref);
+        
+        return true;
+    }
+    
+    function updateSession(newTheme) {
+        $.post(newTheme);
+    }
+    
+});</script></body>
+</html>
